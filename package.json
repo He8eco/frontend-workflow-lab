@@ -1,0 +1,15 @@
+{
+  "name": "frontend-workflow-lab",
+  "version": "1.0.0",
+  "description": "Тренировочный репозиторий для отработки базового frontend workflow:\r - Node / npm\r - Vite\r - Git / GitHub (ветки, PR, merge, rebase, конфликты)\r - ESLint / Prettier",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo \"dev script placeholder\"",
+    "build": "echo \"build script placeholder\"",
+    "lint": "echo \"lint script placeholder\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
