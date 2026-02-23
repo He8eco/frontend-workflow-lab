@@ -1,15 +1,30 @@
 {
   "name": "frontend-workflow-lab",
+  "private": true,
+  "description": "Тренировочный репозиторий для отработки базового frontend workflow",
   "version": "1.0.0",
-  "description": "Тренировочный репозиторий для отработки базового frontend workflow:\r - Node / npm\r - Vite\r - Git / GitHub (ветки, PR, merge, rebase, конфликты)\r - ESLint / Prettier",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "echo \"dev script placeholder\"",
-    "build": "echo \"build script placeholder\"",
-    "lint": "echo \"lint script placeholder\""
+    "dev": "vite --host 127.0.0.1 --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "esbuild": "^0.27.3",
+    "fdir": "^6.5.0",
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.3",
+    "postcss": "^8.5.6",
+    "rollup": "^4.59.0",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.15"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "license": "ISC"
 }
