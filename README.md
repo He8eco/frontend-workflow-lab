@@ -1,7 +1,5 @@
-# frontend-workflow-lab
+## Stage 1 progress
 
-Тренировочный репозиторий для отработки базового frontend workflow:
-- Node / npm
-- Vite
-- Git / GitHub (ветки, PR, merge, rebase, конфликты)
-- ESLint / Prettier
+- [x] Repo initialized
+- [x] npm initialized
+- [x] Vite project created
