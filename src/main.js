@@ -20,5 +20,6 @@ document.querySelector('#app').innerHTML = `
     </p>
   </div>
 `
-
+console.log('DEV MODE?', import.meta.env.DEV)
+console.log('PROD MODE?', import.meta.env.PROD)
 setupCounter(document.querySelector('#counter'))
