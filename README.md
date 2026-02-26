@@ -4,4 +4,4 @@
 - [x] npm initialized
 - [x] Vite project created
 
-Current focus: Stage 1 workflow training
+Current focus: Stage 1 Git workflow and pull requests
