@@ -4,4 +4,4 @@
 - [x] npm initialized
 - [x] Vite project created
 
-Current focus: Stage 1 merge conflicts and rebase practice
+Current focus: Stage 1 merge conflicts and rebase practic
