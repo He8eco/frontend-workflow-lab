@@ -6,4 +6,4 @@
 
 Current focus: Stage 1 merge conflicts and rebase practice
 ## Rebase practice
-This section is used to practice rebasing.
+This section is used to practice rebasing with Git.
