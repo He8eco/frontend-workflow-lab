@@ -1,0 +1,16 @@
+# JS Fundamentals — Notes
+
+## 1) Arrays / Objects
+- ...
+
+## 2) Copies / References / Immutability
+- ...
+
+## 3) Modules
+- ...
+
+## 4) Promises / async-await
+- ...
+
+## 5) Event loop
+- ...
