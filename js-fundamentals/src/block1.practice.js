@@ -27,3 +27,24 @@ console.log('names:', names)
 
 const usersOnly = users.filter (u => u.role === 'user')
 console.log('usersOnly:', usersOnly)
+
+const numbers1 = [1, 2, 3]
+
+const doubled1 = numbers1.reduce((acc, item) => {
+  acc.push(item * 2)
+  return acc
+}, [])
+
+console.log('doubled1:', doubled1)
+
+const users1 = [
+  { name: "Ivan", role: "admin" },
+  { name: "Olga", role: "user" }
+]
+
+const grouped = users1.reduce((acc, item) => {
+  acc[item.role] = item.name
+  return acc
+}, {})
+
+console.log('grouped:', grouped)
