@@ -7,6 +7,7 @@
   "start": "node src/index.js",
   "block0": "node src/block0.demo.js",
   "block1": "node src/block1.practice.js",
-  "block2": "node src/block2.reduce.js"
+  "block2": "node src/block2.reduce.js",
+  "block3": "node src/block-3-sort.js"
   }
 }
