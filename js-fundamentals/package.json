@@ -10,6 +10,7 @@
   "block2": "node src/block2.reduce.js",
   "block3": "node src/block-3-sort.js",
   "block4": "node src/block-4-object-methods.js",
-  "block5": "node src/block-5-destructuring-spread-rest.js"
+  "block5": "node src/block-5-destructuring-spread-rest.js",
+  "block6": "node src/block-0-references-and-copy.js"
   }
 }
