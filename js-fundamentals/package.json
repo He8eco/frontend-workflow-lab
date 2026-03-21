@@ -13,6 +13,7 @@
   "block5": "node src/block-5-destructuring-spread-rest.js",
   "block6": "node src/block-0-references-and-copy.js",
   "block7": "node src/block-1-shallow-vs-deep-copy.js",
-  "block8": "node src/block-2-immutable-updates.js"
+  "block8": "node src/block-2-immutable-updates.js",
+  "block9": "node src/block-3-nested-updates.js"
   }
 }
