@@ -15,6 +15,7 @@
   "block7": "node src/block-1-shallow-vs-deep-copy.js",
   "block8": "node src/block-2-immutable-updates.js",
   "block9": "node src/block-3-nested-updates.js",
-  "block10": "node src/block-0-promises-basics"
+  "block10": "node src/block-0-promises-basics",
+  "block11": "node src/block-1-then-catch-finally.js"
   }
 }
