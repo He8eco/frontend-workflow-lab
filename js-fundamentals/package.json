@@ -17,6 +17,7 @@
   "block9": "node src/block-3-nested-updates.js",
   "block10": "node src/block-0-promises-basics",
   "block11": "node src/block-1-then-catch-finally.js",
-  "block12": "node src/block-2-async-await.js"
+  "block12": "node src/block-2-async-await.js",
+  "block13": "node src/block-3-error-handling.js"
   }
 }
