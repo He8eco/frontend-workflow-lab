@@ -22,6 +22,7 @@
   "block14": "node src/block-4-promise-combinators.js",
   "block15": "node src/block-5-fake-api-retry.js",
   "block16": "node src/block-0-event-loop-basics.js",
-  "block17": "node src/block-1-settimeout.js"
+  "block17": "node src/block-1-settimeout.js",
+  "block18": "node src/block-2-microtasks.js"
   }
 }
