@@ -21,6 +21,7 @@
   "block13": "node src/block-3-error-handling.js",
   "block14": "node src/block-4-promise-combinators.js",
   "block15": "node src/block-5-fake-api-retry.js",
-  "block16": "node src/block-0-event-loop-basics.js"
+  "block16": "node src/block-0-event-loop-basics.js",
+  "block17": "node src/block-1-settimeout.js"
   }
 }
