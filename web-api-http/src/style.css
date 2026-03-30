@@ -1,8 +1,54 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
 }
 
-main {
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 24px;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
 }
