@@ -44,9 +44,12 @@ document.querySelector('#app').innerHTML = `
 const loadButton = document.querySelector('.load-btn')
 
 loadButton.addEventListener('click', async ()=>{
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
-  const text = await response.text()
-  console.log(response.ok)
-  console.log(response.status)
-  console.log(text)
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/123456')
+    const text = await response.text()
+    console.log(response.ok)
+    console.log(response.status)
+  } catch (error) {
+    console.log('error')
+  }
 })
