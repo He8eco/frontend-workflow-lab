@@ -11,7 +11,7 @@ document.querySelector('#app').innerHTML = `
     </header>
 
     <section class="controls">
-      <button type="button">Load</button>
+      <button class="load-btn" type="button">Load</button>
       <button type="button">Abort</button>
       <button type="button">Retry</button>
       <button type="button">Clear storage</button>
@@ -40,3 +40,13 @@ document.querySelector('#app').innerHTML = `
     </section>
   </main>
 `
+
+const loadButton = document.querySelector('.load-btn')
+
+loadButton.addEventListener('click', async ()=>{
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+  const text = await response.text()
+  console.log(response.ok)
+  console.log(response.status)
+  console.log(text)
+})
