@@ -12,7 +12,7 @@ document.querySelector('#app').innerHTML = `
 
     <section class="controls">
       <button class="load-btn" type="button">Load</button>
-      <button type="button">Abort</button>
+      <button class="abort-btn"type="button">Abort</button>
       <button type="button">Retry</button>
       <button type="button">Clear storage</button>
     </section>
@@ -41,6 +41,7 @@ document.querySelector('#app').innerHTML = `
   </main>
 `
 const loadButton = document.querySelector('.load-btn')
+const abortButton = document.querySelector('.abort-btn')
 const statusText = document.querySelector('.status-text')
 const resultText = document.querySelector('.result-text')
 const errorText = document.querySelector('.error-text')
@@ -61,9 +62,10 @@ function addLog(message) {
   logList.prepend(item)
 }
 
+let controller = null
+
 async function request(url) {
   const response = await fetch(url)
-
   if (!response.ok) {
     throw new Error(`HTTP error: ${response.status}`)
   } else {
@@ -73,6 +75,7 @@ async function request(url) {
 }
 
 loadButton.addEventListener('click', async ()=>{
+  controller = new AbortController()
   setStatus('loading')
   setResult('No data yet')
   setError('No errors')
@@ -80,8 +83,7 @@ loadButton.addEventListener('click', async ()=>{
   addLog('Request started via request()')
 
   try {
-    const data = await request('https://jsonplaceholder.typicode.com/posts/123456')
-
+    const data = await request('https://jsonplaceholder.typicode.com/posts/99', {signal: controller.signal})
     setStatus('success')
     setResult(JSON.stringify(data, null, 2))
     addLog('Result rendered')
@@ -92,3 +94,12 @@ loadButton.addEventListener('click', async ()=>{
   }
 })
 
+abortButton.addEventListener('click', ()=>{
+  if (!controller) {
+    addLog('Abort clicked, but there is no active controller')
+    return
+  }
+
+  controller.abort()
+  addLog('AbortController.abort() called')
+})
