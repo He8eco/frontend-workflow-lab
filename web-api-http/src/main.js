@@ -40,7 +40,6 @@ document.querySelector('#app').innerHTML = `
     </section>
   </main>
 `
-
 const loadButton = document.querySelector('.load-btn')
 const statusText = document.querySelector('.status-text')
 const resultText = document.querySelector('.result-text')
@@ -62,25 +61,34 @@ function addLog(message) {
   logList.prepend(item)
 }
 
+async function request(url) {
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`HTTP error: ${response.status}`)
+  } else {
+  return response.json()
+}
+  
+}
+
 loadButton.addEventListener('click', async ()=>{
+  setStatus('loading')
+  setResult('No data yet')
+  setError('No errors')
+  addLog('Load button clicked')
+  addLog('Request started via request()')
+
   try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts/123456')
-  // Для теста 404 можно временно поставить:
-  // const url = 'https://jsonplaceholder.typicode.com/posts/123456'
-    addLog(`Response received: ${response.status}`)
-    if (!response.ok) {
-      setStatus('Error')
-      setError(`HTTP Error: ${response.status}`)
-      addLog('Обнаружена ошибка')
-    } else {
-    const data = await response.json()
+    const data = await request('https://jsonplaceholder.typicode.com/posts/123456')
 
     setStatus('success')
     setResult(JSON.stringify(data, null, 2))
-    addLog('Result rendered')}
+    addLog('Result rendered')
   } catch (error) {
     setStatus('error')
     setError(`Network error: ${error.message}`)
     addLog('Network error caught')
   }
 })
+
