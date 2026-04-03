@@ -83,19 +83,22 @@ loadButton.addEventListener('click', async ()=>{
   addLog('Request started via request()')
 
   try {
-    const data = await request('https://jsonplaceholder.typicode.com/posts/19')
+    const data = await request('https://jsonplaceholder.typicode.com/posts/78')
     setStatus('success')
     setResult(JSON.stringify(data, null, 2))
     addLog('Result rendered')
+    controller = null
   } catch (error) {
     if (error.name === 'AbortError') {
       setStatus('Aborted')
       addLog('Request was aborted')
+      controller = null
       return
     }
     setStatus('error')
     setError(`Network error: ${error.message}`)
     addLog('Network error caught')
+    controller = null
   }
 })
 
