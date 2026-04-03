@@ -65,7 +65,7 @@ function addLog(message) {
 let controller = null
 
 async function request(url) {
-  const response = await fetch(url)
+  const response = await fetch(url, {signal: controller.signal})
   if (!response.ok) {
     throw new Error(`HTTP error: ${response.status}`)
   } else {
@@ -83,11 +83,16 @@ loadButton.addEventListener('click', async ()=>{
   addLog('Request started via request()')
 
   try {
-    const data = await request('https://jsonplaceholder.typicode.com/posts/99', {signal: controller.signal})
+    const data = await request('https://jsonplaceholder.typicode.com/posts/19')
     setStatus('success')
     setResult(JSON.stringify(data, null, 2))
     addLog('Result rendered')
   } catch (error) {
+    if (error.name === 'AbortError') {
+      setStatus('Aborted')
+      addLog('Request was aborted')
+      return
+    }
     setStatus('error')
     setError(`Network error: ${error.message}`)
     addLog('Network error caught')
