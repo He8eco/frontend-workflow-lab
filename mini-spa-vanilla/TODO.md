@@ -6,8 +6,8 @@
 - [x] Add README.md
 - [x] Add NOTES.md
 - [x] Add TODO.md
-- [ ] Define project workflow rules
-- [ ] Create base layout
+- [x] Define project workflow rules
+- [x] Create base layout
 
 ## Architecture
 - [ ] Plan project structure
