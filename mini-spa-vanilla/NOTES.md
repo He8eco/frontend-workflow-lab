@@ -22,3 +22,9 @@
 - Added header, controls area, catalog section, status section and pagination section
 - The project now looks like a small application instead of an empty training template
 - The current UI is still static and acts as a base for upcoming features
+
+## Substage 1 — Block 0
+- As the project grows, keeping everything in one `main.js` becomes hard to manage
+- API logic, state, UI rendering, event handlers and utils should not be mixed together
+- Architecture is needed in vanilla JS too, not only in React projects
+- The goal is not complexity, but separation of responsibilities and easier project growth
