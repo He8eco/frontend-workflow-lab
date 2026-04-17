@@ -10,8 +10,10 @@
 - [x] Create base layout
 
 ## Architecture
-- [ ] Plan project structure
-- [ ] Split project into modules
+- [x] Plan project structure
+- [x] Create `api / state / ui / utils`
+- [ ] Define application state shape
+- [ ] Move first render into UI layer
 
 ## Catalog
 - [ ] Connect movie data

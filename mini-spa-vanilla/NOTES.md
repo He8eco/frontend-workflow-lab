@@ -28,3 +28,9 @@
 - API logic, state, UI rendering, event handlers and utils should not be mixed together
 - Architecture is needed in vanilla JS too, not only in React projects
 - The goal is not complexity, but separation of responsibilities and easier project growth
+
+## Substage 1 — Block 1
+- Added the first project structure by roles: `api`, `state`, `ui`, `utils`
+- `main.js` stays as the application entry point
+- The goal of this structure is separation of responsibilities, not unnecessary complexity
+- The project now has a cleaner base for future features
