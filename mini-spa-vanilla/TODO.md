@@ -12,8 +12,9 @@
 ## Architecture
 - [x] Plan project structure
 - [x] Create `api / state / ui / utils`
-- [ ] Define application state shape
+- [x] Define application state shape
 - [ ] Move first render into UI layer
+- [ ] Connect state to render flow
 
 ## Catalog
 - [ ] Connect movie data
