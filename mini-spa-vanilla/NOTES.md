@@ -40,3 +40,9 @@
 - UI should not be the source of truth, it should reflect the current state
 - The main flow is: event → state change → rerender
 - State already needs to include movies, loading, error, search, genre, sort, page and favorites
+
+## Substage 1 — Block 3
+- Moved the main application layout out of `main.js` into `ui/renderApp.js`
+- `main.js` now works as a clean entry point
+- The first render is now based on `initialState`
+- The project starts through modules, not through one large file
