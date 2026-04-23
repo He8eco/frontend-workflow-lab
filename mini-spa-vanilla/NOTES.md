@@ -34,3 +34,9 @@
 - `main.js` stays as the application entry point
 - The goal of this structure is separation of responsibilities, not unnecessary complexity
 - The project now has a cleaner base for future features
+
+## Substage 1 — Block 2
+- The app should have one source of truth: a central state object
+- UI should not be the source of truth, it should reflect the current state
+- The main flow is: event → state change → rerender
+- State already needs to include movies, loading, error, search, genre, sort, page and favorites

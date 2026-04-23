@@ -87,5 +87,3 @@ document.querySelector('#app').innerHTML = `
     </section>
   </main>
 `
-
-setupCounter(document.querySelector('#counter'))

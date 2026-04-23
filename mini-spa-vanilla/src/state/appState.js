@@ -6,5 +6,6 @@ export const initialState = {
   genre: 'all',
   sortBy: 'default',
   page: 1,
+  itemsPerPage: 9,
   favorites: [],
 }
