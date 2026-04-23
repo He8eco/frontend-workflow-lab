@@ -13,8 +13,8 @@
 - [x] Plan project structure
 - [x] Create `api / state / ui / utils`
 - [x] Define application state shape
-- [ ] Move first render into UI layer
-- [ ] Connect state to render flow
+- [x] Move first render into UI layer
+- [x] Connect state to first render
 
 ## Catalog
 - [ ] Connect movie data
