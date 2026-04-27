@@ -20,7 +20,7 @@
 - [x] Add first movie data source
 - [x] Load movies on app start
 - [x] Render real movie cards
-- [ ] Handle loading / error / empty states
+- [x] Handle loading / error / empty states
 - [ ] Add refresh / reload button
 
 ## Features

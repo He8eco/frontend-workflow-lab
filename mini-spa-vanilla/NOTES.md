@@ -59,3 +59,9 @@
 - The catalog now renders cards from `state.movies`
 - Added a separate card renderer and movie list renderer
 - The UI now reflects real catalog data instead of hardcoded placeholders
+
+## Substage 2 — Block 2
+- Added basic UI states for the catalog: loading, error and empty
+- The catalog now renders different content depending on state
+- UI no longer assumes that movie data is always available
+- Loading, error and empty states are handled separately

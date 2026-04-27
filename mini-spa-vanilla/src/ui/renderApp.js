@@ -23,6 +23,19 @@ function renderMovieList(movies) {
   return movies.map(renderMovieCard).join('')
 }
 
+function renderCatalogContent(state) {
+ if (state.loading) {
+  return `<p class="catalog-message">Loading movies...</p>`
+ }
+ if (state.error) {
+  return `<p class="catalog-message error-message">${state.error}</p>`
+ }
+ if (state.movies.length === 0) {
+    return `<p class="catalog-message">No movies found.</p>`
+  }
+
+  return renderMovieList(state.movies)
+}
 export function renderApp(state) {
   appRoot.innerHTML = `
     <main class="app-shell">
@@ -71,13 +84,13 @@ export function renderApp(state) {
         </div>
 
         <div class="movie-grid">
-          ${renderMovieList(state.movies)}
+          ${renderCatalogContent(state)}
         </div>
       </section>
 
       <section class="status panel">
         <h2>Status</h2>
-        <p>${state.loading ? 'Loading...' : state.error ? state.error : 'No data loaded yet.'}</p>
+        <p>${state.loading ? 'Loading...' : state.error ? state.error : state.movies.length === 0 ? 'No data loaded yet.' : 'Movies loaded successfully.'}</p>
       </section>
 
       <section class="pagination panel">
