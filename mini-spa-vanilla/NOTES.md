@@ -53,3 +53,9 @@
 - The loaded movies are stored in state
 - The UI rerenders after movies are loaded
 - The app now begins to work with real catalog data instead of only placeholders
+
+## Substage 2 — Block 1
+- Replaced static placeholder cards with real movie card rendering
+- The catalog now renders cards from `state.movies`
+- Added a separate card renderer and movie list renderer
+- The UI now reflects real catalog data instead of hardcoded placeholders

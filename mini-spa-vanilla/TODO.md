@@ -19,8 +19,9 @@
 ## Catalog
 - [x] Add first movie data source
 - [x] Load movies on app start
-- [ ] Render real movie cards
+- [x] Render real movie cards
 - [ ] Handle loading / error / empty states
+- [ ] Add refresh / reload button
 
 ## Features
 - [ ] Add search

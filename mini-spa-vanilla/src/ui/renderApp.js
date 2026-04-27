@@ -1,5 +1,28 @@
 import { appRoot } from './dom.js'
 
+function renderMovieCard(movie) {
+  return `
+    <article class="movie-card">
+      ${
+        movie.poster
+          ? `<img class="movie-poster" src="${movie.poster}" alt="${movie.title}" />`
+          : `<div class="poster-placeholder"></div>`
+      }
+
+      <div class="movie-card-body">
+        <h3>${movie.title}</h3>
+        <p>${movie.genre}</p>
+        <p>Year: ${movie.year}</p>
+        <p>Rating: ${movie.rating}</p>
+      </div>
+    </article>
+  `
+}
+
+function renderMovieList(movies) {
+  return movies.map(renderMovieCard).join('')
+}
+
 export function renderApp(state) {
   appRoot.innerHTML = `
     <main class="app-shell">
@@ -48,29 +71,7 @@ export function renderApp(state) {
         </div>
 
         <div class="movie-grid">
-          <article class="movie-card placeholder-card">
-            <div class="poster-placeholder"></div>
-            <div class="movie-card-body">
-              <h3>Movie card placeholder</h3>
-              <p>Movie info will appear here.</p>
-            </div>
-          </article>
-
-          <article class="movie-card placeholder-card">
-            <div class="poster-placeholder"></div>
-            <div class="movie-card-body">
-              <h3>Movie card placeholder</h3>
-              <p>Movie info will appear here.</p>
-            </div>
-          </article>
-
-          <article class="movie-card placeholder-card">
-            <div class="poster-placeholder"></div>
-            <div class="movie-card-body">
-              <h3>Movie card placeholder</h3>
-              <p>Movie info will appear here.</p>
-            </div>
-          </article>
+          ${renderMovieList(state.movies)}
         </div>
       </section>
 
