@@ -17,8 +17,9 @@
 - [x] Connect state to first render
 
 ## Catalog
-- [ ] Connect movie data
-- [ ] Render movie cards
+- [x] Add first movie data source
+- [x] Load movies on app start
+- [ ] Render real movie cards
 - [ ] Handle loading / error / empty states
 
 ## Features

@@ -46,3 +46,10 @@
 - `main.js` now works as a clean entry point
 - The first render is now based on `initialState`
 - The project starts through modules, not through one large file
+
+## Substage 2 — Block 0
+- Added the first movie data source
+- The app now loads movie data on startup
+- The loaded movies are stored in state
+- The UI rerenders after movies are loaded
+- The app now begins to work with real catalog data instead of only placeholders
