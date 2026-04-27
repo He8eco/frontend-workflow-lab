@@ -74,7 +74,7 @@ export function renderApp(state) {
           </select>
         </div>
 
-        <button class="secondary-btn" type="button">Reset filters</button>
+        <button class="reload-btn" type="button">Reset filters</button>
       </section>
 
       <section class="catalog panel">

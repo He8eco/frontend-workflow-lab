@@ -21,7 +21,7 @@
 - [x] Load movies on app start
 - [x] Render real movie cards
 - [x] Handle loading / error / empty states
-- [ ] Add refresh / reload button
+- [x] Add refresh / reload button
 
 ## Features
 - [ ] Add search

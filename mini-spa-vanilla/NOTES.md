@@ -65,3 +65,9 @@
 - The catalog now renders different content depending on state
 - UI no longer assumes that movie data is always available
 - Loading, error and empty states are handled separately
+
+## Substage 2 — Block 3
+- Added manual catalog reload button
+- The movie loading logic is now reusable through `loadMovies()`
+- The catalog can now be reloaded both on app start and by user action
+- UI states still work correctly during repeated loading
