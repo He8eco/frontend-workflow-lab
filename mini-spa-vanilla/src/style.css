@@ -162,6 +162,13 @@ button {
   background: linear-gradient(135deg, #1e293b, #334155);
 }
 
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
 .movie-card-body {
   padding: 16px;
 }
