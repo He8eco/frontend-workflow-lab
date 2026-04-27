@@ -107,7 +107,7 @@ button {
 
 .control-group input,
 .control-group select,
-.secondary-btn,
+.reload-btn,
 .pagination button {
   min-height: 44px;
   border-radius: 12px;
@@ -117,7 +117,7 @@ button {
   padding: 0 14px;
 }
 
-.secondary-btn {
+.reload-btn {
   align-self: end;
 }
 
