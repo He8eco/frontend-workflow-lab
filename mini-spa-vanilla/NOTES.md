@@ -77,3 +77,9 @@
 - The current search query is stored in `state.search`
 - Search should affect the rendered movie list, not exist separately from the catalog
 - At this stage search will work by movie title only
+
+## Substage 3 — Block 1
+- Connected the search input to `state.search`
+- The search field now updates application state on every input event
+- The app rerenders after search state changes
+- The input value is now synced with the current state

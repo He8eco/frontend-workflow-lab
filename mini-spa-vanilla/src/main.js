@@ -7,10 +7,26 @@ const state = {...initialState}
 
 function attachEventListeners() {
   const reloadButton = document.querySelector('.reload-btn')
+  const searchInput = document.querySelector('#search')
 
   if (reloadButton) {
     reloadButton.addEventListener('click', ()=>{
       loadMovies()
+    })
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (event) => {
+      state.search = event.target.value
+      render()
+      const newSearchInput = document.querySelector('#search')
+     if (newSearchInput) {
+      newSearchInput.focus()
+      newSearchInput.setSelectionRange(
+        newSearchInput.value.length,
+        newSearchInput.value.length
+      )
+    }
     })
   }
 }
