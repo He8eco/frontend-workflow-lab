@@ -23,6 +23,14 @@
 - [x] Handle loading / error / empty states
 - [x] Add refresh / reload button
 
+## Search
+- [x] Define search logic
+- [ ] Connect input to `state.search`
+- [ ] Filter movie list by title
+- [ ] Add debounce
+- [ ] Reset page on search change
+- [ ] Add search reset
+
 ## Features
 - [ ] Add search
 - [ ] Add filters
