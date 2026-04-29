@@ -47,6 +47,7 @@ async function loadMovies() {
     state.loading = false
     render()
   } catch (error) {
+    state.movies = []
     state.error = "Failed to load movies"
     state.loading = false
     render()
