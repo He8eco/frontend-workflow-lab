@@ -83,3 +83,16 @@
 - The search field now updates application state on every input event
 - The app rerenders after search state changes
 - The input value is now synced with the current state
+
+## Substage 3 — Block 2
+- Added movie filtering by `title`
+- Search is now case-insensitive
+- Empty search returns the full movie list
+- The catalog now renders filtered movies instead of always rendering all movies
+- Result count is based on filtered movies
+
+## Substage 3 — Block 3
+- Added debounce for the search input
+- Search now updates state with a small delay instead of rerendering immediately on every keystroke
+- Search change now resets the current page to 1
+- Search behavior is now closer to a real catalog application

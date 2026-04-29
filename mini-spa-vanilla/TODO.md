@@ -26,9 +26,9 @@
 ## Search
 - [x] Define search logic
 - [x] Connect input to `state.search`
-- [ ] Filter movie list by title
-- [ ] Add debounce
-- [ ] Reset page on search change
+- [x] Filter movie list by title
+- [x] Add debounce
+- [x] Reset page on search change
 - [ ] Add search reset
 
 ## Features

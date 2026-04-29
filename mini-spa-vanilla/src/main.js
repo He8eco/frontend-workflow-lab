@@ -2,8 +2,15 @@ import './style.css'
 import { initialState } from './state/appState.js'
 import { renderApp } from './ui/renderApp.js'
 import { getMovies } from './api/movieApi.js'
+import { debounce } from './utils/debounce.js'
 
 const state = {...initialState}
+
+const handleSearchInput = debounce((value) => {
+  state.search = value
+  state.page = 1
+  render()
+}, 1000)
 
 function attachEventListeners() {
   const reloadButton = document.querySelector('.reload-btn')
@@ -17,16 +24,7 @@ function attachEventListeners() {
 
   if (searchInput) {
     searchInput.addEventListener('input', (event) => {
-      state.search = event.target.value
-      render()
-      const newSearchInput = document.querySelector('#search')
-     if (newSearchInput) {
-      newSearchInput.focus()
-      newSearchInput.setSelectionRange(
-        newSearchInput.value.length,
-        newSearchInput.value.length
-      )
-    }
+      handleSearchInput(event.target.value)
     })
   }
 }
@@ -47,6 +45,7 @@ async function loadMovies() {
     state.loading = false
     render()
   } catch (error) {
+    state.movies = []
     state.error = "Failed to load movies"
     state.loading = false
     render()

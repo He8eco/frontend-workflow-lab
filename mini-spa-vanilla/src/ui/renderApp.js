@@ -23,6 +23,16 @@ function renderMovieList(movies) {
   return movies.map(renderMovieCard).join('')
 }
 
+function getFilteredMovies(state) {
+  const normalizedSearch = state.search.trim().toLowerCase()
+
+  if (!normalizedSearch) {
+    return state.movies
+  }
+
+  return state.movies.filter((movie) => movie.title.toLowerCase().includes(normalizedSearch))
+}
+
 function renderCatalogContent(state) {
  if (state.loading) {
   return `<p class="catalog-message">Loading movies...</p>`
@@ -34,9 +44,11 @@ function renderCatalogContent(state) {
     return `<p class="catalog-message">No movies found.</p>`
   }
 
-  return renderMovieList(state.movies)
+  return renderMovieList(filteredMovies)
 }
 export function renderApp(state) {
+  const filteredMovies = getFilteredMovies(state)
+
   appRoot.innerHTML = `
     <main class="app-shell">
       <header class="hero panel">
@@ -80,17 +92,18 @@ export function renderApp(state) {
       <section class="catalog panel">
         <div class="catalog-toolbar">
           <h2>Catalog</h2>
-          <p>Showing <span>${state.movies.length}</span> results</p>
+          <p>Showing <span>${filteredMovies.length}</span> results</p>
+            <button class="reload-btn" type="button">Reload catalog</button>
         </div>
 
         <div class="movie-grid">
-          ${renderCatalogContent(state)}
+          ${renderCatalogContent(state, filteredMovies)}
         </div>
       </section>
 
       <section class="status panel">
         <h2>Status</h2>
-        <p>${state.loading ? 'Loading...' : state.error ? state.error : state.movies.length === 0 ? 'No data loaded yet.' : 'Movies loaded successfully.'}</p>
+        <p>${state.loading ? 'Loading...' : state.error ? state.error : filteredMovies.length === 0 ? 'No data loaded yet.' : 'Movies loaded successfully.'}</p>
       </section>
 
       <section class="pagination panel">
