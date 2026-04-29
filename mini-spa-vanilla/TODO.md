@@ -29,7 +29,7 @@
 - [x] Filter movie list by title
 - [x] Add debounce
 - [x] Reset page on search change
-- [ ] Add search reset
+- [x] Add search reset
 
 ## Features
 - [ ] Add search

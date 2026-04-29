@@ -10,11 +10,13 @@ const handleSearchInput = debounce((value) => {
   state.search = value
   state.page = 1
   render()
-}, 1000)
+}, 400)
 
 function attachEventListeners() {
   const reloadButton = document.querySelector('.reload-btn')
   const searchInput = document.querySelector('#search')
+  const clearSearchButton = document.querySelector('.clear-search-btn')
+  
 
   if (reloadButton) {
     reloadButton.addEventListener('click', ()=>{
@@ -25,6 +27,13 @@ function attachEventListeners() {
   if (searchInput) {
     searchInput.addEventListener('input', (event) => {
       handleSearchInput(event.target.value)
+    })
+  }
+  if (clearSearchButton) {
+    clearSearchButton.addEventListener('click', () => {
+      state.search = ''
+      state.page = 1
+      render()
     })
   }
 }

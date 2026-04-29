@@ -120,6 +120,9 @@ button {
 .reload-btn {
   align-self: end;
 }
+.search-row {
+  display: flex;
+}
 
 .catalog {
   padding: 20px;

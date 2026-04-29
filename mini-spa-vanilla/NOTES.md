@@ -96,3 +96,9 @@
 - Search now updates state with a small delay instead of rerendering immediately on every keystroke
 - Search change now resets the current page to 1
 - Search behavior is now closer to a real catalog application
+
+## Substage 3 — Block 4
+- Added a clear search button
+- Search reset now clears `state.search`
+- Search reset also resets the current page to 1
+- The catalog can now return to the full movie list through a clear user action

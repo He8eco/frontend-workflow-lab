@@ -33,14 +33,14 @@ function getFilteredMovies(state) {
   return state.movies.filter((movie) => movie.title.toLowerCase().includes(normalizedSearch))
 }
 
-function renderCatalogContent(state) {
+function renderCatalogContent(state, filteredMovies) {
  if (state.loading) {
   return `<p class="catalog-message">Loading movies...</p>`
  }
  if (state.error) {
   return `<p class="catalog-message error-message">${state.error}</p>`
  }
- if (state.movies.length === 0) {
+ if (filteredMovies.length === 0) {
     return `<p class="catalog-message">No movies found.</p>`
   }
 
@@ -69,9 +69,16 @@ export function renderApp(state) {
       <section class="controls panel">
         <div class="control-group">
           <label for="search">Search</label>
-          <input id="search" type="text" placeholder="Search movies..." value="${state.search}" />
+          <div class="search-row">
+            <input
+              id="search"
+              type="text"
+              placeholder="Search movies..."
+              value="${state.search}"
+          />
+          <button class="clear-search-btn" type="button">Clear search</button>
         </div>
-
+        </div>
         <div class="control-group">
           <label for="genre">Genre</label>
           <select id="genre">
@@ -86,7 +93,7 @@ export function renderApp(state) {
           </select>
         </div>
 
-        <button class="reload-btn" type="button">Reset filters</button>
+        <button class="reset-filters-btn" type="button">Reset filters</button>
       </section>
 
       <section class="catalog panel">
@@ -103,7 +110,7 @@ export function renderApp(state) {
 
       <section class="status panel">
         <h2>Status</h2>
-        <p>${state.loading ? 'Loading...' : state.error ? state.error : filteredMovies.length === 0 ? 'No data loaded yet.' : 'Movies loaded successfully.'}</p>
+        <p>${state.loading ? 'Loading...' : state.error ? state.error : filteredMovies.length === 0 ? 'No movies found.' : 'Movies loaded successfully.'}</p>
       </section>
 
       <section class="pagination panel">
