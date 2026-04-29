@@ -71,3 +71,9 @@
 - The movie loading logic is now reusable through `loadMovies()`
 - The catalog can now be reloaded both on app start and by user action
 - UI states still work correctly during repeated loading
+
+## Substage 3 — Block 0
+- Search in the catalog should be part of application state
+- The current search query is stored in `state.search`
+- Search should affect the rendered movie list, not exist separately from the catalog
+- At this stage search will work by movie title only
