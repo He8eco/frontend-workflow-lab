@@ -91,3 +91,8 @@
 - The catalog now renders filtered movies instead of always rendering all movies
 - Result count is based on filtered movies
 
+## Substage 3 — Block 3
+- Added debounce for the search input
+- Search now updates state with a small delay instead of rerendering immediately on every keystroke
+- Search change now resets the current page to 1
+- Search behavior is now closer to a real catalog application
