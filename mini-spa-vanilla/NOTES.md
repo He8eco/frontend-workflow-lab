@@ -120,3 +120,12 @@
 - `getFilteredMovies(state)` now applies search first and genre filter second.
 - `genre: 'all'` means the genre filter is disabled.
 - Search and genre filter can now work together.
+
+## Substage 4 — Block 2
+
+- Added the second filter: minimum rating.
+- Rating select now updates `state.minRating`.
+- `state.minRating` is stored as a number using `Number(event.target.value)`.
+- Rating change resets `state.page` to 1.
+- `getFilteredMovies(state)` now applies search, genre, and min rating.
+- `minRating: 0` means the rating filter is disabled.

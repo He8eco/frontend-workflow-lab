@@ -17,6 +17,7 @@ function attachEventListeners() {
   const searchInput = document.querySelector('#search')
   const clearSearchButton = document.querySelector('.clear-search-btn')
   const genreSelect = document.querySelector('#genre')
+  const minRatingSelect = document.querySelector('#min-rating')
   
 
   if (reloadButton) {
@@ -40,7 +41,15 @@ function attachEventListeners() {
 
   if (genreSelect)  {
     genreSelect.addEventListener('change', (event) => {
-      state.genre = event.target.value
+      state.genre = Number(event.target.value)
+      state.page = 1
+      render()
+    })
+  }
+
+  if (minRatingSelect) {
+    minRatingSelect.addEventListener('change', event => {
+      state.minRating  = event.target.value
       state.page = 1
       render()
     })
