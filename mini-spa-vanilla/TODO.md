@@ -38,7 +38,7 @@
 - [x] Connect genre select to `state.genre`
 - [x] Filter movie list by genre
 - [x] Add rating filter
-- [ ] Combine search and filters
+- [x] Combine search and filters
 - [ ] Reset filters
 
 ## Features
