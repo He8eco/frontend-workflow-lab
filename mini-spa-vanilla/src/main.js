@@ -16,6 +16,7 @@ function attachEventListeners() {
   const reloadButton = document.querySelector('.reload-btn')
   const searchInput = document.querySelector('#search')
   const clearSearchButton = document.querySelector('.clear-search-btn')
+  const genreSelect = document.querySelector('#genre')
   
 
   if (reloadButton) {
@@ -32,6 +33,14 @@ function attachEventListeners() {
   if (clearSearchButton) {
     clearSearchButton.addEventListener('click', () => {
       state.search = ''
+      state.page = 1
+      render()
+    })
+  }
+
+  if (genreSelect)  {
+    genreSelect.addEventListener('change', (event) => {
+      state.genre = event.target.value
       state.page = 1
       render()
     })

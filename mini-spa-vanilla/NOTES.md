@@ -111,3 +111,12 @@
 - `genre: 'all'` means no genre filter.
 - `minRating: 0` means no rating filter.
 - The future data flow should be: search → filters → sorting → pagination.
+
+## Substage 4 — Block 1
+
+- Added the first real filter: genre.
+- Genre select now updates `state.genre`.
+- Genre change resets `state.page` to 1.
+- `getFilteredMovies(state)` now applies search first and genre filter second.
+- `genre: 'all'` means the genre filter is disabled.
+- Search and genre filter can now work together.
