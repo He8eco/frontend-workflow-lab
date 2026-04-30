@@ -138,3 +138,28 @@
 - Filters are applied only when their state values are active.
 - The current data flow is: search → genre → minRating.
 - Future data flow will be: search → filters → sorting → pagination.
+
+## Substage 4 — Block 4
+
+- Added reset filters behavior.
+- Reset filters clears `state.search`.
+- Reset filters sets `state.genre` back to `all`.
+- Reset filters sets `state.minRating` back to `0`.
+- Reset filters resets `state.page` to `1`.
+- UI is reset through state update + render, not by manually changing DOM values.
+
+## Substage 5 — Block 0
+
+- Sorting changes the order of items, filtering changes which items are included.
+- Selected sorting should be stored in `state.sortBy`.
+- `sortBy: 'default'` means no custom sorting.
+- JavaScript `.sort()` mutates the original array.
+- We should not sort `state.movies` directly.
+- Before sorting, create a copy of the array with `[...movies]`.
+- Planned sorting values:
+  - `default`
+  - `title-asc`
+  - `title-desc`
+  - `rating-desc`
+  - `rating-asc`
+- Future data flow: search → filters → sorting → pagination.

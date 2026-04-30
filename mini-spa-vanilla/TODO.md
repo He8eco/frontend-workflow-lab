@@ -39,7 +39,16 @@
 - [x] Filter movie list by genre
 - [x] Add rating filter
 - [x] Combine search and filters
-- [ ] Reset filters
+- [x] Reset filters
+
+## Sorting
+
+- [x] Define sorting logic
+- [x] Confirm `sortBy` in state
+- [ ] Connect sort select to `state.sortBy`
+- [ ] Add title sorting
+- [ ] Add rating sorting
+- [ ] Combine search, filters, and sorting
 
 ## Features
 - [ ] Add search
