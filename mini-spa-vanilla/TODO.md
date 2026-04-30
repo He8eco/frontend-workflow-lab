@@ -37,7 +37,7 @@
 - [x] Add `minRating` to state
 - [x] Connect genre select to `state.genre`
 - [x] Filter movie list by genre
-- [ ] Add rating filter
+- [x] Add rating filter
 - [ ] Combine search and filters
 - [ ] Reset filters
 

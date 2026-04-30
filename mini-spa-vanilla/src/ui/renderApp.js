@@ -35,6 +35,10 @@ function getFilteredMovies(state) {
     filteredMovies = filteredMovies.filter((movie) => movie.genre === state.genre)
   }
 
+  if (state.minRating > 0) {
+    filteredMovies = filteredMovies.filter((movie) => movie.rating >= state.minRating)
+  }
+
   return filteredMovies
 }
 
@@ -106,7 +110,23 @@ export function renderApp(state) {
             <option ${state.sortBy === 'default' ? 'selected' : ''}>Default</option>
           </select>
         </div>
-
+        <div class="control-group">
+  <label for="min-rating">Rating</label>
+  <select id="min-rating">
+    <option value="0" ${state.minRating === 0 ? 'selected' : ''}>
+      All ratings
+    </option>
+    <option value="7" ${state.minRating === 7 ? 'selected' : ''}>
+      7+
+    </option>
+    <option value="8" ${state.minRating === 8 ? 'selected' : ''}>
+      8+
+    </option>
+    <option value="9" ${state.minRating === 9 ? 'selected' : ''}>
+      9+
+    </option>
+  </select>
+</div>
         <button class="reset-filters-btn" type="button">Reset filters</button>
       </section>
 
