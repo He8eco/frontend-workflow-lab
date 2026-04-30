@@ -45,7 +45,7 @@
 
 - [x] Define sorting logic
 - [x] Confirm `sortBy` in state
-- [ ] Connect sort select to `state.sortBy`
+- [x] Connect sort select to `state.sortBy`
 - [ ] Add title sorting
 - [ ] Add rating sorting
 - [ ] Combine search, filters, and sorting

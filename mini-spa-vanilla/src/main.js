@@ -19,6 +19,7 @@ function attachEventListeners() {
   const genreSelect = document.querySelector('#genre')
   const minRatingSelect = document.querySelector('#min-rating')
   const resetFiltersButton = document.querySelector('.reset-filters-btn')
+  const sortSelect = document.querySelector('#sort')
   
 
   if (reloadButton) {
@@ -65,6 +66,13 @@ function attachEventListeners() {
       render()
     })
   }
+  if (sortSelect) {
+  sortSelect.addEventListener('change', (event) => {
+    state.sortBy = event.target.value
+    state.page = 1
+    render()
+  })
+}
 }
 
 function render() {
