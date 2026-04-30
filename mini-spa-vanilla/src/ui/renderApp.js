@@ -25,12 +25,17 @@ function renderMovieList(movies) {
 
 function getFilteredMovies(state) {
   const normalizedSearch = state.search.trim().toLowerCase()
+  let filteredMovies = state.movies
 
-  if (!normalizedSearch) {
-    return state.movies
+  if (normalizedSearch) {
+    filteredMovies = filteredMovies.filter((movie) => movie.title.toLowerCase().includes(normalizedSearch))
+  }
+  
+  if (state.genre !== 'all')  {
+    filteredMovies = filteredMovies.filter((movie) => movie.genre === state.genre)
   }
 
-  return state.movies.filter((movie) => movie.title.toLowerCase().includes(normalizedSearch))
+  return filteredMovies
 }
 
 function renderCatalogContent(state, filteredMovies) {
@@ -82,7 +87,16 @@ export function renderApp(state) {
         <div class="control-group">
           <label for="genre">Genre</label>
           <select id="genre">
-            <option ${state.genre === 'all' ? 'selected' : ''}>All genres</option>
+            
+  <option value="all" ${state.genre === 'all' ? 'selected' : ''}>
+    All genres
+  </option>
+  <option value="Sci-Fi" ${state.genre === 'Sci-Fi' ? 'selected' : ''}>
+    Sci-Fi
+  </option>
+  <option value="Action" ${state.genre === 'Action' ? 'selected' : ''}>
+    Action
+  </option>
           </select>
         </div>
 
