@@ -105,11 +105,25 @@ export function renderApp(state) {
         </div>
 
         <div class="control-group">
-          <label for="sort">Sort by</label>
-          <select id="sort">
-            <option ${state.sortBy === 'default' ? 'selected' : ''}>Default</option>
-          </select>
-        </div>
+  <label for="sort">Sort by</label>
+  <select id="sort">
+    <option value="default" ${state.sortBy === 'default' ? 'selected' : ''}>
+      Default
+    </option>
+    <option value="title-asc" ${state.sortBy === 'title-asc' ? 'selected' : ''}>
+      Title A–Z
+    </option>
+    <option value="title-desc" ${state.sortBy === 'title-desc' ? 'selected' : ''}>
+      Title Z–A
+    </option>
+    <option value="rating-desc" ${state.sortBy === 'rating-desc' ? 'selected' : ''}>
+      Rating high to low
+    </option>
+    <option value="rating-asc" ${state.sortBy === 'rating-asc' ? 'selected' : ''}>
+      Rating low to high
+    </option>
+  </select>
+</div>
         <div class="control-group">
   <label for="min-rating">Rating</label>
   <select id="min-rating">

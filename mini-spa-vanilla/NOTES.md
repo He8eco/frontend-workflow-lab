@@ -163,3 +163,16 @@
   - `rating-desc`
   - `rating-asc`
 - Future data flow: search → filters → sorting → pagination.
+
+## Substage 5 — Block 1
+
+- Connected sort select to `state.sortBy`.
+- Added sort options:
+  - `default`
+  - `title-asc`
+  - `title-desc`
+  - `rating-desc`
+  - `rating-asc`
+- Sort select change resets `state.page` to 1.
+- Selected sort option is preserved after render because options use `state.sortBy`.
+- Sorting logic will be implemented in the next blocks.
