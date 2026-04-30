@@ -96,3 +96,18 @@
 - Search now updates state with a small delay instead of rerendering immediately on every keystroke
 - Search change now resets the current page to 1
 - Search behavior is now closer to a real catalog application
+
+## Substage 3 — Block 4
+- Added a clear search button
+- Search reset now clears `state.search`
+- Search reset also resets the current page to 1
+- The catalog can now return to the full movie list through a clear user action
+
+## Substage 4 — Block 0
+
+- Filters are part of application state, not just UI controls.
+- Genre filter will be stored in `state.genre`.
+- Rating filter will be stored in `state.minRating`.
+- `genre: 'all'` means no genre filter.
+- `minRating: 0` means no rating filter.
+- The future data flow should be: search → filters → sorting → pagination.

@@ -29,7 +29,17 @@
 - [x] Filter movie list by title
 - [x] Add debounce
 - [x] Reset page on search change
-- [ ] Add search reset
+- [x] Add search reset
+
+## Filters
+
+- [x] Define filter logic
+- [x] Add `minRating` to state
+- [ ] Connect genre select to `state.genre`
+- [ ] Filter movie list by genre
+- [ ] Add rating filter
+- [ ] Combine search and filters
+- [ ] Reset filters
 
 ## Features
 - [ ] Add search
