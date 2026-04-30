@@ -129,3 +129,12 @@
 - Rating change resets `state.page` to 1.
 - `getFilteredMovies(state)` now applies search, genre, and min rating.
 - `minRating: 0` means the rating filter is disabled.
+
+## Substage 4 — Block 3
+
+- Search, genre, and min rating now work as one combined filtering pipeline.
+- `state.movies` remains the full source list.
+- `filteredMovies` is derived from `state.movies`, `state.search`, `state.genre`, and `state.minRating`.
+- Filters are applied only when their state values are active.
+- The current data flow is: search → genre → minRating.
+- Future data flow will be: search → filters → sorting → pagination.
