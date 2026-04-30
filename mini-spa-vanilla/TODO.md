@@ -31,6 +31,16 @@
 - [x] Reset page on search change
 - [x] Add search reset
 
+## Filters
+
+- [x] Define filter logic
+- [x] Add `minRating` to state
+- [ ] Connect genre select to `state.genre`
+- [ ] Filter movie list by genre
+- [ ] Add rating filter
+- [ ] Combine search and filters
+- [ ] Reset filters
+
 ## Features
 - [ ] Add search
 - [ ] Add filters
