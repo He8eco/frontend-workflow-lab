@@ -207,3 +207,15 @@
 - `.sort()` should be applied only to a copied array.
 - `Reset filters` does not reset `state.sortBy`, because sorting is not a filter.
 - Future data flow will be: search → filters → sorting → pagination.
+
+## Substage 6 — Block 0
+
+- Favorites are user-selected movies.
+- `state.favorites` should store movie ids, not full movie objects.
+- Example: `favorites: [1, 3]`.
+- A movie is favorite if `state.favorites.includes(movie.id)` returns `true`.
+- `localStorage` keeps data after page reload.
+- `localStorage` stores only strings.
+- Use `JSON.stringify()` to save arrays/objects to `localStorage`.
+- Use `JSON.parse()` to read arrays/objects from `localStorage`.
+- Planned storage key: `movie-catalog:favorites`.
