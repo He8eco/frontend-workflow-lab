@@ -39,21 +39,27 @@ function getFilteredMovies(state) {
     filteredMovies = filteredMovies.filter((movie) => movie.rating >= state.minRating)
   }
 
-  if (state.sortBy === 'title-asc') {
-    filteredMovies = [...filteredMovies].sort((a,b)=>a.title.localeCompare(b.title))
-  }
+  switch (state.sortBy) {
+    case 'title-asc':
+      filteredMovies = [...filteredMovies].sort((a,b)=>a.title.localeCompare(b.title))
+      break
 
-  if (state.sortBy === 'title-desc') {
-    filteredMovies = [...filteredMovies].sort((a,b) => b.title.localeCompare(a.title))
-  }
+    case 'title-desc':
+      filteredMovies = [...filteredMovies].sort((a,b) => b.title.localeCompare(a.title))
+      break
 
-  if (state.sortBy === 'rating-desc') {
-    filteredMovies = [...filteredMovies].sort((a,b) => b.rating - a.rating)
-  }
+    case 'rating-desc':
+      filteredMovies = [...filteredMovies].sort((a,b) => b.rating - a.rating)
+      break
 
-  if (state.sortBy === 'rating-asc') {
-    filteredMovies = [...filteredMovies].sort((a,b) => a.rating - b.rating)
+    case 'rating-asc':
+      filteredMovies = [...filteredMovies].sort((a,b) => a.rating - b.rating)
+      break
+
+    default:
+      break
   }
+  
   return filteredMovies
 }
 
