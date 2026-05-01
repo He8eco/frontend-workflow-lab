@@ -54,7 +54,7 @@
 
 - [x] Define favorites logic
 - [x] Confirm `favorites` in state
-- [ ] Add favorite button to movie cards
+- [x] Add favorite button to movie cards
 - [ ] Toggle favorite ids in `state.favorites`
 - [ ] Update favorite counter
 - [ ] Save favorites to `localStorage`

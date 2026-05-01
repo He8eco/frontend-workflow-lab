@@ -1,8 +1,19 @@
 import { appRoot } from './dom.js'
 
-function renderMovieCard(movie) {
+function renderMovieCard(movie, favorites) {
+const isFavorite = favorites.includes(movie.id)
+
   return `
     <article class="movie-card">
+      <button
+        class="favorite-btn ${isFavorite ? 'is-favorite' : ''}"
+        type="button"
+        data-movie-id="${movie.id}"
+        aria-label="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}"
+      >
+      ${isFavorite ? '♥' : '♡'}
+      </button>
+
       ${
         movie.poster
           ? `<img class="movie-poster" src="${movie.poster}" alt="${movie.title}" />`
@@ -19,8 +30,8 @@ function renderMovieCard(movie) {
   `
 }
 
-function renderMovieList(movies) {
-  return movies.map(renderMovieCard).join('')
+function renderMovieList(movies, favorites) {
+  return movies.map((movie)=>renderMovieCard(movie, favorites)).join('')
 }
 
 function getFilteredMovies(state) {
@@ -74,7 +85,7 @@ function renderCatalogContent(state, filteredMovies) {
     return `<p class="catalog-message">No movies found.</p>`
   }
 
-  return renderMovieList(filteredMovies)
+  return renderMovieList(filteredMovies, state.favorites)
 }
 export function renderApp(state) {
   const filteredMovies = getFilteredMovies(state)

@@ -219,3 +219,13 @@
 - Use `JSON.stringify()` to save arrays/objects to `localStorage`.
 - Use `JSON.parse()` to read arrays/objects from `localStorage`.
 - Planned storage key: `movie-catalog:favorites`.
+
+## Substage 6 — Block 1
+
+- Added favorite button to movie cards.
+- Favorite button stores movie id in `data-movie-id`.
+- Movie card checks favorite state with `favorites.includes(movie.id)`.
+- Favorite movies display active button state with `is-favorite`.
+- `renderMovieCard` now receives `favorites`.
+- `renderMovieList` passes `favorites` to every card.
+- Click behavior will be added in the next block.
