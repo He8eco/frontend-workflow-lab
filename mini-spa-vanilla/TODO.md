@@ -1,6 +1,7 @@
 # TODO
 
 ## Foundation
+
 - [x] Choose project theme
 - [x] Create Vite project
 - [x] Add README.md
@@ -10,6 +11,7 @@
 - [x] Create base layout
 
 ## Architecture
+
 - [x] Plan project structure
 - [x] Create `api / state / ui / utils`
 - [x] Define application state shape
@@ -17,6 +19,7 @@
 - [x] Connect state to first render
 
 ## Catalog
+
 - [x] Add first movie data source
 - [x] Load movies on app start
 - [x] Render real movie cards
@@ -24,6 +27,7 @@
 - [x] Add refresh / reload button
 
 ## Search
+
 - [x] Define search logic
 - [x] Connect input to `state.search`
 - [x] Filter movie list by title
@@ -54,17 +58,17 @@
 
 - [x] Define favorites logic
 - [x] Confirm `favorites` in state
-- [ ] Add favorite button to movie cards
-- [ ] Toggle favorite ids in `state.favorites`
-- [ ] Update favorite counter
+- [x] Add favorite button to movie cards
+- [x] Toggle favorite ids in `state.favorites`
+- [x] Update favorite counter
 - [ ] Save favorites to `localStorage`
 - [ ] Load favorites from `localStorage`
 - [ ] Mark favorite cards after reload
 
 ## Features
+
 - [x] Add search
 - [x] Add filters
 - [x] Add sorting
 - [ ] Add favorites
 - [ ] Add pagination
-

@@ -1,8 +1,20 @@
 import { appRoot } from './dom.js'
+import { html } from '../utils/html.js'
 
-function renderMovieCard(movie) {
+function renderMovieCard(movie, favorites) {
+  const isFavorite = favorites.includes(movie.id)
+
   return `
     <article class="movie-card">
+      <button
+        class="favorite-btn ${isFavorite ? 'is-favorite' : ''}"
+        type="button"
+        data-movie-id="${movie.id}"
+        aria-label="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}"
+      >
+      ${isFavorite ? '♥' : '♡'}
+      </button>
+
       ${
         movie.poster
           ? `<img class="movie-poster" src="${movie.poster}" alt="${movie.title}" />`
@@ -19,8 +31,8 @@ function renderMovieCard(movie) {
   `
 }
 
-function renderMovieList(movies) {
-  return movies.map(renderMovieCard).join('')
+function renderMovieList(movies, favorites) {
+  return movies.map((movie) => renderMovieCard(movie, favorites)).join('')
 }
 
 function getFilteredMovies(state) {
@@ -28,58 +40,68 @@ function getFilteredMovies(state) {
   let filteredMovies = state.movies
 
   if (normalizedSearch) {
-    filteredMovies = filteredMovies.filter((movie) => movie.title.toLowerCase().includes(normalizedSearch))
+    filteredMovies = filteredMovies.filter((movie) =>
+      movie.title.toLowerCase().includes(normalizedSearch)
+    )
   }
-  
-  if (state.genre !== 'all')  {
-    filteredMovies = filteredMovies.filter((movie) => movie.genre === state.genre)
+
+  if (state.genre !== 'all') {
+    filteredMovies = filteredMovies.filter(
+      (movie) => movie.genre === state.genre
+    )
   }
 
   if (state.minRating > 0) {
-    filteredMovies = filteredMovies.filter((movie) => movie.rating >= state.minRating)
+    filteredMovies = filteredMovies.filter(
+      (movie) => movie.rating >= state.minRating
+    )
   }
 
   switch (state.sortBy) {
     case 'title-asc':
-      filteredMovies = [...filteredMovies].sort((a,b)=>a.title.localeCompare(b.title))
+      filteredMovies = [...filteredMovies].sort((a, b) =>
+        a.title.localeCompare(b.title)
+      )
       break
 
     case 'title-desc':
-      filteredMovies = [...filteredMovies].sort((a,b) => b.title.localeCompare(a.title))
+      filteredMovies = [...filteredMovies].sort((a, b) =>
+        b.title.localeCompare(a.title)
+      )
       break
 
     case 'rating-desc':
-      filteredMovies = [...filteredMovies].sort((a,b) => b.rating - a.rating)
+      filteredMovies = [...filteredMovies].sort((a, b) => b.rating - a.rating)
       break
 
     case 'rating-asc':
-      filteredMovies = [...filteredMovies].sort((a,b) => a.rating - b.rating)
+      filteredMovies = [...filteredMovies].sort((a, b) => a.rating - b.rating)
       break
 
     default:
       break
   }
-  
+
   return filteredMovies
 }
 
 function renderCatalogContent(state, filteredMovies) {
- if (state.loading) {
-  return `<p class="catalog-message">Loading movies...</p>`
- }
- if (state.error) {
-  return `<p class="catalog-message error-message">${state.error}</p>`
- }
- if (filteredMovies.length === 0) {
+  if (state.loading) {
+    return `<p class="catalog-message">Loading movies...</p>`
+  }
+  if (state.error) {
+    return `<p class="catalog-message error-message">${state.error}</p>`
+  }
+  if (filteredMovies.length === 0) {
     return `<p class="catalog-message">No movies found.</p>`
   }
 
-  return renderMovieList(filteredMovies)
+  return renderMovieList(filteredMovies, state.favorites)
 }
 export function renderApp(state) {
   const filteredMovies = getFilteredMovies(state)
 
-  appRoot.innerHTML = `
+  appRoot.innerHTML = html`
     <main class="app-shell">
       <header class="hero panel">
         <div>
@@ -105,63 +127,83 @@ export function renderApp(state) {
               type="text"
               placeholder="Search movies..."
               value="${state.search}"
-          />
-          <button class="clear-search-btn" type="button">Clear search</button>
-        </div>
+            />
+            <button class="clear-search-btn" type="button">Clear search</button>
+          </div>
         </div>
         <div class="control-group">
           <label for="genre">Genre</label>
           <select id="genre">
-            
-  <option value="all" ${state.genre === 'all' ? 'selected' : ''}>
-    All genres
-  </option>
-  <option value="Sci-Fi" ${state.genre === 'Sci-Fi' ? 'selected' : ''}>
-    Sci-Fi
-  </option>
-  <option value="Action" ${state.genre === 'Action' ? 'selected' : ''}>
-    Action
-  </option>
+            <option value="all" ${state.genre === 'all' ? 'selected' : ''}>
+              All genres
+            </option>
+            <option
+              value="Sci-Fi"
+              ${state.genre === 'Sci-Fi' ? 'selected' : ''}
+            >
+              Sci-Fi
+            </option>
+            <option
+              value="Action"
+              ${state.genre === 'Action' ? 'selected' : ''}
+            >
+              Action
+            </option>
           </select>
         </div>
 
         <div class="control-group">
-  <label for="sort">Sort by</label>
-  <select id="sort">
-    <option value="default" ${state.sortBy === 'default' ? 'selected' : ''}>
-      Default
-    </option>
-    <option value="title-asc" ${state.sortBy === 'title-asc' ? 'selected' : ''}>
-      Title A–Z
-    </option>
-    <option value="title-desc" ${state.sortBy === 'title-desc' ? 'selected' : ''}>
-      Title Z–A
-    </option>
-    <option value="rating-desc" ${state.sortBy === 'rating-desc' ? 'selected' : ''}>
-      Rating high to low
-    </option>
-    <option value="rating-asc" ${state.sortBy === 'rating-asc' ? 'selected' : ''}>
-      Rating low to high
-    </option>
-  </select>
-</div>
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option
+              value="default"
+              ${state.sortBy === 'default' ? 'selected' : ''}
+            >
+              Default
+            </option>
+            <option
+              value="title-asc"
+              ${state.sortBy === 'title-asc' ? 'selected' : ''}
+            >
+              Title A–Z
+            </option>
+            <option
+              value="title-desc"
+              ${state.sortBy === 'title-desc' ? 'selected' : ''}
+            >
+              Title Z–A
+            </option>
+            <option
+              value="rating-desc"
+              ${state.sortBy === 'rating-desc' ? 'selected' : ''}
+            >
+              Rating high to low
+            </option>
+            <option
+              value="rating-asc"
+              ${state.sortBy === 'rating-asc' ? 'selected' : ''}
+            >
+              Rating low to high
+            </option>
+          </select>
+        </div>
         <div class="control-group">
-  <label for="min-rating">Rating</label>
-  <select id="min-rating">
-    <option value="0" ${state.minRating === 0 ? 'selected' : ''}>
-      All ratings
-    </option>
-    <option value="7" ${state.minRating === 7 ? 'selected' : ''}>
-      7+
-    </option>
-    <option value="8" ${state.minRating === 8 ? 'selected' : ''}>
-      8+
-    </option>
-    <option value="9" ${state.minRating === 9 ? 'selected' : ''}>
-      9+
-    </option>
-  </select>
-</div>
+          <label for="min-rating">Rating</label>
+          <select id="min-rating">
+            <option value="0" ${state.minRating === 0 ? 'selected' : ''}>
+              All ratings
+            </option>
+            <option value="7" ${state.minRating === 7 ? 'selected' : ''}>
+              7+
+            </option>
+            <option value="8" ${state.minRating === 8 ? 'selected' : ''}>
+              8+
+            </option>
+            <option value="9" ${state.minRating === 9 ? 'selected' : ''}>
+              9+
+            </option>
+          </select>
+        </div>
         <button class="reset-filters-btn" type="button">Reset filters</button>
       </section>
 
@@ -169,7 +211,7 @@ export function renderApp(state) {
         <div class="catalog-toolbar">
           <h2>Catalog</h2>
           <p>Showing <span>${filteredMovies.length}</span> results</p>
-            <button class="reload-btn" type="button">Reload catalog</button>
+          <button class="reload-btn" type="button">Reload catalog</button>
         </div>
 
         <div class="movie-grid">
@@ -179,7 +221,15 @@ export function renderApp(state) {
 
       <section class="status panel">
         <h2>Status</h2>
-        <p>${state.loading ? 'Loading...' : state.error ? state.error : filteredMovies.length === 0 ? 'No movies found.' : 'Movies loaded successfully.'}</p>
+        <p>
+          ${state.loading
+            ? 'Loading...'
+            : state.error
+              ? state.error
+              : filteredMovies.length === 0
+                ? 'No movies found.'
+                : 'Movies loaded successfully.'}
+        </p>
       </section>
 
       <section class="pagination panel">

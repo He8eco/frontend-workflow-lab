@@ -4,7 +4,7 @@ import { renderApp } from './ui/renderApp.js'
 import { getMovies } from './api/movieApi.js'
 import { debounce } from './utils/debounce.js'
 
-const state = {...initialState}
+const state = { ...initialState }
 
 const handleSearchInput = debounce((value) => {
   state.search = value
@@ -20,10 +20,10 @@ function attachEventListeners() {
   const minRatingSelect = document.querySelector('#min-rating')
   const resetFiltersButton = document.querySelector('.reset-filters-btn')
   const sortSelect = document.querySelector('#sort')
-  
+  const favoriteButtons = document.querySelectorAll('.favorite-btn')
 
   if (reloadButton) {
-    reloadButton.addEventListener('click', ()=>{
+    reloadButton.addEventListener('click', () => {
       loadMovies()
     })
   }
@@ -41,7 +41,7 @@ function attachEventListeners() {
     })
   }
 
-  if (genreSelect)  {
+  if (genreSelect) {
     genreSelect.addEventListener('change', (event) => {
       state.genre = event.target.value
       state.page = 1
@@ -50,15 +50,15 @@ function attachEventListeners() {
   }
 
   if (minRatingSelect) {
-    minRatingSelect.addEventListener('change', event => {
-      state.minRating  = Number(event.target.value)
+    minRatingSelect.addEventListener('change', (event) => {
+      state.minRating = Number(event.target.value)
       state.page = 1
       render()
     })
   }
-  
+
   if (resetFiltersButton) {
-    resetFiltersButton.addEventListener('click', event => {
+    resetFiltersButton.addEventListener('click', (event) => {
       state.search = ''
       state.genre = 'all'
       state.minRating = 0
@@ -67,12 +67,34 @@ function attachEventListeners() {
     })
   }
   if (sortSelect) {
-  sortSelect.addEventListener('change', (event) => {
-    state.sortBy = event.target.value
-    state.page = 1
-    render()
-  })
+    sortSelect.addEventListener('change', (event) => {
+      state.sortBy = event.target.value
+      state.page = 1
+      render()
+    })
+  }
+
+  if (favoriteButtons.length > 0) {
+    favoriteButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const movieId = Number(button.dataset.movieId)
+
+        toggleFavorite(movieId)
+      })
+    })
+  }
 }
+
+function toggleFavorite(movieId) {
+  const isFavorite = state.favorites.includes(movieId)
+
+  if (isFavorite) {
+    state.favorites = state.favorites.filter((id) => id !== movieId)
+  } else {
+    state.favorites = [...state.favorites, movieId]
+  }
+
+  render()
 }
 
 function render() {
@@ -92,7 +114,7 @@ async function loadMovies() {
     render()
   } catch (error) {
     state.movies = []
-    state.error = "Failed to load movies"
+    state.error = 'Failed to load movies'
     state.loading = false
     render()
   }
