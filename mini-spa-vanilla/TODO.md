@@ -62,8 +62,8 @@
 - [x] Toggle favorite ids in `state.favorites`
 - [x] Update favorite counter
 - [x] Save favorites to `localStorage`
-- [ ] Load favorites from `localStorage`
-- [ ] Mark favorite cards after reload
+- [x] Load favorites from `localStorage`
+- [x] Mark favorite cards after reload
 
 ## Features
 

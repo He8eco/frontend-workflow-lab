@@ -250,3 +250,13 @@
 - `JSON.stringify(state.favorites)` converts the favorites array to a string.
 - `saveFavorites()` is called after every favorite toggle.
 - Favorites are saved after changes, but they are not loaded on app start yet.
+
+## Substage 6 — Block 4
+
+- Favorites are loaded from `localStorage` on app start.
+- `loadFavorites()` reads the saved JSON string by `FAVORITES_STORAGE_KEY`.
+- `JSON.parse()` converts the saved string back to an array.
+- If there are no saved favorites, `loadFavorites()` returns an empty array.
+- A safe `try/catch` prevents broken localStorage data from crashing the app.
+- `state.favorites = loadFavorites()` runs before the initial render.
+- Favorite counter and favorite cards are restored after page reload.
