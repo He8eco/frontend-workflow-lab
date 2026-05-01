@@ -47,12 +47,12 @@
 - [x] Confirm `sortBy` in state
 - [x] Connect sort select to `state.sortBy`
 - [x] Add title sorting
-- [ ] Add rating sorting
+- [x] Add rating sorting
 - [ ] Combine search, filters, and sorting
 
 ## Features
-- [ ] Add search
-- [ ] Add filters
+- [x] Add search
+- [x] Add filters
 - [ ] Add sorting
 - [ ] Add favorites
 - [ ] Add pagination

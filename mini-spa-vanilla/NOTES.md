@@ -185,3 +185,14 @@
 - Title sorting is applied after search and filters.
 - `.sort()` mutates arrays, so sorting is done on a copy with `[...filteredMovies]`.
 - `state.movies` remains the full source list.
+
+## Substage 5 — Block 3
+
+- Added rating sorting.
+- `rating-desc` sorts movies from highest rating to lowest.
+- `rating-asc` sorts movies from lowest rating to highest.
+- Number sorting uses subtraction:
+  - `b.rating - a.rating` for descending order
+  - `a.rating - b.rating` for ascending order
+- Rating sorting is applied after search and filters.
+- Sorting is done on a copied array with `[...filteredMovies]`.

@@ -47,6 +47,13 @@ function getFilteredMovies(state) {
     filteredMovies = [...filteredMovies].sort((a,b) => b.title.localeCompare(a.title))
   }
 
+  if (state.sortBy === 'rating-desc') {
+    filteredMovies = [...filteredMovies].sort((a,b) => b.rating - a.rating)
+  }
+
+  if (state.sortBy === 'rating-asc') {
+    filteredMovies = [...filteredMovies].sort((a,b) => a.rating - b.rating)
+  }
   return filteredMovies
 }
 
