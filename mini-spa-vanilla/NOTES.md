@@ -196,3 +196,14 @@
   - `a.rating - b.rating` for ascending order
 - Rating sorting is applied after search and filters.
 - Sorting is done on a copied array with `[...filteredMovies]`.
+
+## Substage 5 — Block 4
+
+- Search, filters, and sorting now work as one data processing pipeline.
+- Current data flow: search → genre → minRating → sorting.
+- Search and filters decide which movies are included.
+- Sorting decides the order of included movies.
+- `state.movies` remains the full source list.
+- `.sort()` should be applied only to a copied array.
+- `Reset filters` does not reset `state.sortBy`, because sorting is not a filter.
+- Future data flow will be: search → filters → sorting → pagination.

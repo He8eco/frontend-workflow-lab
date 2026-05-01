@@ -48,7 +48,7 @@
 - [x] Connect sort select to `state.sortBy`
 - [x] Add title sorting
 - [x] Add rating sorting
-- [ ] Combine search, filters, and sorting
+- [x] Combine search, filters, and sorting
 
 ## Features
 - [x] Add search
