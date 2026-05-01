@@ -50,10 +50,21 @@
 - [x] Add rating sorting
 - [x] Combine search, filters, and sorting
 
+## Favorites
+
+- [x] Define favorites logic
+- [x] Confirm `favorites` in state
+- [ ] Add favorite button to movie cards
+- [ ] Toggle favorite ids in `state.favorites`
+- [ ] Update favorite counter
+- [ ] Save favorites to `localStorage`
+- [ ] Load favorites from `localStorage`
+- [ ] Mark favorite cards after reload
+
 ## Features
 - [x] Add search
 - [x] Add filters
-- [ ] Add sorting
+- [x] Add sorting
 - [ ] Add favorites
 - [ ] Add pagination
 
