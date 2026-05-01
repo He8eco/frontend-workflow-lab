@@ -176,3 +176,12 @@
 - Sort select change resets `state.page` to 1.
 - Selected sort option is preserved after render because options use `state.sortBy`.
 - Sorting logic will be implemented in the next blocks.
+
+## Substage 5 — Block 2
+
+- Added title sorting.
+- `title-asc` sorts movies by title from A to Z.
+- `title-desc` sorts movies by title from Z to A.
+- Title sorting is applied after search and filters.
+- `.sort()` mutates arrays, so sorting is done on a copy with `[...filteredMovies]`.
+- `state.movies` remains the full source list.
