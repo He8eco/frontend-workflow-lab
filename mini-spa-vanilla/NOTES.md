@@ -229,3 +229,15 @@
 - `renderMovieCard` now receives `favorites`.
 - `renderMovieList` passes `favorites` to every card.
 - Click behavior will be added in the next block.
+
+## Substage 6 — Block 2
+
+- Added favorite toggle behavior.
+- Favorite buttons are selected with `.favorite-btn`.
+- Movie id is read from `data-movie-id`.
+- `dataset.movieId` returns a string, so it is converted with `Number(...)`.
+- If movie id is already in `state.favorites`, it is removed.
+- If movie id is not in `state.favorites`, it is added.
+- Favorites are updated immutably.
+- Favorite counter updates after `render()`.
+- Favorites are not persisted after reload yet.
