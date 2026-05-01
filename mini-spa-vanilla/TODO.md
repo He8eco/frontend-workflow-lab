@@ -61,7 +61,7 @@
 - [x] Add favorite button to movie cards
 - [x] Toggle favorite ids in `state.favorites`
 - [x] Update favorite counter
-- [ ] Save favorites to `localStorage`
+- [x] Save favorites to `localStorage`
 - [ ] Load favorites from `localStorage`
 - [ ] Mark favorite cards after reload
 
