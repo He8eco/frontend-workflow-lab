@@ -106,6 +106,12 @@ function saveFavorites() {
   )
 }
 
+function loadFavorites() {
+  const savedFavorites = localStorage.getItem(FAVORITES_STORAGE_KEY)
+
+  return savedFavorites ? JSON.parse(savedFavorites) : []
+}
+
 function render() {
   renderApp(state)
   attachEventListeners()
@@ -130,6 +136,8 @@ async function loadMovies() {
 }
 
 function initApp() {
+  state.favorites = loadFavorites()
+  
   render()
   loadMovies()
 }
