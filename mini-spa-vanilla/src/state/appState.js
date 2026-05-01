@@ -9,4 +9,5 @@ export const initialState = {
   page: 1,
   itemsPerPage: 9,
   favorites: [],
+  showFavoritesOnly: false,
 }

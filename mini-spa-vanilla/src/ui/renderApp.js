@@ -57,6 +57,12 @@ function getFilteredMovies(state) {
     )
   }
 
+  if (state.showFavoritesOnly) {
+  filteredMovies = filteredMovies.filter((movie) =>
+    state.favorites.includes(movie.id)
+  )
+}
+
   switch (state.sortBy) {
     case 'title-asc':
       filteredMovies = [...filteredMovies].sort((a, b) =>
@@ -115,6 +121,14 @@ export function renderApp(state) {
         <div class="favorites-box">
           <span class="favorites-label">Favorites</span>
           <strong class="favorites-count">${state.favorites.length}</strong>
+          <button
+            class="favorites-only-btn ${state.showFavoritesOnly
+              ? 'is-active'
+              : ''}"
+            type="button"
+          >
+            ${state.showFavoritesOnly ? 'Show all' : 'Favorites only'}
+          </button>
         </div>
       </header>
 

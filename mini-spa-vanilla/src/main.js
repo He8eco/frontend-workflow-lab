@@ -23,6 +23,7 @@ function attachEventListeners() {
   const resetFiltersButton = document.querySelector('.reset-filters-btn')
   const sortSelect = document.querySelector('#sort')
   const favoriteButtons = document.querySelectorAll('.favorite-btn')
+  const favoritesOnlyButton = document.querySelector('.favorites-only-btn')
 
   if (reloadButton) {
     reloadButton.addEventListener('click', () => {
@@ -59,15 +60,25 @@ function attachEventListeners() {
     })
   }
 
+  if (favoritesOnlyButton) {
+    favoritesOnlyButton.addEventListener('click', () => {
+      state.showFavoritesOnly = !state.showFavoritesOnly
+      state.page = 1
+      render()
+    })
+  }
+
   if (resetFiltersButton) {
     resetFiltersButton.addEventListener('click', (event) => {
       state.search = ''
       state.genre = 'all'
       state.minRating = 0
+      state.showFavoritesOnly = false
       state.page = 1
       render()
     })
   }
+
   if (sortSelect) {
     sortSelect.addEventListener('change', (event) => {
       state.sortBy = event.target.value
@@ -101,9 +112,7 @@ function toggleFavorite(movieId) {
 }
 
 function saveFavorites() {
-  localStorage.setItem(
-    FAVORITES_STORAGE_KEY, JSON.stringify(state.favorites)
-  )
+  localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(state.favorites))
 }
 
 function loadFavorites() {
@@ -137,7 +146,7 @@ async function loadMovies() {
 
 function initApp() {
   state.favorites = loadFavorites()
-  
+
   render()
   loadMovies()
 }

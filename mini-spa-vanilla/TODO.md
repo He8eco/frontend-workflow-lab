@@ -64,6 +64,7 @@
 - [x] Save favorites to `localStorage`
 - [x] Load favorites from `localStorage`
 - [x] Mark favorite cards after reload
+- [x] Add favorites only filter
 
 ## Features
 

@@ -260,3 +260,13 @@
 - A safe `try/catch` prevents broken localStorage data from crashing the app.
 - `state.favorites = loadFavorites()` runs before the initial render.
 - Favorite counter and favorite cards are restored after page reload.
+
+## Substage 6 — Block 5
+
+- Added `showFavoritesOnly` to state.
+- Added Favorites only / Show all button.
+- Favorites only mode filters movies by `state.favorites.includes(movie.id)`.
+- Favorites only is applied before sorting.
+- Reset filters disables `showFavoritesOnly`, but does not clear `state.favorites`.
+- Favorites remain saved in localStorage.
+- Current data flow: search → genre → minRating → favorites only → sorting.

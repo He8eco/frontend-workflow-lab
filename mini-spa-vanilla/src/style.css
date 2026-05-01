@@ -198,6 +198,23 @@ button {
   background: rgba(127, 29, 29, 0.45);
 }
 
+.favorites-only-btn {
+  width: 100%;
+  min-height: 36px;
+  margin-top: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+  font-size: 13px;
+}
+
+.favorites-only-btn.is-active {
+  border-color: rgba(252, 165, 165, 0.55);
+  background: rgba(127, 29, 29, 0.45);
+  color: #fecaca;
+}
+
 .poster-placeholder {
   aspect-ratio: 2 / 3;
   background: linear-gradient(135deg, #1e293b, #334155);
