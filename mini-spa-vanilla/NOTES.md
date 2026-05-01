@@ -241,3 +241,12 @@
 - Favorites are updated immutably.
 - Favorite counter updates after `render()`.
 - Favorites are not persisted after reload yet.
+
+## Substage 6 — Block 3
+
+- Favorites are saved to `localStorage`.
+- Storage key: `movie-catalog:favorites`.
+- `localStorage` stores only strings.
+- `JSON.stringify(state.favorites)` converts the favorites array to a string.
+- `saveFavorites()` is called after every favorite toggle.
+- Favorites are saved after changes, but they are not loaded on app start yet.

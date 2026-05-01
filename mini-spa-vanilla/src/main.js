@@ -6,6 +6,8 @@ import { debounce } from './utils/debounce.js'
 
 const state = { ...initialState }
 
+const FAVORITES_STORAGE_KEY = 'movie-catalog:favorites'
+
 const handleSearchInput = debounce((value) => {
   state.search = value
   state.page = 1
@@ -94,7 +96,14 @@ function toggleFavorite(movieId) {
     state.favorites = [...state.favorites, movieId]
   }
 
+  saveFavorites()
   render()
+}
+
+function saveFavorites() {
+  localStorage.setItem(
+    FAVORITES_STORAGE_KEY, JSON.stringify(state.favorites)
+  )
 }
 
 function render() {
