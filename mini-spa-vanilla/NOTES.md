@@ -307,3 +307,13 @@
 - Next increases `state.page`.
 - Pagination still happens after search, filters, favorites only, and sorting.
 - Current data flow: search → filters → sorting → pagination.
+
+## Substage 7 — Block 3
+
+- Added dynamic pagination page buttons.
+- Page buttons are generated from `totalPages`.
+- Current page button gets `active-page`.
+- Current page button is disabled.
+- Page number is stored in `data-page`.
+- Clicking a page button updates `state.page`.
+- Pagination now supports Prev, Next, and direct page navigation.

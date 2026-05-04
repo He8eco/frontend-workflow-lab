@@ -254,6 +254,13 @@ button {
   font-size: 14px;
 }
 
+.pagination-pages {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .active-page {
   outline: 2px solid #60a5fa;
 }

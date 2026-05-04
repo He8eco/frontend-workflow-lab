@@ -25,6 +25,7 @@ function attachEventListeners() {
   const favoriteButtons = document.querySelectorAll('.favorite-btn')
   const prevPageButton = document.querySelector('.pagination-prev-btn')
   const nextPageButton = document.querySelector('.pagination-next-btn')
+  const pageButtons = document.querySelectorAll('.pagination-page-btn')
 
   if (reloadButton) {
     reloadButton.addEventListener('click', () => {
@@ -101,6 +102,13 @@ function attachEventListeners() {
       render()
     })
   }
+
+  pageButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      state.page = Number(button.dataset.page)
+      render()
+    })
+  })
 }
 
 function toggleFavorite(movieId) {
