@@ -66,6 +66,16 @@
 - [x] Mark favorite cards after reload
 - [x] Add favorites only filter
 
+## Pagination
+
+- [x] Define pagination logic
+- [x] Confirm `page` and `itemsPerPage` in state
+- [x] Apply pagination to visible movies
+- [x] Show paginated movies only
+- [ ] Add Prev / Next behavior
+- [ ] Add dynamic page numbers
+- [ ] Combine pagination with search, filters, sorting, and favorites
+
 ## Features
 
 - [x] Add search
@@ -73,13 +83,3 @@
 - [x] Add sorting
 - [ ] Add favorites
 - [ ] Add pagination
-
-## Pagination
-
-- [x] Define pagination logic
-- [x] Confirm `page` and `itemsPerPage` in state
-- [ ] Apply pagination to visible movies
-- [ ] Show paginated movies only
-- [ ] Add Prev / Next behavior
-- [ ] Add dynamic page numbers
-- [ ] Combine pagination with search, filters, sorting, and favorites

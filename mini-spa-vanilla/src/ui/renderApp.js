@@ -85,21 +85,29 @@ function getFilteredMovies(state) {
   return filteredMovies
 }
 
-function renderCatalogContent(state, filteredMovies) {
+function getPaginatedMovies(movies, state) {
+  const startIndex = (state.page - 1) * state.itemsPerPage
+  const endIndex = startIndex + state.itemsPerPage
+
+  return movies.slice(startIndex, endIndex)
+}
+
+function renderCatalogContent(state, movies) {
   if (state.loading) {
     return `<p class="catalog-message">Loading movies...</p>`
   }
   if (state.error) {
     return `<p class="catalog-message error-message">${state.error}</p>`
   }
-  if (filteredMovies.length === 0) {
+  if (movies.length === 0) {
     return `<p class="catalog-message">No movies found.</p>`
   }
 
-  return renderMovieList(filteredMovies, state.favorites)
+  return renderMovieList(movies, state.favorites)
 }
 export function renderApp(state) {
   const filteredMovies = getFilteredMovies(state)
+  const paginatedMovies = getPaginatedMovies(filteredMovies, state)
 
   appRoot.innerHTML = html`
     <main class="app-shell">
@@ -210,12 +218,15 @@ export function renderApp(state) {
       <section class="catalog panel">
         <div class="catalog-toolbar">
           <h2>Catalog</h2>
-          <p>Showing <span>${filteredMovies.length}</span> results</p>
+          <p>
+            Showing <span>${paginatedMovies.length}</span> of
+            <span>${filteredMovies.length}</span> results
+          </p>
           <button class="reload-btn" type="button">Reload catalog</button>
         </div>
 
         <div class="movie-grid">
-          ${renderCatalogContent(state, filteredMovies)}
+          ${renderCatalogContent(state, paginatedMovies)}
         </div>
       </section>
 
