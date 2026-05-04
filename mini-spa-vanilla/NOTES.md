@@ -317,3 +317,13 @@
 - Page number is stored in `data-page`.
 - Clicking a page button updates `state.page`.
 - Pagination now supports Prev, Next, and direct page navigation.
+
+## Substage 7 — Block 4
+
+- Pagination now works together with search, filters, favorites only, and sorting.
+- Pagination is applied after all list processing steps.
+- Current data flow: search → genre → minRating → favorites only → sorting → pagination.
+- Search, filters, sorting, and favorites-only mode reset `state.page` to 1.
+- `state.page` is the single source of truth for the current page.
+- Page buttons, Prev, and Next all update `state.page`.
+- The catalog renders `paginatedMovies`, while result count still uses the full processed list.
