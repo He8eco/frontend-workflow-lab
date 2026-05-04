@@ -260,3 +260,27 @@
 - A safe `try/catch` prevents broken localStorage data from crashing the app.
 - `state.favorites = loadFavorites()` runs before the initial render.
 - Favorite counter and favorite cards are restored after page reload.
+
+## Substage 6 — Block 5
+
+- Added `showFavoritesOnly` to state.
+- Added Favorites only / Show all button.
+- Favorites only mode filters movies by `state.favorites.includes(movie.id)`.
+- Favorites only is applied before sorting.
+- Reset filters disables `showFavoritesOnly`, but does not clear `state.favorites`.
+- Favorites remain saved in localStorage.
+- Current data flow: search → genre → minRating → favorites only → sorting.
+
+## Substage 7 — Block 0
+
+- Pagination splits a large list into pages.
+- `state.page` stores the current page.
+- `state.itemsPerPage` stores how many items should be shown on one page.
+- Pagination should be applied after search, filters, and sorting.
+- Future data flow: search → filters → sorting → pagination.
+- Total pages can be calculated with `Math.ceil(totalItems / itemsPerPage)`.
+- Current page items can be calculated with:
+  - `startIndex = (page - 1) * itemsPerPage`
+  - `endIndex = startIndex + itemsPerPage`
+  - `items.slice(startIndex, endIndex)`
+- For testing, `itemsPerPage` can be temporarily reduced to `2`.
