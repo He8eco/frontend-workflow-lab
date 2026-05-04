@@ -284,3 +284,15 @@
   - `endIndex = startIndex + itemsPerPage`
   - `items.slice(startIndex, endIndex)`
 - For testing, `itemsPerPage` can be temporarily reduced to `2`.
+
+## Substage 7 — Block 1
+
+- Added pagination slicing for visible movies.
+- `getPaginatedMovies(movies, state)` calculates current page items.
+- Pagination uses:
+  - `startIndex = (page - 1) * itemsPerPage`
+  - `endIndex = startIndex + itemsPerPage`
+  - `movies.slice(startIndex, endIndex)`
+- Catalog now renders `paginatedMovies`, not the full filtered list.
+- Result count now shows current page count and total matching count.
+- Current data flow: search → filters → sorting → pagination.

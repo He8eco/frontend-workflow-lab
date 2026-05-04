@@ -7,6 +7,6 @@ export const initialState = {
   minRating: 0,
   sortBy: 'default',
   page: 1,
-  itemsPerPage: 9,
+  itemsPerPage: 2,
   favorites: [],
 }
