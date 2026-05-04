@@ -72,7 +72,7 @@
 - [x] Confirm `page` and `itemsPerPage` in state
 - [x] Apply pagination to visible movies
 - [x] Show paginated movies only
-- [ ] Add Prev / Next behavior
+- [x] Add Prev / Next behavior
 - [ ] Add dynamic page numbers
 - [ ] Combine pagination with search, filters, sorting, and favorites
 

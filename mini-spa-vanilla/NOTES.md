@@ -296,3 +296,14 @@
 - Catalog now renders `paginatedMovies`, not the full filtered list.
 - Result count now shows current page count and total matching count.
 - Current data flow: search → filters → sorting → pagination.
+
+## Substage 7 — Block 2
+
+- Added Prev / Next pagination controls.
+- `totalPages` is calculated from the processed movies count and `itemsPerPage`.
+- Prev button is disabled on page 1.
+- Next button is disabled on the last page.
+- Prev decreases `state.page`.
+- Next increases `state.page`.
+- Pagination still happens after search, filters, favorites only, and sorting.
+- Current data flow: search → filters → sorting → pagination.
