@@ -109,6 +109,25 @@ function renderCatalogContent(state, movies) {
 
   return renderMovieList(movies, state.favorites)
 }
+
+function renderPaginationPages(currentPage, totalPages) {
+  return Array.from({ length: totalPages }, (_, index) => {
+    const pageNumber = index + 1
+    return html`
+      <button
+        class="pagination-page-btn ${pageNumber === currentPage
+          ? 'active-page'
+          : ''}"
+        type="button"
+        data-page="${pageNumber}"
+        ${pageNumber === currentPage ? 'disabled' : ''}
+      >
+        ${pageNumber}
+      </button>
+    `
+  }).join('')
+}
+
 export function renderApp(state) {
   const filteredMovies = getFilteredMovies(state)
   const totalPages = getTotalPages(filteredMovies.length, state.itemsPerPage)
@@ -258,7 +277,7 @@ export function renderApp(state) {
         </button>
 
         <span class="pagination-info">
-          Page ${state.page} of ${totalPages}
+          ${renderPaginationPages(state.page, totalPages)}
         </span>
 
         <button
