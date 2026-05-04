@@ -246,6 +246,14 @@ button {
   cursor: not-allowed;
 }
 
+.pagination-info {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
 .active-page {
   outline: 2px solid #60a5fa;
 }

@@ -85,6 +85,10 @@ function getFilteredMovies(state) {
   return filteredMovies
 }
 
+function getTotalPages(totalItems, itemsPerPage) {
+  return Math.max(1, Math.ceil(totalItems / itemsPerPage))
+}
+
 function getPaginatedMovies(movies, state) {
   const startIndex = (state.page - 1) * state.itemsPerPage
   const endIndex = startIndex + state.itemsPerPage
@@ -107,6 +111,7 @@ function renderCatalogContent(state, movies) {
 }
 export function renderApp(state) {
   const filteredMovies = getFilteredMovies(state)
+  const totalPages = getTotalPages(filteredMovies.length, state.itemsPerPage)
   const paginatedMovies = getPaginatedMovies(filteredMovies, state)
 
   appRoot.innerHTML = html`
@@ -244,11 +249,25 @@ export function renderApp(state) {
       </section>
 
       <section class="pagination panel">
-        <button type="button" disabled>Prev</button>
-        <button type="button" class="active-page">${state.page}</button>
-        <button type="button" disabled>2</button>
-        <button type="button" disabled>3</button>
-        <button type="button" disabled>Next</button>
+        <button
+          class="pagination-prev-btn"
+          type="button"
+          ${state.page === 1 ? 'disabled' : ''}
+        >
+          Prev
+        </button>
+
+        <span class="pagination-info">
+          Page ${state.page} of ${totalPages}
+        </span>
+
+        <button
+          class="pagination-next-btn"
+          type="button"
+          ${state.page === totalPages ? 'disabled' : ''}
+        >
+          Next
+        </button>
       </section>
     </main>
   `

@@ -23,6 +23,8 @@ function attachEventListeners() {
   const resetFiltersButton = document.querySelector('.reset-filters-btn')
   const sortSelect = document.querySelector('#sort')
   const favoriteButtons = document.querySelectorAll('.favorite-btn')
+  const prevPageButton = document.querySelector('.pagination-prev-btn')
+  const nextPageButton = document.querySelector('.pagination-next-btn')
 
   if (reloadButton) {
     reloadButton.addEventListener('click', () => {
@@ -85,6 +87,20 @@ function attachEventListeners() {
       })
     })
   }
+
+  if (prevPageButton) {
+    prevPageButton.addEventListener('click', () => {
+      state.page = Math.max(1, state.page - 1)
+      render()
+    })
+  }
+
+  if (nextPageButton) {
+    nextPageButton.addEventListener('click', () => {
+      state.page = state.page + 1
+      render()
+    })
+  }
 }
 
 function toggleFavorite(movieId) {
@@ -101,15 +117,17 @@ function toggleFavorite(movieId) {
 }
 
 function saveFavorites() {
-  localStorage.setItem(
-    FAVORITES_STORAGE_KEY, JSON.stringify(state.favorites)
-  )
+  localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(state.favorites))
 }
 
 function loadFavorites() {
   const savedFavorites = localStorage.getItem(FAVORITES_STORAGE_KEY)
 
   return savedFavorites ? JSON.parse(savedFavorites) : []
+}
+
+function getTotalPages(totalItems, itemsPerPage) {
+  return Math.max(1, Math.ceil(totalItems / itemsPerPage))
 }
 
 function render() {
@@ -137,7 +155,7 @@ async function loadMovies() {
 
 function initApp() {
   state.favorites = loadFavorites()
-  
+
   render()
   loadMovies()
 }
