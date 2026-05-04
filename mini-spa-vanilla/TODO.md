@@ -74,7 +74,7 @@
 - [x] Show paginated movies only
 - [x] Add Prev / Next behavior
 - [x] Add dynamic page numbers
-- [ ] Combine pagination with search, filters, sorting, and favorites
+- [x] Combine pagination with search, filters, sorting, and favorites
 
 ## Features
 

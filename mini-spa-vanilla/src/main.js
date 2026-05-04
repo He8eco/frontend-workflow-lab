@@ -23,6 +23,7 @@ function attachEventListeners() {
   const resetFiltersButton = document.querySelector('.reset-filters-btn')
   const sortSelect = document.querySelector('#sort')
   const favoriteButtons = document.querySelectorAll('.favorite-btn')
+  const favoritesOnlyButton = document.querySelector('.favorites-only-btn')
   const prevPageButton = document.querySelector('.pagination-prev-btn')
   const nextPageButton = document.querySelector('.pagination-next-btn')
   const pageButtons = document.querySelectorAll('.pagination-page-btn')
@@ -67,6 +68,7 @@ function attachEventListeners() {
       state.search = ''
       state.genre = 'all'
       state.minRating = 0
+      state.showFavoritesOnly = false
       state.page = 1
       render()
     })
@@ -86,6 +88,14 @@ function attachEventListeners() {
 
         toggleFavorite(movieId)
       })
+    })
+  }
+
+  if (favoritesOnlyButton) {
+    favoritesOnlyButton.addEventListener('click', () => {
+      state.showFavoritesOnly = !state.showFavoritesOnly
+      state.page = 1
+      render()
     })
   }
 
