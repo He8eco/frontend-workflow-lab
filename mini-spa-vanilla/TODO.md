@@ -87,8 +87,8 @@
 ## Supabase API + Storage
 
 - [x] Define Supabase role in Movie Catalog
-- [ ] Create Supabase project
-- [ ] Create `movies` table
+- [x] Create Supabase project
+- [x] Create `movies` table
 - [ ] Create poster storage bucket
 - [ ] Upload poster images
 - [ ] Add movie records
