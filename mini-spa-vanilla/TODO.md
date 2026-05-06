@@ -91,10 +91,10 @@
 - [x] Create `movies` table
 - [x] Add movie records
 - [x] Create poster storage bucket
-- [ ] Upload poster images
-- [ ] Fill `poster` URLs in `movies` table
-- [ ] Install Supabase SDK
-- [ ] Create Supabase client
+- [x] Upload poster images
+- [x] Fill `poster` URLs in `movies` table
+- [x] Install Supabase SDK
+- [x] Create Supabase client
 - [ ] Replace mock `getMovies()` with Supabase request
 - [ ] Normalize Supabase movie data
 - [ ] Verify loading / error / empty states

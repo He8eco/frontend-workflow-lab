@@ -363,3 +363,16 @@
 - The `movies.poster` field stores a public image URL.
 - Movies with `poster = NULL` can still use the existing poster placeholder.
 - Public poster URLs can be copied from Supabase Dashboard.
+
+## Substage 8 — Block 3
+
+- Installed `@supabase/supabase-js`.
+- Created Supabase client in `src/api/supabaseClient.js`.
+- Supabase client uses Vite environment variables.
+- Required env variables:
+  - `VITE_SUPABASE_URL`
+  - `VITE_SUPABASE_ANON_KEY`
+- `.env` stores real local values and should not be committed.
+- `.env.example` documents required env variables.
+- Only public anon/publishable key should be used in frontend.
+- `service_role` key must never be used in browser code.
