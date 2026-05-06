@@ -96,6 +96,6 @@
 - [x] Install Supabase SDK
 - [x] Create Supabase client
 - [x] Replace mock `getMovies()` with Supabase request
-- [ ] Normalize Supabase movie data
+- [x] Normalize Supabase movie data
 - [ ] Verify loading / error / empty states
 - [ ] Verify search, filters, favorites, sorting, and pagination with Supabase data
