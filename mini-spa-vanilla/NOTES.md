@@ -376,3 +376,14 @@
 - `.env.example` documents required env variables.
 - Only public anon/publishable key should be used in frontend.
 - `service_role` key must never be used in browser code.
+
+## Substage 8 — Block 4
+
+- Replaced local mock movie loading with Supabase table loading.
+- `getMovies()` now reads from the `movies` table.
+- Supabase query uses `.select('*')`.
+- Query is ordered by `id` for stable default ordering.
+- If Supabase returns an error, `getMovies()` throws an error.
+- Existing `loadMovies()` handles loading and error state.
+- Public SELECT policy is required when RLS is enabled.
+- Movies with `poster = NULL` still use the existing poster placeholder.

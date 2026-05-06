@@ -95,7 +95,7 @@
 - [x] Fill `poster` URLs in `movies` table
 - [x] Install Supabase SDK
 - [x] Create Supabase client
-- [ ] Replace mock `getMovies()` with Supabase request
+- [x] Replace mock `getMovies()` with Supabase request
 - [ ] Normalize Supabase movie data
 - [ ] Verify loading / error / empty states
 - [ ] Verify search, filters, favorites, sorting, and pagination with Supabase data
