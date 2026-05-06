@@ -418,3 +418,14 @@
 - `poster` falls back to an empty string when Supabase returns `NULL`.
 - `getMovies()` returns normalized movie objects.
 - Normalization keeps UI less dependent on raw Supabase data.
+
+## Substage 8 — Block 6
+
+- Verified loading state with real Supabase loading.
+- Optional `sleep(ms)` can make loading state visible during development.
+- Verified error state by temporarily breaking the Supabase table name.
+- `getMovies()` throws an error when Supabase returns an error.
+- `loadMovies()` catches the error and updates `state.error`.
+- Verified empty state through search/filter results.
+- `Reload catalog` can recover after an error when the request is fixed.
+- `console.error(error)` helps debug Supabase errors during development.
