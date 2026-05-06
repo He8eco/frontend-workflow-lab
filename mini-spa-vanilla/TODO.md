@@ -81,5 +81,20 @@
 - [x] Add search
 - [x] Add filters
 - [x] Add sorting
-- [ ] Add favorites
-- [ ] Add pagination
+- [x] Add favorites
+- [x] Add pagination
+
+## Supabase API + Storage
+
+- [x] Define Supabase role in Movie Catalog
+- [ ] Create Supabase project
+- [ ] Create `movies` table
+- [ ] Create poster storage bucket
+- [ ] Upload poster images
+- [ ] Add movie records
+- [ ] Install Supabase SDK
+- [ ] Create Supabase client
+- [ ] Replace mock `getMovies()` with Supabase request
+- [ ] Normalize Supabase movie data
+- [ ] Verify loading / error / empty states
+- [ ] Verify search, filters, favorites, sorting, and pagination with Supabase data
