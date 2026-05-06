@@ -408,3 +408,13 @@
 - Genres are collected from `state.movies`.
 - `Set` is used to remove duplicate genre values.
 - Hardcoded genre options were replaced because Supabase data can contain more genres.
+
+## Substage 8 — Block 5
+
+- Added movie data normalization in `movieApi.js`.
+- Supabase rows are converted into the app movie format.
+- `normalizeMovie(movie)` returns only the fields used by the UI.
+- `id`, `year`, and `rating` are converted to numbers.
+- `poster` falls back to an empty string when Supabase returns `NULL`.
+- `getMovies()` returns normalized movie objects.
+- Normalization keeps UI less dependent on raw Supabase data.
