@@ -89,9 +89,10 @@
 - [x] Define Supabase role in Movie Catalog
 - [x] Create Supabase project
 - [x] Create `movies` table
-- [ ] Create poster storage bucket
+- [x] Add movie records
+- [x] Create poster storage bucket
 - [ ] Upload poster images
-- [ ] Add movie records
+- [ ] Fill `poster` URLs in `movies` table
 - [ ] Install Supabase SDK
 - [ ] Create Supabase client
 - [ ] Replace mock `getMovies()` with Supabase request
