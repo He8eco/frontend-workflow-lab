@@ -102,6 +102,26 @@ function getPaginatedMovies(movies, state) {
   return movies.slice(startIndex, endIndex)
 }
 
+function getGenres(movies) {
+  return [...new Set(movies.map((movie) => movie.genre))]
+}
+
+function renderGenreOptions(movies, selectedGenre) {
+  const genres = getGenres(movies)
+
+  return genres
+    .map(
+      (genre) =>
+        html`<option
+          value="${genre}"
+          ${selectedGenre === genre ? 'selected' : ''}
+        >
+          ${genre}
+        </option> `
+    )
+    .join('')
+}
+
 function renderCatalogContent(state, movies) {
   if (state.loading) {
     return `<p class="catalog-message">Loading movies...</p>`
@@ -184,18 +204,8 @@ export function renderApp(state) {
             <option value="all" ${state.genre === 'all' ? 'selected' : ''}>
               All genres
             </option>
-            <option
-              value="Sci-Fi"
-              ${state.genre === 'Sci-Fi' ? 'selected' : ''}
-            >
-              Sci-Fi
-            </option>
-            <option
-              value="Action"
-              ${state.genre === 'Action' ? 'selected' : ''}
-            >
-              Action
-            </option>
+
+            ${renderGenreOptions(state.movies, state.genre)}
           </select>
         </div>
 
