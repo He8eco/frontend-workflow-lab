@@ -327,3 +327,13 @@
 - `state.page` is the single source of truth for the current page.
 - Page buttons, Prev, and Next all update `state.page`.
 - The catalog renders `paginatedMovies`, while result count still uses the full processed list.
+
+## Substage 8 — Block 0
+
+- Supabase will be used as the backend source for Movie Catalog.
+- Supabase Database will store movie records.
+- Supabase Storage will store movie poster images.
+- The `movies` table will replace local `mockMovies`.
+- The `poster` field will store a public image URL.
+- `getMovies()` will later load movies from Supabase instead of returning local mock data.
+- The UI should keep working through the same state/render pipeline.
