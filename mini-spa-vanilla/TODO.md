@@ -98,4 +98,4 @@
 - [x] Replace mock `getMovies()` with Supabase request
 - [x] Normalize Supabase movie data
 - [x] Verify loading / error / empty states
-- [ ] Verify search, filters, favorites, sorting, and pagination with Supabase data
+- [x] Verify search, filters, favorites, sorting, and pagination with Supabase data

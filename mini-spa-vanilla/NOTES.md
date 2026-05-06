@@ -429,3 +429,18 @@
 - Verified empty state through search/filter results.
 - `Reload catalog` can recover after an error when the request is fixed.
 - `console.error(error)` helps debug Supabase errors during development.
+
+## Substage 8 — Block 7
+
+- Verified Movie Catalog features with Supabase data.
+- Supabase movies are loaded through `getMovies()`.
+- Movie rows are normalized before entering `state.movies`.
+- Dynamic genre options are generated from loaded movie data.
+- Search works with Supabase movie titles.
+- Genre and rating filters work with Supabase data.
+- Favorites and localStorage still work after switching to Supabase.
+- Favorites only mode works with Supabase movies.
+- Sorting works after Supabase data normalization.
+- Pagination works after search, filters, favorites only, and sorting.
+- Poster URLs from Supabase Storage render images.
+- `poster = NULL` uses the existing placeholder.
