@@ -337,3 +337,19 @@
 - The `poster` field will store a public image URL.
 - `getMovies()` will later load movies from Supabase instead of returning local mock data.
 - The UI should keep working through the same state/render pipeline.
+
+## Substage 8 — Block 1
+
+- Created a Supabase project for Movie Catalog.
+- Created the `movies` table.
+- The `movies` table will replace local `mockMovies`.
+- Planned columns:
+  - `id`
+  - `title`
+  - `year`
+  - `rating`
+  - `genre`
+  - `poster`
+- `poster` will store a public poster image URL later.
+- Row Level Security can block frontend reads until a SELECT policy is added.
+- Supabase table data will later be loaded through `getMovies()`.
