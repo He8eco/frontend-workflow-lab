@@ -353,3 +353,13 @@
 - `poster` will store a public poster image URL later.
 - Row Level Security can block frontend reads until a SELECT policy is added.
 - Supabase table data will later be loaded through `getMovies()`.
+
+## Substage 8 — Block 2
+
+- Created Supabase Storage bucket for movie posters.
+- Bucket name: `movie-posters`.
+- Movie posters are public assets, so the bucket can be public.
+- Image files are stored in Supabase Storage.
+- The `movies.poster` field stores a public image URL.
+- Movies with `poster = NULL` can still use the existing poster placeholder.
+- Public poster URLs can be copied from Supabase Dashboard.
