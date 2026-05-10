@@ -36,3 +36,15 @@
 - `index.css` contains global styles and base reset.
 - `App.css` contains styles for the root `App` component.
 - The project still runs after template cleanup.
+
+## Stage 5 — Substage 0 — Block 3
+
+- Created base project folders inside `src`.
+- `components/` will store reusable UI components.
+- `pages/` will store route-level page components.
+- `hooks/` will store custom React hooks.
+- `api/` will store data loading functions.
+- `data/` will store temporary local mock data.
+- `utils/` will store small pure helper functions.
+- Added `.gitkeep` files because Git does not track empty folders.
+- The app still runs after creating the folder structure.
