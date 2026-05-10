@@ -3,7 +3,7 @@
 ## Substage 0 — Project foundation
 
 - [x] Understand React role in this learning stage
-- [ ] Create Vite React project
+- [x] Create Vite React project
 - [ ] Clean default Vite template
 - [ ] Create base folders
 - [ ] Add README, NOTES, and TODO

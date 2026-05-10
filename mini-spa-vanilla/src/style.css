@@ -125,7 +125,9 @@ button {
 .control-group input,
 .control-group select,
 .reload-btn,
-.pagination button {
+.pagination button,
+.clear-search-btn,
+.reset-filters-btn {
   min-height: 44px;
   border-radius: 12px;
   border: 1px solid rgba(148, 163, 184, 0.2);
@@ -137,8 +139,8 @@ button {
 .reload-btn {
   align-self: end;
 }
-.search-row {
-  display: flex;
+.clear-search-btn{
+  margin: 10px 0 0;
 }
 
 .catalog {
@@ -276,6 +278,10 @@ button {
   gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.pagination button {
+  margin: 0 3px
 }
 
 .active-page {
