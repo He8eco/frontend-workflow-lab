@@ -24,3 +24,15 @@
 - Vite runs the app locally and updates the browser during development.
 - `src/main.jsx` is the entry point of the React app.
 - `src/App.jsx` is the root app component for now.
+
+## Stage 5 — Substage 0 — Block 2
+
+- Cleaned the default Vite React template.
+- Removed demo counter logic from `App.jsx`.
+- Removed unused Vite and React logo imports.
+- `App.jsx` now contains a minimal root component.
+- `src/main.jsx` is the React entry point.
+- `createRoot(...).render(...)` mounts the React app into `#root`.
+- `index.css` contains global styles and base reset.
+- `App.css` contains styles for the root `App` component.
+- The project still runs after template cleanup.
