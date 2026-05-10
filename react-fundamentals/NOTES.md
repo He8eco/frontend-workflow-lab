@@ -14,3 +14,13 @@
 - React does not replace JavaScript. It uses JavaScript.
 - Arrays, objects, map, filter, sort, async/await, modules, and events are still required.
 - The old Movie Catalog render pipeline will be rebuilt through React components.
+
+## Stage 5 — Substage 0 — Block 1
+
+- Created a separate Vite React project inside `frontend-workflow-lab/react-fundamentals`.
+- Used the plain React template, not React TypeScript.
+- Installed project dependencies with `npm install`.
+- Started the development server with `npm run dev`.
+- Vite runs the app locally and updates the browser during development.
+- `src/main.jsx` is the entry point of the React app.
+- `src/App.jsx` is the root app component for now.
