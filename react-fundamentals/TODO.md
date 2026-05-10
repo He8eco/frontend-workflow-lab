@@ -2,10 +2,12 @@
 
 ## Substage 0 — Project foundation
 
+- [x] Configure dev server host
+- [x] Add Prettier config
 - [x] Understand React role in this learning stage
 - [x] Create Vite React project
 - [x] Clean default Vite template
-- [ ] Create base folders
+- [x] Create base folders
 - [ ] Add README, NOTES, and TODO
 - [ ] Commit project foundation
 
