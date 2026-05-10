@@ -60,3 +60,15 @@
 - `NOTES.md` is for personal learning notes.
 - `TODO.md` is for tracking completed and upcoming work.
 - Documentation helps keep the learning stage structured instead of turning the project into random files.
+
+## Stage 5 — Substage 0 — Block 5
+
+- Verified the React project foundation.
+- Checked that the dev server starts correctly.
+- Checked that the production build works with `npm run build`.
+- Verified that the project structure is ready for React components.
+- Checked that `node_modules`, `dist`, and local env files should not be committed.
+- `.gitignore` should include dependencies, build output, and local environment files.
+- Prettier config keeps formatting consistent.
+- ESLint can be used to catch basic code issues.
+- Substage 0 is complete when the project foundation is clean and committed.

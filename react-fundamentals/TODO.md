@@ -9,7 +9,7 @@
 - [x] Clean default Vite template
 - [x] Create base folders
 - [x] Add README, NOTES, and TODO
-- [ ] Commit project foundation
+- [x] Commit project foundation
 
 ## Substage 1 — Components, props, and state
 
