@@ -52,3 +52,15 @@ src/
   index.css
   main.jsx
 ```
+
+## What changed
+
+- Verified React Fundamentals project foundation.
+- Checked development server, build, and lint.
+- Added/updated project notes and TODO.
+- Confirmed base folder structure for components, pages, hooks, API, data, and utils.
+- Confirmed `.gitignore` and Prettier setup.
+
+## Notes
+
+This closes Substage 0. The project is ready for React components, props, and state practice.
