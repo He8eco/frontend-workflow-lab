@@ -48,3 +48,15 @@
 - `utils/` will store small pure helper functions.
 - Added `.gitkeep` files because Git does not track empty folders.
 - The app still runs after creating the folder structure.
+
+## Stage 5 — Substage 0 — Block 4
+
+- Added project learning documentation.
+- `README.md` describes the project goal, tech stack, learning goals, structure, and scripts.
+- `NOTES.md` stores learning notes, important conclusions, and common mistakes.
+- `TODO.md` stores the checklist for Stage 5 progress.
+- Documentation files are stored inside `react-fundamentals/`, not in the root of `frontend-workflow-lab`.
+- `README.md` is for understanding what the project is and how to run it.
+- `NOTES.md` is for personal learning notes.
+- `TODO.md` is for tracking completed and upcoming work.
+- Documentation helps keep the learning stage structured instead of turning the project into random files.

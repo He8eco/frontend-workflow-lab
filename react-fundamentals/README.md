@@ -1,16 +1,54 @@
-# React + Vite
+# React Fundamentals
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Учебный проект для Этапа 5 — React фундамент.
 
-Currently, two official plugins are available:
+Цель проекта — научиться уверенно писать React без TypeScript, Redux и лишних библиотек на старте.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Проект будет постепенно развиваться от чистой Vite React-базы до учебного SPA-каталога с компонентами, props, state, controlled forms, useEffect, custom hooks и React Router.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- JavaScript
+- CSS
+- ESLint
+- Prettier
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Learning Goals
+
+В этом проекте отрабатываются:
+
+- компоненты;
+- JSX;
+- props;
+- state;
+- однонаправленный поток данных;
+- списки и `key`;
+- controlled forms;
+- `useEffect`;
+- custom hooks;
+- React Router;
+- базовая структура React SPA.
+
+---
+
+## Project Structure
+
+```text
+src/
+  api/
+  components/
+  data/
+  hooks/
+  pages/
+  utils/
+  App.jsx
+  App.css
+  index.css
+  main.jsx
+```
