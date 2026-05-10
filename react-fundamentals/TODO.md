@@ -4,7 +4,7 @@
 
 - [x] Understand React role in this learning stage
 - [x] Create Vite React project
-- [ ] Clean default Vite template
+- [x] Clean default Vite template
 - [ ] Create base folders
 - [ ] Add README, NOTES, and TODO
 - [ ] Commit project foundation
