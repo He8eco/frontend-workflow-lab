@@ -1,4 +1,4 @@
-export function GameCard({ game }) {
+export function GameCard({ game, isFavorite, onToggleFavorite }) {
   return (
     <article className="game-card">
       <div className="game-card__cover">
@@ -16,6 +16,13 @@ export function GameCard({ game }) {
           <span>{game.year}</span>
           <span>Rating {game.rating}</span>
         </div>
+        <button
+          className="game-card__favorite-button"
+          type="button"
+          onClick={() => onToggleFavorite(game.id)}
+        >
+          {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        </button>
       </div>
     </article>
   )

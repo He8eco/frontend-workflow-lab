@@ -132,3 +132,19 @@
 - Empty search shows all games because every string includes an empty string.
 - `trim().toLowerCase()` makes search more predictable.
 - Added empty state when no games match the search.
+
+## Stage 5 — Substage 1 — Block 5
+
+- Added `favorites` state in `App`.
+- Favorites are stored as an array of game ids, not full game objects.
+- `handleToggleFavorite(gameId)` adds or removes a game id from favorites.
+- State arrays should not be mutated directly.
+- Use `.filter()` to remove an item from an array.
+- Use spread syntax `[...currentFavorites, gameId]` to add an item immutably.
+- `setFavorites((currentFavorites) => ...)` uses the current state value safely.
+- `App` passes `favorites` and `onToggleFavorite` down to `GameList`.
+- `GameList` calculates `isFavorite` for each game.
+- `GameCard` receives `isFavorite` and `onToggleFavorite`.
+- `GameCard` does not own favorites state; it only calls the callback when clicked.
+- Favorites reset after page reload because they are stored only in React state for now.
+

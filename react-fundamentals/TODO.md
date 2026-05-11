@@ -21,8 +21,8 @@
 - [x] Pass game data through props
 - [x] Add `searchQuery` state
 - [x] Create `SearchBar`
-- [ ] Add `favorites` state
-- [ ] Handle favorite toggle through props
+- [x] Add `favorites` state
+- [x] Handle favorite toggle through props
 
 ## Substage 2 — Lists and keys
 

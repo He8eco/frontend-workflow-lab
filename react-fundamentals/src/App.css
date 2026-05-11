@@ -161,3 +161,32 @@
   color: #cbd5e1;
   font-size: 14px;
 }
+.game-card--favorite {
+  border-color: rgba(250, 204, 21, 0.72);
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.3),
+    0 0 0 1px rgba(250, 204, 21, 0.22);
+}
+
+.game-card__favorite-button {
+  width: 100%;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #020617;
+  font-weight: 800;
+  background: #e2e8f0;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.game-card__favorite-button:hover {
+  transform: translateY(-1px);
+  background: #facc15;
+}
+
+.game-card--favorite .game-card__favorite-button {
+  background: #facc15;
+}
