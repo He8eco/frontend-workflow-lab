@@ -5,6 +5,7 @@ import { SortSelect } from './components/SortSelect'
 import { GenreFilter } from './components/GenreFilter'
 import { PlatformFilter } from './components/PlatformFilter'
 import { RatingFilter } from './components/RatingFilter'
+import { ResetControlsButton } from './components/ResetControlsButton'
 import { GameList } from './components/GameList'
 import { games } from './data/games'
 import './App.css'
@@ -16,6 +17,13 @@ export default function App() {
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
   const [minRating, setMinRating] = useState(0)
+
+  const hasActiveControls =
+    searchQuery.trim() !== '' ||
+    genre !== 'all' ||
+    platform !== 'all' ||
+    minRating !== 0 ||
+    sort !== 'default'
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase()
 
@@ -58,6 +66,14 @@ export default function App() {
     }
   })
 
+  function handleResetControls() {
+    setSearchQuery('')
+    setGenre('all')
+    setPlatform('all')
+    setMinRating(0)
+    setSort('default')
+  }
+
   function handleToggleFavorite(gameId) {
     setFavorites((currentFavorites) => {
       if (currentFavorites.includes(gameId)) {
@@ -77,6 +93,10 @@ export default function App() {
       <PlatformFilter platform={platform} onPlatformChange={setPlatform} />
       <RatingFilter minRating={minRating} onMinRatingChange={setMinRating} />
       <SortSelect sort={sort} onSortChange={setSort} />
+      <ResetControlsButton
+        isDisabled={!hasActiveControls}
+        onResetControls={handleResetControls}
+      />
       <GameList
         games={sortedGames}
         favorites={favorites}

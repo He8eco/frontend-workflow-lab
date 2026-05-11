@@ -43,8 +43,8 @@
 - [x] Add genre filter
 - [x] Add platform filter
 - [x] Add minimum rating filter
-- [ ] Add reset controls button
-- [ ] Keep filters in `App` state
+- [x] Add reset controls button
+- [x] Keep filters in `App` state
 - [ ] Build final filtering chain
 - [ ] Close controlled forms substage
 
