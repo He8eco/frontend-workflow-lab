@@ -162,3 +162,16 @@
 - Props go down from `App` to child components.
 - Events go up through callback functions.
 - Substage 1 closes with working components, props, state, search, and favorites.
+
+## Stage 5 — Substage 2 — Block 0
+
+- React renders lists by mapping arrays to JSX elements.
+- `.map()` transforms data items into components.
+- `key` helps React match list items between renders.
+- A stable `id` is a good key because it belongs to the item, not to the position.
+- `index` is a risky key when a list can be filtered, sorted, inserted into, or deleted from.
+- `key={game.id}` is used by React internally.
+- `key` is not passed to the child component as a normal prop.
+- If a component needs an id, pass it explicitly or use `game.id`.
+- In this project, favorites are tied to game ids, not card positions.
+- The best model: `key` is for React, props are for components.
