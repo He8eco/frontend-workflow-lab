@@ -45,7 +45,7 @@
 - [x] Add minimum rating filter
 - [x] Add reset controls button
 - [x] Keep filters in `App` state
-- [ ] Build final filtering chain
+- [x] Build final filtering chain
 - [ ] Close controlled forms substage
 
 ## Substage 4 — useEffect

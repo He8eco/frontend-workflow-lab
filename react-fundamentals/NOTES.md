@@ -306,3 +306,15 @@
 - The reset button is disabled when there are no active controls.
 - Controlled components update automatically after reset because their `value` comes from state.
 - The reset flow is `button click → handleResetControls → setState calls → controlled values update → GameList recalculates`.
+
+## Stage 5 — Substage 3 — Block 6
+
+- Grouped search, filters, sorting, and reset controls into `GameFilters`.
+- `GameFilters` is a composition component.
+- `GameFilters` does not own form state.
+- `App` still owns `searchQuery`, `genre`, `platform`, `minRating`, and `sort`.
+- `GameFilters` receives values and callbacks through props.
+- `GameFilters` passes those values and callbacks down to smaller controls.
+- This keeps `App` cleaner while preserving the same state flow.
+- The component tree is now `App → GameFilters → SearchBar / GenreFilter / PlatformFilter / RatingFilter / SortSelect / ResetControlsButton`.
+- Grouping controls changed structure, not behavior.

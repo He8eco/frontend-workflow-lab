@@ -1,11 +1,6 @@
 import { useState } from 'react'
 import { Header } from './components/Header'
-import { SearchBar } from './components/SearchBar'
-import { SortSelect } from './components/SortSelect'
-import { GenreFilter } from './components/GenreFilter'
-import { PlatformFilter } from './components/PlatformFilter'
-import { RatingFilter } from './components/RatingFilter'
-import { ResetControlsButton } from './components/ResetControlsButton'
+import { GameFilters } from './components/GameFilters'
 import { GameList } from './components/GameList'
 import { games } from './data/games'
 import './App.css'
@@ -88,13 +83,18 @@ export default function App() {
     <main className="app">
       <Header favoritesCount={favorites.length} />
 
-      <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
-      <GenreFilter genre={genre} onGenreChange={setGenre} />
-      <PlatformFilter platform={platform} onPlatformChange={setPlatform} />
-      <RatingFilter minRating={minRating} onMinRatingChange={setMinRating} />
-      <SortSelect sort={sort} onSortChange={setSort} />
-      <ResetControlsButton
-        isDisabled={!hasActiveControls}
+      <GameFilters
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        genre={genre}
+        onGenreChange={setGenre}
+        platform={platform}
+        onPlatformChange={setPlatform}
+        minRating={minRating}
+        onMinRatingChange={setMinRating}
+        sort={sort}
+        onSortChange={setSort}
+        isResetDisabled={!hasActiveControls}
         onResetControls={handleResetControls}
       />
       <GameList
