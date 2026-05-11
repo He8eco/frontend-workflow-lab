@@ -226,3 +226,19 @@
 - `key={index}` is risky for dynamic lists because index is only the current position.
 - If a card later has local UI state, `key={index}` can make that state move to the wrong item after sorting or filtering.
 - The current list is stable because both React tracking and favorite logic use stable game ids.
+
+## Stage 5 — Substage 2 — Block 5
+
+- Closed the lists and keys substage.
+- React lists are rendered by mapping data arrays to JSX elements.
+- `.map()` turns each game object into a `GameCard`.
+- `key` helps React track list items between renders.
+- `key` is used by React internally and is not passed as a normal prop.
+- Stable `id` values are better keys than array indexes.
+- `index` is risky for dynamic lists because it represents position, not item identity.
+- The project uses `key={game.id}` for game cards.
+- Favorites are also tied to game ids, so sorting and searching do not move favorite state to the wrong game.
+- Added sorting with the flow `games → search → sort → GameList`.
+- `sort` is state because the user changes it.
+- `sortedGames` is derived data because it is calculated from `filteredGames` and `sort`.
+- `.sort()` mutates arrays, so the project sorts a copied array with `[...filteredGames].sort(...)`.

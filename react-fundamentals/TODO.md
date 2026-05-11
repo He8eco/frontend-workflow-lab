@@ -34,13 +34,19 @@
 - [x] Create `SortSelect`
 - [x] Check list behavior with search, sorting, and favorites
 - [x] Avoid index as key for dynamic lists
-- [ ] Close lists and keys substage
+- [x] Close lists and keys substage
 
 ## Substage 3 — Controlled forms
 
-- [ ] Create controlled search input
-- [ ] Create controlled filters
-- [ ] Add reset button
+- [ ] Understand controlled components deeper
+- [ ] Review current `SearchBar` and `SortSelect`
+- [ ] Add genre filter
+- [ ] Add platform filter
+- [ ] Add minimum rating filter
+- [ ] Add reset controls button
+- [ ] Keep filters in `App` state
+- [ ] Build final filtering chain
+- [ ] Close controlled forms substage
 
 ## Substage 4 — useEffect
 
