@@ -28,11 +28,13 @@
 
 ## Substage 2 — Lists and keys
 
-- [ ] Understand why React needs `key`
-- [ ] Use stable `id` as key
+- [x] Understand why React needs `key`
+- [ ] Review current `GameList` rendering
+- [ ] Add sorting state
+- [ ] Create `SortSelect`
+- [ ] Check list behavior with search, sorting, and favorites
 - [ ] Avoid index as key for dynamic lists
-- [ ] Check list behavior with filtering and sorting
-- [ ] Prepare list logic for future filters and sorting
+- [ ] Close lists and keys substage
 
 ## Substage 3 — Controlled forms
 
