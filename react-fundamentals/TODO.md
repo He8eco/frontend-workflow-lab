@@ -23,12 +23,16 @@
 - [x] Create `SearchBar`
 - [x] Add `favorites` state
 - [x] Handle favorite toggle through props
+- [x] Show favorites count in `Header`
+- [x] Review props/state flow
 
 ## Substage 2 — Lists and keys
 
-- [ ] Render catalog items with map
-- [ ] Use stable id as key
-- [ ] Check filtering and sorting behavior
+- [ ] Understand why React needs `key`
+- [ ] Use stable `id` as key
+- [ ] Avoid index as key for dynamic lists
+- [ ] Check list behavior with filtering and sorting
+- [ ] Prepare list logic for future filters and sorting
 
 ## Substage 3 — Controlled forms
 

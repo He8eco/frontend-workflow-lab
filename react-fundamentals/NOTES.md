@@ -148,3 +148,17 @@
 - `GameCard` does not own favorites state; it only calls the callback when clicked.
 - Favorites reset after page reload because they are stored only in React state for now.
 
+## Stage 5 — Substage 1 — Block 6
+
+- Reviewed the first React component structure.
+- `App` owns the main state: `searchQuery` and `favorites`.
+- `filteredGames` is derived data, not separate state.
+- Derived data should usually be calculated from existing data instead of stored separately.
+- `SearchBar` receives `searchQuery` and `onSearchChange`.
+- `GameList` receives filtered games, favorites, and favorite toggle handler.
+- `GameCard` receives one game, `isFavorite`, and `onToggleFavorite`.
+- Added `favoritesCount` prop to `Header`.
+- `Header` shows favorite count but does not own favorites state.
+- Props go down from `App` to child components.
+- Events go up through callback functions.
+- Substage 1 closes with working components, props, state, search, and favorites.
