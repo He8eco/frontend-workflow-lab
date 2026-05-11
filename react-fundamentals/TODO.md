@@ -42,7 +42,7 @@
 - [x] Review current `SearchBar` and `SortSelect`
 - [x] Add genre filter
 - [x] Add platform filter
-- [ ] Add minimum rating filter
+- [x] Add minimum rating filter
 - [ ] Add reset controls button
 - [ ] Keep filters in `App` state
 - [ ] Build final filtering chain
