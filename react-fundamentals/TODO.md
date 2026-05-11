@@ -39,8 +39,8 @@
 ## Substage 3 — Controlled forms
 
 - [x] Understand controlled components deeper
-- [ ] Review current `SearchBar` and `SortSelect`
-- [ ] Add genre filter
+- [x] Review current `SearchBar` and `SortSelect`
+- [x] Add genre filter
 - [ ] Add platform filter
 - [ ] Add minimum rating filter
 - [ ] Add reset controls button

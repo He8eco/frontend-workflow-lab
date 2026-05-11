@@ -72,6 +72,35 @@
   border-color: rgba(147, 197, 253, 0.75);
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16);
 }
+
+.filter-panel {
+  display: grid;
+  gap: 10px;
+  max-width: 960px;
+  margin: 0 auto 32px;
+}
+
+.filter-panel__label {
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.filter-panel__select {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 18px;
+  padding: 16px 18px;
+  color: #f8fafc;
+  font-size: 18px;
+  background: rgba(15, 23, 42, 0.86);
+  outline: none;
+}
+
+.filter-panel__select:focus {
+  border-color: rgba(147, 197, 253, 0.75);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16);
+}
 .sort-panel {
   display: grid;
   gap: 10px;

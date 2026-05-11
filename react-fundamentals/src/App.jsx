@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Header } from './components/Header'
 import { SearchBar } from './components/SearchBar'
 import { SortSelect } from './components/SortSelect'
+import { GenteFilter } from './components/GenreFilter'
 import { GameList } from './components/GameList'
 import { games } from './data/games'
 import './App.css'
@@ -10,11 +11,20 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [favorites, setFavorites] = useState([])
   const [sort, setSort] = useState('default')
+  const [genre, setGenre] = useState('all')
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase()
 
-  const filteredGames = games.filter((game) => {
+  const searchedGames = games.filter((game) => {
     return game.title.toLowerCase().includes(normalizedSearchQuery)
+  })
+
+  const filteredGames = searchedGames.filter((game) => {
+    if(genre === 'all') {
+      return true
+    }
+
+    return game.genre === genre
   })
 
   const sortedGames = [...filteredGames].sort((firstGame, secondGame) => {
@@ -48,7 +58,7 @@ export default function App() {
       <Header favoritesCount={favorites.length} />
 
       <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
-
+      <GenteFilter genre={genre} onGenreChange={setGenre}/>
       <SortSelect sort={sort} onSortChange={setSort} />
 
       <GameList

@@ -255,3 +255,16 @@
 - Controlled forms make filtering, resetting, synchronization, and validation easier.
 - In React, state should usually be the source of truth for form controls.
 - Resetting controlled forms means resetting the state values.
+
+## Stage 5 — Substage 3 — Block 2
+
+- Added controlled genre filter.
+- `genre` state lives in `App`.
+- Default genre value is `all`.
+- `GenreFilter` receives `genre` and `onGenreChange` through props.
+- The genre select is controlled with `value={genre}`.
+- `onChange` sends the selected genre value back to `App`.
+- The filtering chain is now `games → search → genre → sort → GameList`.
+- If `genre === 'all'`, all searched games are kept.
+- Otherwise, only games with `game.genre === genre` are kept.
+- Genre filtering works together with search, sorting, favorites, and empty state.
