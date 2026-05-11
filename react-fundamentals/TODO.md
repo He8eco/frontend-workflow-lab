@@ -19,8 +19,8 @@
 - [x] Create `GameList`
 - [x] Create `GameCard`
 - [x] Pass game data through props
-- [ ] Add `searchQuery` state
-- [ ] Create `SearchBar`
+- [x] Add `searchQuery` state
+- [x] Create `SearchBar`
 - [ ] Add `favorites` state
 - [ ] Handle favorite toggle through props
 
