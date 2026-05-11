@@ -11,7 +11,7 @@ export default function App() {
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase()
 
-  const filteredGames = games.filter((game) =>{
+  const filteredGames = games.filter((game) => {
     return game.title.toLowerCase().includes(normalizedSearchQuery)
   })
 
@@ -27,13 +27,15 @@ export default function App() {
 
   return (
     <main className="app">
-      <Header />
+      <Header favoritesCount={favorites.length} />
 
-      <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery}/>
+      <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
-      <GameList games={filteredGames} 
-      favorites={favorites}
-      onToggleFavorite={handleToggleFavorite}/>
+      <GameList
+        games={filteredGames}
+        favorites={favorites}
+        onToggleFavorite={handleToggleFavorite}
+      />
     </main>
   )
 }
