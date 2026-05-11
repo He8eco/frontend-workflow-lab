@@ -294,3 +294,15 @@
 - If `minRating` is `0`, all games pass the rating filter.
 - The filtering chain is now `games → search → genre → platform → minRating → sort → GameList`.
 - Rating filtering works together with search, genre, platform, sorting, favorites, and empty state.
+
+## Stage 5 — Substage 3 — Block 5
+
+- Added reset controls button.
+- Resetting controlled forms means resetting their state values.
+- `handleResetControls()` resets `searchQuery`, `genre`, `platform`, `minRating`, and `sort`.
+- `favorites` are not reset because they are not part of the filter/sort controls.
+- Added `hasActiveControls` derived boolean.
+- `hasActiveControls` checks whether any search/filter/sort control differs from its default value.
+- The reset button is disabled when there are no active controls.
+- Controlled components update automatically after reset because their `value` comes from state.
+- The reset flow is `button click → handleResetControls → setState calls → controlled values update → GameList recalculates`.
