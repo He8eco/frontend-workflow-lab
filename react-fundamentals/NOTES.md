@@ -268,3 +268,16 @@
 - If `genre === 'all'`, all searched games are kept.
 - Otherwise, only games with `game.genre === genre` are kept.
 - Genre filtering works together with search, sorting, favorites, and empty state.
+
+## Stage 5 — Substage 3 — Block 3
+
+- Added controlled platform filter.
+- `platform` state lives in `App`.
+- Default platform value is `all`.
+- `PlatformFilter` receives `platform` and `onPlatformChange` through props.
+- The platform select is controlled with `value={platform}`.
+- `onChange` sends the selected platform value back to `App`.
+- The filtering chain is now `games → search → genre → platform → sort → GameList`.
+- If `platform === 'all'`, all genre-filtered games are kept.
+- Otherwise, only games with `game.platform === platform` are kept.
+- Platform filtering works together with search, genre, sorting, favorites, and empty state.
