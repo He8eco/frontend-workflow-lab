@@ -189,3 +189,16 @@
 - `isFavorite` is calculated in `GameList` with `favorites.includes(game.id)`.
 - `onToggleFavorite` is passed through `GameList` to `GameCard`.
 - Added `hasGames` for a clearer list/empty conditional render.
+
+## Stage 5 — Substage 2 — Block 2
+
+- Added `sort` state in `App`.
+- `sort` stores the current sorting mode.
+- `sortedGames` is derived data, not separate state.
+- The list flow is now `games → search → sort → GameList`.
+- `.sort()` mutates arrays, so sorting should be done on a copied array.
+- `[...filteredGames].sort(...)` creates a copy before sorting.
+- `rating-desc` sorts games from highest rating to lowest rating.
+- `year-desc` sorts games from newest to oldest.
+- `title-asc` sorts games alphabetically with `localeCompare`.
+- Sorting keeps favorite state stable because favorites are tied to game ids.
