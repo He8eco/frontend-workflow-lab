@@ -318,3 +318,22 @@
 - This keeps `App` cleaner while preserving the same state flow.
 - The component tree is now `App → GameFilters → SearchBar / GenreFilter / PlatformFilter / RatingFilter / SortSelect / ResetControlsButton`.
 - Grouping controls changed structure, not behavior.
+
+## Stage 5 — Substage 3 — Block 7
+
+- Closed the controlled forms substage.
+- Controlled form elements use React state as the source of truth.
+- The main flow is `state → value → input/select → onChange → setState → UI update`.
+- `SearchBar` controls `searchQuery`.
+- `GenreFilter` controls `genre`.
+- `PlatformFilter` controls `platform`.
+- `RatingFilter` controls `minRating`.
+- `SortSelect` controls `sort`.
+- `ResetControlsButton` resets search, filters, and sorting through state updates.
+- `GameFilters` groups all controls but does not own their state.
+- `App` owns form state and calculates derived data.
+- The final data chain is `games → search → genre → platform → minRating → sort → GameList`.
+- `searchedGames`, `genreFilteredGames`, `platformFilteredGames`, `filteredGames`, and `sortedGames` are derived data.
+- Derived data is calculated from state and source data instead of being stored as separate state.
+- Favorites are intentionally not reset by `Reset controls`.
+- Controlled forms make filtering, sorting, reset, and future validation easier.
