@@ -287,3 +287,42 @@
 .game-card--favorite .game-card__favorite-button {
   background: #facc15;
 }
+
+.game-filters {
+  max-width: 960px;
+  margin: 0 auto 32px;
+}
+
+.game-filters .search-panel {
+  margin-bottom: 24px;
+}
+
+.game-filters__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.game-filters .filter-panel,
+.game-filters .sort-panel {
+  max-width: none;
+  margin: 0;
+}
+
+.game-filters .reset-controls-button {
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .game-filters__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .game-filters__grid {
+    grid-template-columns: 1fr;
+  }
+}
