@@ -1,4 +1,4 @@
-export function GenteFilter({ genre, onGenreChange }) {
+export function GenreFilter({ genre, onGenreChange }) {
   return (
     <section className="filter-panel" aria-label="Genre filter">
       <label className="filter-panel__label" htmlFor="game-genre">

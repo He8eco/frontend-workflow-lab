@@ -281,3 +281,16 @@
 - If `platform === 'all'`, all genre-filtered games are kept.
 - Otherwise, only games with `game.platform === platform` are kept.
 - Platform filtering works together with search, genre, sorting, favorites, and empty state.
+
+## Stage 5 — Substage 3 — Block 4
+
+- Added controlled minimum rating filter.
+- `minRating` state lives in `App`.
+- Default `minRating` value is `0`.
+- `RatingFilter` receives `minRating` and `onMinRatingChange` through props.
+- The rating select is controlled with `value={minRating}`.
+- Select values come from the DOM as strings, so `Number(event.target.value)` converts them to numbers.
+- Rating filtering keeps games where `game.rating >= minRating`.
+- If `minRating` is `0`, all games pass the rating filter.
+- The filtering chain is now `games → search → genre → platform → minRating → sort → GameList`.
+- Rating filtering works together with search, genre, platform, sorting, favorites, and empty state.
