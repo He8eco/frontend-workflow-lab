@@ -84,3 +84,14 @@
 - Props will pass data down from parent components to child components.
 - Events will go up through callback functions.
 - The main data flow is: state lives up, props go down, events go up.
+
+## Stage 5 — Substage 1 — Block 1
+
+- Created the first React component: `Header`.
+- A React component is a function that returns JSX.
+- Component names should start with a capital letter.
+- Lowercase JSX tags are treated as HTML elements.
+- Uppercase JSX tags are treated as React components.
+- `Header` is exported from `src/components/Header.jsx`.
+- `App.jsx` imports `Header` and renders it as `<Header />`.
+- `App` now starts becoming a component composition instead of storing all UI directly.

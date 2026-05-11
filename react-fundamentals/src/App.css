@@ -1,13 +1,32 @@
 .app {
   min-height: 100vh;
-  padding: 40px;
+  padding: 48px 24px;
 }
 
-.app h1 {
-  margin-bottom: 12px;
-  font-size: 40px;
+.header {
+  max-width: 960px;
+  margin: 0 auto 40px;
 }
 
-.app p {
-  font-size: 18px;
+.header__eyebrow {
+  margin: 0 0 12px;
+  color: #93c5fd;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header__title {
+  margin: 0;
+  font-size: clamp(40px, 8vw, 72px);
+  line-height: 1;
+}
+
+.header__subtitle {
+  max-width: 640px;
+  margin: 20px 0 0;
+  color: #cbd5e1;
+  font-size: 20px;
+  line-height: 1.6;
 }

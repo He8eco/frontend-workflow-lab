@@ -14,7 +14,7 @@
 ## Substage 1 — Components, props, and state
 
 - [x] Plan React Game Library architecture
-- [ ] Create `Header`
+- [x] Create `Header`
 - [ ] Add local games data
 - [ ] Create `GameList`
 - [ ] Create `GameCard`
