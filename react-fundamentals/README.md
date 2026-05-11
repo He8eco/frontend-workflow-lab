@@ -2,7 +2,7 @@
 
 Учебный проект для Этапа 5 — React фундамент.
 
-Цель проекта — научиться уверенно писать React без TypeScript, Redux и лишних библиотек на старте.
+Цель проекта — собрать React SPA-каталог игр и на нём отработать компоненты, props, state, controlled forms, useEffect, custom hooks и React Router.
 
 Проект будет постепенно развиваться от чистой Vite React-базы до учебного SPA-каталога с компонентами, props, state, controlled forms, useEffect, custom hooks и React Router.
 
@@ -52,6 +52,10 @@ src/
   index.css
   main.jsx
 ```
+
+## Current Status
+
+Project foundation is complete. The next step is building the first React Game Library components.
 
 ## What changed
 

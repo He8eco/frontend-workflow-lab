@@ -13,11 +13,16 @@
 
 ## Substage 1 — Components, props, and state
 
-- [ ] Create base components
-- [ ] Pass props to child components
-- [ ] Add state in App
-- [ ] Handle events through props
-- [ ] Practice lifting state up
+- [x] Plan React Game Library architecture
+- [ ] Create `Header`
+- [ ] Add local games data
+- [ ] Create `GameList`
+- [ ] Create `GameCard`
+- [ ] Pass game data through props
+- [ ] Add `searchQuery` state
+- [ ] Create `SearchBar`
+- [ ] Add `favorites` state
+- [ ] Handle favorite toggle through props
 
 ## Substage 2 — Lists and keys
 
