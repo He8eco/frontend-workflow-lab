@@ -117,3 +117,18 @@
 - `key={game.id}` is used for list items because `id` is stable.
 - `GameCard` displays game title, year, genre, platform, and rating.
 - Cover images are not used yet; a placeholder with the first title letter is shown instead.
+
+## Stage 5 — Substage 1 — Block 4
+
+- Added the first React state: `searchQuery`.
+- `useState('')` creates a state value and a setter function.
+- `searchQuery` stores the current search input value.
+- `setSearchQuery` updates the search state.
+- `SearchBar` receives `searchQuery` and `onSearchChange` through props.
+- The search input is controlled because its `value` comes from React state.
+- `onChange` sends the new input value back to `App`.
+- `App` calculates `filteredGames` from `games` and `searchQuery`.
+- `GameList` receives `filteredGames`, not the original full array.
+- Empty search shows all games because every string includes an empty string.
+- `trim().toLowerCase()` makes search more predictable.
+- Added empty state when no games match the search.
