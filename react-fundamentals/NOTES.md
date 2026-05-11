@@ -214,3 +214,15 @@
 - In `App`, `onSortChange` is connected to `setSort`.
 - The pattern is the same as `SearchBar`: value goes down, event goes up.
 - `App` became cleaner and now composes `Header`, `SearchBar`, `SortSelect`, and `GameList`.
+
+## Stage 5 — Substage 2 — Block 4
+
+- Checked list stability with search, sorting, and favorites.
+- `GameList` uses `key={game.id}` for `GameCard`.
+- `key={game.id}` helps React track list items by stable game id.
+- Favorites are also tied to game ids with `favorites.includes(game.id)`.
+- Sorting changes card positions but does not change game ids.
+- Search can temporarily hide cards, but favorite state remains tied to ids.
+- `key={index}` is risky for dynamic lists because index is only the current position.
+- If a card later has local UI state, `key={index}` can make that state move to the wrong item after sorting or filtering.
+- The current list is stable because both React tracking and favorite logic use stable game ids.

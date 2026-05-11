@@ -32,8 +32,8 @@
 - [x] Review current `GameList` rendering
 - [x] Add sorting state
 - [x] Create `SortSelect`
-- [ ] Check list behavior with search, sorting, and favorites
-- [ ] Avoid index as key for dynamic lists
+- [x] Check list behavior with search, sorting, and favorites
+- [x] Avoid index as key for dynamic lists
 - [ ] Close lists and keys substage
 
 ## Substage 3 — Controlled forms
