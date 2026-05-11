@@ -72,3 +72,15 @@
 - Prettier config keeps formatting consistent.
 - ESLint can be used to catch basic code issues.
 - Substage 0 is complete when the project foundation is clean and committed.
+
+## Stage 5 — Substage 1 — Block 0
+
+- The Stage 5 project will be a React Game Library.
+- The project is not a copy of the previous Movie Catalog.
+- It uses a similar catalog structure to practice React fundamentals on a familiar pattern.
+- A game item will have fields like `id`, `title`, `year`, `genre`, `platform`, `rating`, and `cover`.
+- The first component structure will be `App → Header / SearchBar / GameList → GameCard`.
+- `App` will initially own the main state.
+- Props will pass data down from parent components to child components.
+- Events will go up through callback functions.
+- The main data flow is: state lives up, props go down, events go up.
