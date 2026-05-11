@@ -242,3 +242,16 @@
 - `sort` is state because the user changes it.
 - `sortedGames` is derived data because it is calculated from `filteredGames` and `sort`.
 - `.sort()` mutates arrays, so the project sorts a copied array with `[...filteredGames].sort(...)`.
+
+## Stage 5 — Substage 3 — Block 0
+
+- Controlled form elements are controlled by React state.
+- The form value comes from state through the `value` prop.
+- User changes are handled with `onChange`.
+- `onChange` sends the new value back to the component that owns the state.
+- The main flow is `state → value → input/select → onChange → setState`.
+- `SearchBar` is already a controlled input.
+- `SortSelect` is already a controlled select.
+- Controlled forms make filtering, resetting, synchronization, and validation easier.
+- In React, state should usually be the source of truth for form controls.
+- Resetting controlled forms means resetting the state values.
