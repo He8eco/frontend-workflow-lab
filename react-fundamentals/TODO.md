@@ -41,7 +41,7 @@
 - [x] Understand controlled components deeper
 - [x] Review current `SearchBar` and `SortSelect`
 - [x] Add genre filter
-- [ ] Add platform filter
+- [x] Add platform filter
 - [ ] Add minimum rating filter
 - [ ] Add reset controls button
 - [ ] Keep filters in `App` state

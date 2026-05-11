@@ -3,6 +3,7 @@ import { Header } from './components/Header'
 import { SearchBar } from './components/SearchBar'
 import { SortSelect } from './components/SortSelect'
 import { GenteFilter } from './components/GenreFilter'
+import { PlatformFilter } from './components/PlatformFilter'
 import { GameList } from './components/GameList'
 import { games } from './data/games'
 import './App.css'
@@ -12,6 +13,7 @@ export default function App() {
   const [favorites, setFavorites] = useState([])
   const [sort, setSort] = useState('default')
   const [genre, setGenre] = useState('all')
+  const [platform, setPlatform] = useState('all')
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase()
 
@@ -19,12 +21,20 @@ export default function App() {
     return game.title.toLowerCase().includes(normalizedSearchQuery)
   })
 
-  const filteredGames = searchedGames.filter((game) => {
-    if(genre === 'all') {
+  const genreFilteredGames = searchedGames.filter((game) => {
+    if (genre === 'all') {
       return true
     }
 
     return game.genre === genre
+  })
+
+  const filteredGames = genreFilteredGames.filter((game) => {
+    if (platform === 'all') {
+      return true
+    }
+
+    return game.platform === platform
   })
 
   const sortedGames = [...filteredGames].sort((firstGame, secondGame) => {
@@ -58,9 +68,9 @@ export default function App() {
       <Header favoritesCount={favorites.length} />
 
       <SearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
-      <GenteFilter genre={genre} onGenreChange={setGenre}/>
+      <GenteFilter genre={genre} onGenreChange={setGenre} />
+      <PlatformFilter platform={platform} onPlatformChange={setPlatform} />
       <SortSelect sort={sort} onSortChange={setSort} />
-
       <GameList
         games={sortedGames}
         favorites={favorites}
