@@ -105,3 +105,15 @@
 - `games.js` exports the games array as a named export.
 - The app can import local data with `import { games } from './data/games'`.
 - The UI does not render the games yet. Rendering will be handled by `GameList` and `GameCard` in the next block.
+
+## Stage 5 — Substage 1 — Block 3
+
+- Created `GameList` and `GameCard` components.
+- `App` imports local `games` data.
+- `App` passes the full games array to `GameList` as a prop.
+- `GameList` receives `games` and renders a list with `.map()`.
+- `GameCard` receives one `game` object as a prop.
+- The data flow is `App → GameList → GameCard`.
+- `key={game.id}` is used for list items because `id` is stable.
+- `GameCard` displays game title, year, genre, platform, and rating.
+- Cover images are not used yet; a placeholder with the first title letter is shown instead.
