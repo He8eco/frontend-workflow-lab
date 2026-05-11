@@ -95,3 +95,13 @@
 - `Header` is exported from `src/components/Header.jsx`.
 - `App.jsx` imports `Header` and renders it as `<Header />`.
 - `App` now starts becoming a component composition instead of storing all UI directly.
+
+## Stage 5 — Substage 1 — Block 2
+
+- Added local game data in `src/data/games.js`.
+- Local data is used first to focus on React components, props, and state without API complexity.
+- Each game has `id`, `title`, `year`, `genre`, `platform`, `rating`, and `cover`.
+- `id` will be used later as a stable React `key`, for favorites, and for details routes.
+- `games.js` exports the games array as a named export.
+- The app can import local data with `import { games } from './data/games'`.
+- The UI does not render the games yet. Rendering will be handled by `GameList` and `GameCard` in the next block.

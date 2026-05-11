@@ -15,7 +15,7 @@
 
 - [x] Plan React Game Library architecture
 - [x] Create `Header`
-- [ ] Add local games data
+- [x] Add local games data
 - [ ] Create `GameList`
 - [ ] Create `GameCard`
 - [ ] Pass game data through props
