@@ -46,7 +46,7 @@
 - [x] Add reset controls button
 - [x] Keep filters in `App` state
 - [x] Build final filtering chain
-- [ ] Close controlled forms substage
+- [x] Close controlled forms substage
 
 ## Substage 4 — useEffect
 
