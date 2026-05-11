@@ -202,3 +202,15 @@
 - `year-desc` sorts games from newest to oldest.
 - `title-asc` sorts games alphabetically with `localeCompare`.
 - Sorting keeps favorite state stable because favorites are tied to game ids.
+
+## Stage 5 — Substage 2 — Block 3
+
+- Extracted sorting UI into `SortSelect`.
+- `SortSelect` is a controlled component.
+- `SortSelect` receives the current `sort` value from `App`.
+- `SortSelect` receives `onSortChange` callback from `App`.
+- The select value is controlled by React state with `value={sort}`.
+- When the user selects another option, `SortSelect` calls `onSortChange(event.target.value)`.
+- In `App`, `onSortChange` is connected to `setSort`.
+- The pattern is the same as `SearchBar`: value goes down, event goes up.
+- `App` became cleaner and now composes `Header`, `SearchBar`, `SortSelect`, and `GameList`.

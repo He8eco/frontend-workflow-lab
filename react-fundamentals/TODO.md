@@ -31,7 +31,7 @@
 - [x] Understand why React needs `key`
 - [x] Review current `GameList` rendering
 - [x] Add sorting state
-- [ ] Create `SortSelect`
+- [x] Create `SortSelect`
 - [ ] Check list behavior with search, sorting, and favorites
 - [ ] Avoid index as key for dynamic lists
 - [ ] Close lists and keys substage
