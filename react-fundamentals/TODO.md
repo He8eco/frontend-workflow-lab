@@ -29,7 +29,7 @@
 ## Substage 2 — Lists and keys
 
 - [x] Understand why React needs `key`
-- [ ] Review current `GameList` rendering
+- [x] Review current `GameList` rendering
 - [ ] Add sorting state
 - [ ] Create `SortSelect`
 - [ ] Check list behavior with search, sorting, and favorites

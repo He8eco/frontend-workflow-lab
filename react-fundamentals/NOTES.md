@@ -175,3 +175,17 @@
 - If a component needs an id, pass it explicitly or use `game.id`.
 - In this project, favorites are tied to game ids, not card positions.
 - The best model: `key` is for React, props are for components.
+
+## Stage 5 — Substage 2 — Block 1
+
+- Reviewed the current `GameList` rendering flow.
+- `App` passes `filteredGames` to `GameList` as the `games` prop.
+- `GameList` receives the full list it needs to render.
+- `.map()` takes one `game` at a time and returns a `GameCard`.
+- `game` inside `.map()` is just the current array item.
+- `key={game.id}` is for React list tracking.
+- `game={game}` is a normal prop for `GameCard`.
+- `key` and `game` are not the same thing.
+- `isFavorite` is calculated in `GameList` with `favorites.includes(game.id)`.
+- `onToggleFavorite` is passed through `GameList` to `GameCard`.
+- Added `hasGames` for a clearer list/empty conditional render.
