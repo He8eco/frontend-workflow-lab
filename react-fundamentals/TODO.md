@@ -38,7 +38,7 @@
 
 ## Substage 3 — Controlled forms
 
-- [ ] Understand controlled components deeper
+- [x] Understand controlled components deeper
 - [ ] Review current `SearchBar` and `SortSelect`
 - [ ] Add genre filter
 - [ ] Add platform filter
