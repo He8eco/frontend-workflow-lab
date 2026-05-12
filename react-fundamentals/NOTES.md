@@ -372,3 +372,15 @@
 - `loading` and `error` state are prepared for future async loading.
 - If setters are not used yet, state can be declared without setters to avoid lint warnings.
 - Later, `useEffect` will load games through `getGames()` and update `games`, `loading`, and `error`.
+
+## Stage 5 — Substage 4 — Block 3
+
+- Games are now loaded through `useEffect`.
+- `games` state starts as an empty array.
+- `useEffect(..., [])` runs once after the first render.
+- `getGames()` is called inside the effect.
+- The effect updates React state with `setGames(loadedGames)`.
+- An async function is declared inside the effect because the effect callback itself should not be async.
+- `useEffect(async () => {})` is not recommended because async functions return a Promise.
+- Without the dependency array, the effect would run after every render.
+- Loading/error UI will be handled in the next block.

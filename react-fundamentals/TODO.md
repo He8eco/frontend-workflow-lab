@@ -53,7 +53,7 @@
 - [x] Understand side effects in React
 - [x] Prepare `gameApi.js`
 - [x] Move games into state
-- [ ] Load games with `useEffect`
+- [x] Load games with `useEffect`
 - [ ] Add loading state
 - [ ] Add error state
 - [ ] Add reload games

@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Header } from './components/Header'
 import { GameFilters } from './components/GameFilters'
 import { GameList } from './components/GameList'
-import { games as initialGames } from './data/games'
+import { getGames } from './api/gameApi'
 import './App.css'
 
 export default function App() {
-  const [games, setGames] = useState(initialGames)
+  const [games, setGames] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
   const [favorites, setFavorites] = useState([])
   const [sort, setSort] = useState('default')
@@ -15,6 +15,16 @@ export default function App() {
   const [minRating, setMinRating] = useState(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+
+  useEffect(() => {
+    async function loadGames() {
+      const loadedGames = await getGames()
+
+      setGames(loadedGames)
+    }
+
+    loadGames()
+  }, [])
 
   const hasActiveControls =
     searchQuery.trim() !== '' ||
