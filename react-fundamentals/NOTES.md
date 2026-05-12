@@ -362,3 +362,13 @@
 - `getGames()` is async to match the shape of a real API request.
 - Later, `getGames()` can add delay, errors, fetch, Supabase, or another backend without rewriting the UI.
 - The goal is to separate data source details from React components.
+
+## Stage 5 — Substage 4 — Block 2
+
+- Moved game data into React state.
+- Renamed imported `games` to `initialGames` to avoid a name conflict.
+- `games` is now a state value inside `App`.
+- For this block, `games` can be initialized with `initialGames` to avoid breaking the UI before `useEffect` loading is added.
+- `loading` and `error` state are prepared for future async loading.
+- If setters are not used yet, state can be declared without setters to avoid lint warnings.
+- Later, `useEffect` will load games through `getGames()` and update `games`, `loading`, and `error`.

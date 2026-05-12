@@ -2,16 +2,19 @@ import { useState } from 'react'
 import { Header } from './components/Header'
 import { GameFilters } from './components/GameFilters'
 import { GameList } from './components/GameList'
-import { games } from './data/games'
+import { games as initialGames } from './data/games'
 import './App.css'
 
 export default function App() {
+  const [games, setGames] = useState(initialGames)
   const [searchQuery, setSearchQuery] = useState('')
   const [favorites, setFavorites] = useState([])
   const [sort, setSort] = useState('default')
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
   const [minRating, setMinRating] = useState(0)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const hasActiveControls =
     searchQuery.trim() !== '' ||
