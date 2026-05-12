@@ -352,3 +352,13 @@
 - Basic effect shape: `useEffect(() => { ... }, dependencies)`.
 - Effects run after render.
 - Event handlers and effects are different: event handlers respond to user actions, effects synchronize after render based on dependencies.
+
+## Stage 5 — Substage 4 — Block 1
+
+- Created `src/api/gameApi.js` as a small API layer for game data.
+- `App.jsx` should not depend on `src/data/games.js` forever.
+- `getGames()` will become the single entry point for loading games.
+- For now, `getGames()` returns local games from `src/data/games.js`.
+- `getGames()` is async to match the shape of a real API request.
+- Later, `getGames()` can add delay, errors, fetch, Supabase, or another backend without rewriting the UI.
+- The goal is to separate data source details from React components.
