@@ -50,9 +50,20 @@
 
 ## Substage 4 — useEffect
 
-- [ ] Load data with useEffect
-- [ ] Handle loading, error, and empty states
-- [ ] Sync favorites with localStorage
+- [x] Understand side effects in React
+- [ ] Prepare `gameApi.js`
+- [ ] Move games into state
+- [ ] Load games with `useEffect`
+- [ ] Add loading state
+- [ ] Add error state
+- [ ] Add reload games
+- [ ] Understand effect dependencies
+- [ ] Read favorites from localStorage
+- [ ] Sync favorites to localStorage with `useEffect`
+- [ ] Understand cleanup basics
+- [ ] Add AbortController basics
+- [ ] Refactor loading logic if needed
+- [ ] Close useEffect substage
 
 ## Substage 5 — Custom hooks
 
