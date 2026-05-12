@@ -337,3 +337,18 @@
 - Derived data is calculated from state and source data instead of being stored as separate state.
 - Favorites are intentionally not reset by `Reset controls`.
 - Controlled forms make filtering, sorting, reset, and future validation easier.
+
+## Stage 5 — Substage 4 — Block 0
+
+- `useEffect` is used for side effects.
+- A side effect is an action that goes outside normal render calculation.
+- Examples of side effects: data loading, localStorage sync, timers, subscriptions, event listeners, request cancellation.
+- Render code should stay pure and calculate UI from props and state.
+- Derived data like filtered or sorted games should not be stored in state through `useEffect`.
+- If something can be calculated from existing state/data during render, calculate it directly.
+- `useEffect` is needed when a component must synchronize with something outside React.
+- `SearchBar`, filters, sorting, and `hasActiveControls` do not need `useEffect`.
+- Loading games and syncing favorites with localStorage will need `useEffect`.
+- Basic effect shape: `useEffect(() => { ... }, dependencies)`.
+- Effects run after render.
+- Event handlers and effects are different: event handlers respond to user actions, effects synchronize after render based on dependencies.
