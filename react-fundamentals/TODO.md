@@ -48,10 +48,8 @@
 - [x] Build final filtering chain
 - [x] Close controlled forms substage
 
-## Substage 4 — useEffect
-
 - [x] Understand side effects in React
-- [ ] Prepare `gameApi.js`
+- [x] Prepare `gameApi.js`
 - [ ] Move games into state
 - [ ] Load games with `useEffect`
 - [ ] Add loading state
