@@ -16,25 +16,24 @@ export default function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  useEffect(() => {
-    async function loadGames() {
-      setLoading(true)
-      setError(null)
+  async function loadGames() {
+    setLoading(true)
+    setError(null)
 
-      try {
-        const loadedGames = await getGames()
+    try {
+      const loadedGames = await getGames()
 
-        setGames(loadedGames)
-      } catch (error) {
-        console.error(error)
+      setGames(loadedGames)
+    } catch (error) {
+      console.error(error)
 
-        setGames([])
-        setError('Failed to load games')
-      } finally {
-        setLoading(false)
-      }
+      setGames([])
+      setError('Failed to load games')
+    } finally {
+      setLoading(false)
     }
-
+  }
+  useEffect(() => {
     loadGames()
   }, [])
 
@@ -104,6 +103,24 @@ export default function App() {
     })
   }
 
+  let catalogContent
+
+  if (loading) {
+    catalogContent = <p className="catalog-message">Loading games...</p>
+  } else if (error) {
+    catalogContent = <p className="catalog-message error-message">{error}</p>
+  } else if (sortedGames.length === 0) {
+    catalogContent = <p className="catalog-message">No games found.</p>
+  } else {
+    catalogContent = (
+      <GameList
+        games={sortedGames}
+        favorites={favorites}
+        onToggleFavorite={handleToggleFavorite}
+      />
+    )
+  }
+
   return (
     <main className="app">
       <Header favoritesCount={favorites.length} />
@@ -122,11 +139,14 @@ export default function App() {
         isResetDisabled={!hasActiveControls}
         onResetControls={handleResetControls}
       />
-      <GameList
-        games={sortedGames}
-        favorites={favorites}
-        onToggleFavorite={handleToggleFavorite}
-      />
+
+      <div className="catalog-actions">
+        <button type="button" onClick={loadGames} disabled={loading}>
+          {loading ? 'Loading...' : 'Reload games'}
+        </button>
+      </div>
+
+      {catalogContent}
     </main>
   )
 }

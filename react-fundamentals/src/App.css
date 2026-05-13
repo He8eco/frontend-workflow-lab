@@ -315,6 +315,21 @@
   margin: 0;
 }
 
+.catalog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.catalog-actions button {
+  cursor: pointer;
+}
+
+.catalog-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 @media (max-width: 860px) {
   .game-filters__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
