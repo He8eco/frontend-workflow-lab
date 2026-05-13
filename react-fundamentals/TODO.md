@@ -54,8 +54,8 @@
 - [x] Prepare `gameApi.js`
 - [x] Move games into state
 - [x] Load games with `useEffect`
-- [ ] Add loading state
-- [ ] Add error state
+- [x] Add loading state
+- [x] Add error state
 - [ ] Add reload games
 - [ ] Understand effect dependencies
 - [ ] Read favorites from localStorage

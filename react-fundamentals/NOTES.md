@@ -384,3 +384,18 @@
 - `useEffect(async () => {})` is not recommended because async functions return a Promise.
 - Without the dependency array, the effect would run after every render.
 - Loading/error UI will be handled in the next block.
+
+## Stage 5 — Substage 4 — Block 4
+
+- Added loading/error handling for async game loading.
+- `setLoading(true)` marks the start of loading.
+- `setError(null)` clears previous errors before loading.
+- `try/catch/finally` handles success, failure, and loading cleanup.
+- `setGames(loadedGames)` stores successful results.
+- `setGames([])` clears games when loading fails.
+- `setError('Failed to load games')` stores a user-facing error message.
+- `console.error(error)` keeps the technical error visible for development.
+- UI state order should be: loading → error → empty → success.
+- Empty state means the request succeeded but there are no games to show.
+- Error state means the request failed.
+- Loading state means the request is still in progress.

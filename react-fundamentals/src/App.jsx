@@ -18,9 +18,21 @@ export default function App() {
 
   useEffect(() => {
     async function loadGames() {
-      const loadedGames = await getGames()
+      setLoading(true)
+      setError(null)
 
-      setGames(loadedGames)
+      try {
+        const loadedGames = await getGames()
+
+        setGames(loadedGames)
+      } catch (error) {
+        console.error(error)
+
+        setGames([])
+        setError('Failed to load games')
+      } finally {
+        setLoading(false)
+      }
     }
 
     loadGames()
