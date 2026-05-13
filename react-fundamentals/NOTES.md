@@ -411,3 +411,19 @@
 - `disabled={loading}` prevents multiple reload clicks during active loading.
 - Adding `loadGames` to the dependency array can cause extra effect runs if the function is recreated on every render.
 - `useCallback` is not needed yet; dependencies will be handled in a later block.
+
+## Stage 5 — Substage 4 — Block 6
+
+- `useEffect` dependencies define when the effect runs.
+- No dependency array means the effect runs after every render.
+- Empty dependency array `[]` means the effect runs after the first render.
+- `[value]` means the effect runs after the first render and when `value` changes.
+- Effects should include reactive values they use from the component.
+- Reactive values include props, state, variables, and functions declared inside the component.
+- `loadGames` is declared inside `App`, so ESLint may warn that it is a missing dependency.
+- Adding `loadGames` to dependencies can cause extra runs if `loadGames` is recreated on every render.
+- `useState` setter functions like `setGames`, `setLoading`, and `setError` are stable.
+- Stale closure means an effect may keep old values from the render where it was created.
+- Do not use `useEffect` to calculate derived data like filtering or sorting.
+- For this project, initial game loading still uses `useEffect(() => { loadGames() }, [])`.
+- `useCallback` can be useful later, but it is not needed for this block.

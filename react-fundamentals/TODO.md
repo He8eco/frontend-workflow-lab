@@ -57,7 +57,7 @@
 - [x] Add loading state
 - [x] Add error state
 - [x] Add reload games
-- [ ] Understand effect dependencies
+- [x] Understand effect dependencies
 - [ ] Read favorites from localStorage
 - [ ] Sync favorites to localStorage with `useEffect`
 - [ ] Understand cleanup basics
