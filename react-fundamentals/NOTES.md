@@ -399,3 +399,15 @@
 - Empty state means the request succeeded but there are no games to show.
 - Error state means the request failed.
 - Loading state means the request is still in progress.
+
+## Stage 5 — Substage 4 — Block 5
+
+- Moved `loadGames()` out of `useEffect`.
+- `loadGames()` is now reused for initial loading and manual reload.
+- `useEffect(() => { loadGames() }, [])` runs the initial load after the first render.
+- The Reload button calls `loadGames()` from an event handler.
+- Reload is a user event, so it does not require a separate `useEffect`.
+- `setError(null)` clears previous errors before every new load.
+- `disabled={loading}` prevents multiple reload clicks during active loading.
+- Adding `loadGames` to the dependency array can cause extra effect runs if the function is recreated on every render.
+- `useCallback` is not needed yet; dependencies will be handled in a later block.
