@@ -427,3 +427,16 @@
 - Do not use `useEffect` to calculate derived data like filtering or sorting.
 - For this project, initial game loading still uses `useEffect(() => { loadGames() }, [])`.
 - `useCallback` can be useful later, but it is not needed for this block.
+
+## Stage 5 — Substage 4 — Block 7
+
+- Favorites now read their initial value from `localStorage`.
+- `localStorage.getItem('favoriteGames')` returns a string or `null`.
+- `JSON.parse()` converts the saved JSON string back into a JavaScript value.
+- `useState(() => { ... })` uses an initializer function.
+- The initializer function runs only when React initializes the state.
+- Reading `localStorage` in the initializer avoids an extra render with empty favorites.
+- If there are no saved favorites, the initial value is `[]`.
+- If saved JSON is broken, the app catches the error and falls back to `[]`.
+- `Array.isArray()` protects the app from invalid saved data shapes.
+- This block only reads favorites; writing favorites to `localStorage` will be handled in the next block.

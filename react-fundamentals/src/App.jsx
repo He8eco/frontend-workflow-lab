@@ -8,7 +8,23 @@ import './App.css'
 export default function App() {
   const [games, setGames] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem('favoriteGames')
+
+    if (!savedFavorites) {
+      return []
+    }
+
+    try {
+      const parsedFavorites = JSON.parse(savedFavorites)
+
+      return Array.isArray(parsedFavorites) ? parsedFavorites : []
+    } catch (error) {
+      console.error(error)
+
+      return []
+    }
+  })
   const [sort, setSort] = useState('default')
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
