@@ -58,7 +58,7 @@
 - [x] Add error state
 - [x] Add reload games
 - [x] Understand effect dependencies
-- [ ] Read favorites from localStorage
+- [x] Read favorites from localStorage
 - [ ] Sync favorites to localStorage with `useEffect`
 - [ ] Understand cleanup basics
 - [ ] Add AbortController basics
