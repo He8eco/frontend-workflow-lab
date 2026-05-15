@@ -59,7 +59,7 @@
 - [x] Add reload games
 - [x] Understand effect dependencies
 - [x] Read favorites from localStorage
-- [ ] Sync favorites to localStorage with `useEffect`
+- [x] Sync favorites to localStorage with `useEffect`
 - [ ] Understand cleanup basics
 - [ ] Add AbortController basics
 - [ ] Refactor loading logic if needed

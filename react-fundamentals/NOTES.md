@@ -440,3 +440,15 @@
 - If saved JSON is broken, the app catches the error and falls back to `[]`.
 - `Array.isArray()` protects the app from invalid saved data shapes.
 - This block only reads favorites; writing favorites to `localStorage` will be handled in the next block.
+
+## Stage 5 — Substage 4 — Block 8
+
+- Favorites are now synced to `localStorage` with `useEffect`.
+- `favorites` state is the source of truth while the app is running.
+- `localStorage` is used to persist favorites between page reloads.
+- `useEffect(() => { ... }, [favorites])` runs after the first render and whenever `favorites` changes.
+- `JSON.stringify(favorites)` converts the array into a string for `localStorage`.
+- `handleToggleFavorite` only updates React state.
+- The effect is responsible for syncing the external storage.
+- `Reset controls` should not clear favorites because favorites are not a filter.
+- `try/catch` around `localStorage.setItem` protects the app from storage write errors.
