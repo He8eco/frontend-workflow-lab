@@ -53,6 +53,14 @@ export default function App() {
     loadGames()
   }, [])
 
+  useEffect(() => {
+    try {
+      localStorage.setItem('favoriteGames', JSON.stringify(favorites))
+    } catch (error) {
+      console.error(error)
+    }
+  }, [favorites])
+
   const hasActiveControls =
     searchQuery.trim() !== '' ||
     genre !== 'all' ||
