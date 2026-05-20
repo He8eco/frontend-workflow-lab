@@ -452,3 +452,20 @@
 - The effect is responsible for syncing the external storage.
 - `Reset controls` should not clear favorites because favorites are not a filter.
 - `try/catch` around `localStorage.setItem` protects the app from storage write errors.
+
+## Stage 5 — Substage 4 — Block 9
+
+- Cleanup is a function returned from `useEffect`.
+- Cleanup should stop or undo what the effect setup started.
+- React runs cleanup before re-running an effect with changed dependencies.
+- React also runs cleanup when the component unmounts.
+- In development Strict Mode, React may run setup → cleanup → setup to check effect correctness.
+- `setTimeout` should be cleaned with `clearTimeout`.
+- `setInterval` should be cleaned with `clearInterval`.
+- `addEventListener` should be cleaned with `removeEventListener`.
+- Subscriptions should be cleaned with unsubscribe/disconnect logic.
+- Simple derived data does not need `useEffect` or cleanup.
+- Writing favorites to `localStorage` does not need cleanup because it does not leave a running process.
+- Current game loading does not have request cancellation yet.
+- AbortController will be handled later.
+- Rule: if an effect creates something long-lived, cleanup should remove it.

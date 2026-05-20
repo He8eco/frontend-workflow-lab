@@ -60,7 +60,7 @@
 - [x] Understand effect dependencies
 - [x] Read favorites from localStorage
 - [x] Sync favorites to localStorage with `useEffect`
-- [ ] Understand cleanup basics
+- [x] Understand cleanup basics
 - [ ] Add AbortController basics
 - [ ] Refactor loading logic if needed
 - [ ] Close useEffect substage
