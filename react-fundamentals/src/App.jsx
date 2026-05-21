@@ -32,25 +32,37 @@ export default function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  async function loadGames() {
+  async function loadGames(signal) {
     setLoading(true)
     setError(null)
 
     try {
-      const loadedGames = await getGames()
+      const loadedGames = await getGames({ signal })
 
       setGames(loadedGames)
     } catch (error) {
+      if (error.name === 'AbortError') {
+        return
+      }
+
       console.error(error)
 
       setGames([])
       setError('Failed to load games')
     } finally {
-      setLoading(false)
+      if (!signal?.aborted) {
+        setLoading(false)
+      }
     }
   }
   useEffect(() => {
-    loadGames()
+    const controller = new AbortController()
+
+    loadGames(controller.signal)
+
+    return () => {
+      controller.abort()
+    }
   }, [])
 
   useEffect(() => {
@@ -165,7 +177,7 @@ export default function App() {
       />
 
       <div className="catalog-actions">
-        <button type="button" onClick={loadGames} disabled={loading}>
+        <button type="button" onClick={() => loadGames()} disabled={loading}>
           {loading ? 'Loading...' : 'Reload games'}
         </button>
       </div>

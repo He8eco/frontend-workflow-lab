@@ -61,7 +61,7 @@
 - [x] Read favorites from localStorage
 - [x] Sync favorites to localStorage with `useEffect`
 - [x] Understand cleanup basics
-- [ ] Add AbortController basics
+- [x] Add AbortController basics
 - [ ] Refactor loading logic if needed
 - [ ] Close useEffect substage
 
