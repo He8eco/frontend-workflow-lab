@@ -482,3 +482,15 @@
 - `AbortError` should not be shown to the user as a normal loading error.
 - Request cancellation is useful when a component unmounts or when an old request becomes irrelevant.
 - Manual reload still uses `loadGames()` without a signal because the button is disabled while loading.
+
+## Stage 5 — Substage 4 — Block 11
+
+- `loadGames` is now wrapped in `useCallback`.
+- `useCallback` keeps the same function reference between renders while dependencies do not change.
+- `loadGames` is used inside the initial loading effect.
+- Because the effect uses `loadGames`, `loadGames` should be included in the effect dependencies.
+- `useEffect(..., [loadGames])` is now correct because `loadGames` is stable.
+- `loadGames` can use an empty dependency array because it only uses stable state setters and imported `getGames`.
+- `onClick={() => loadGames()}` is used because `onClick={loadGames}` would pass the click event as the first argument.
+- Not every handler needs `useCallback`; it is used here because `loadGames` participates in effect dependencies.
+- Bigger extraction into custom hooks is intentionally postponed until the custom hooks substage.

@@ -62,7 +62,7 @@
 - [x] Sync favorites to localStorage with `useEffect`
 - [x] Understand cleanup basics
 - [x] Add AbortController basics
-- [ ] Refactor loading logic if needed
+- [x] Refactor loading logic if needed
 - [ ] Close useEffect substage
 
 ## Substage 5 — Custom hooks

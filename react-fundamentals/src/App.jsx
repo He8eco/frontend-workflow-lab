@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Header } from './components/Header'
 import { GameFilters } from './components/GameFilters'
 import { GameList } from './components/GameList'
@@ -32,7 +32,7 @@ export default function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  async function loadGames(signal) {
+  const loadGames = useCallback(async (signal) => {
     setLoading(true)
     setError(null)
 
@@ -54,7 +54,7 @@ export default function App() {
         setLoading(false)
       }
     }
-  }
+  }, [])
   useEffect(() => {
     const controller = new AbortController()
 
@@ -63,7 +63,7 @@ export default function App() {
     return () => {
       controller.abort()
     }
-  }, [])
+  }, [loadGames])
 
   useEffect(() => {
     try {
