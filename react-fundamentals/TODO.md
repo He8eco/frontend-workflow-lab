@@ -63,13 +63,14 @@
 - [x] Understand cleanup basics
 - [x] Add AbortController basics
 - [x] Refactor loading logic if needed
-- [ ] Close useEffect substage
+- [x] Close useEffect substage
 
-## Substage 5 — Custom hooks
+## Next: Substage 5 — Custom Hooks
 
-- [ ] Create useDebounce
-- [ ] Create useLocalStorage
-- [ ] Create useFetch or useItems
+- [ ] Extract reusable logic into custom hooks
+- [ ] Create `useDebounce`
+- [ ] Create `useLocalStorage`
+- [ ] Consider `useGames` or `useFetch`
 
 ## Substage 6 — React Router
 

@@ -494,3 +494,22 @@
 - `onClick={() => loadGames()}` is used because `onClick={loadGames}` would pass the click event as the first argument.
 - Not every handler needs `useCallback`; it is used here because `loadGames` participates in effect dependencies.
 - Bigger extraction into custom hooks is intentionally postponed until the custom hooks substage.
+
+## Stage 5 — Substage 4 — Summary
+
+- `useEffect` is used for side effects, not for normal render calculations.
+- Derived data like search, filtering, sorting, and `hasActiveControls` should be calculated during render.
+- Game loading is a side effect because it synchronizes the app with an external data source.
+- Games are loaded through `getGames()` from `src/api/gameApi.js`.
+- `loading`, `error`, and `games` state describe the async loading lifecycle.
+- Catalog UI renders in this order: loading → error → empty → success.
+- `Reload games` reuses the same `loadGames()` function as the initial load.
+- `localStorage` is used to persist favorite games between page reloads.
+- Favorites are read from `localStorage` with a `useState` initializer.
+- Favorites are written to `localStorage` with a `useEffect` that depends on `[favorites]`.
+- Cleanup is used when an effect creates something that must be stopped or removed.
+- `AbortController` cancels the initial game loading when the effect cleanup runs.
+- `AbortError` should not be shown as a normal user-facing error.
+- `loadGames` is wrapped in `useCallback` because it is used inside an effect dependency array.
+- `useEffect` dependencies should reflect the reactive values used by the effect.
+- Do not hide dependency problems by randomly changing dependency arrays.
