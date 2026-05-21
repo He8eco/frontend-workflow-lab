@@ -469,3 +469,16 @@
 - Current game loading does not have request cancellation yet.
 - AbortController will be handled later.
 - Rule: if an effect creates something long-lived, cleanup should remove it.
+
+## Stage 5 — Substage 4 — Block 10
+
+- `AbortController` can be used to cancel async operations.
+- `controller.signal` is passed to the async operation.
+- `controller.abort()` triggers cancellation.
+- `getGames({ signal })` now accepts an optional abort signal.
+- The fake `sleep(ms, signal)` can reject with `AbortError` when aborted.
+- `useEffect` creates an `AbortController` for initial game loading.
+- The effect cleanup calls `controller.abort()`.
+- `AbortError` should not be shown to the user as a normal loading error.
+- Request cancellation is useful when a component unmounts or when an old request becomes irrelevant.
+- Manual reload still uses `loadGames()` without a signal because the button is disabled while loading.
