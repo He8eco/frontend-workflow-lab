@@ -68,8 +68,8 @@
 ## Substage 5 — Custom Hooks
 
 - [x] Understand what custom hooks are
-- [ ] Create `useDebounce`
-- [ ] Apply `useDebounce` to search
+- [x] Create `useDebounce`
+- [x] Apply `useDebounce` to search
 - [ ] Create `useLocalStorage`
 - [ ] Replace favorites localStorage logic with `useLocalStorage`
 - [ ] Create `useGames`

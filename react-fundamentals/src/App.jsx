@@ -3,6 +3,7 @@ import { Header } from './components/Header'
 import { GameFilters } from './components/GameFilters'
 import { GameList } from './components/GameList'
 import { getGames } from './api/gameApi'
+import { useDebounce } from './hooks/useDebounce'
 import './App.css'
 
 export default function App() {
@@ -80,7 +81,8 @@ export default function App() {
     minRating !== 0 ||
     sort !== 'default'
 
-  const normalizedSearchQuery = searchQuery.trim().toLowerCase()
+  const debouncedSearchQuery = useDebounce(searchQuery, 300)
+  const normalizedSearchQuery = debouncedSearchQuery.trim().toLowerCase()
 
   const searchedGames = games.filter((game) => {
     return game.title.toLowerCase().includes(normalizedSearchQuery)

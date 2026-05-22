@@ -528,3 +528,16 @@
 - `useGames` will handle games loading, loading state, error state, reload, and abort logic.
 - Not every piece of logic needs a custom hook.
 - Derived data like filtering and sorting can stay in render if it is simple and readable.
+
+## Stage 5 — Substage 5 — Block 1
+
+- Created `useDebounce(value, delay)`.
+- `useDebounce` is a custom hook because it starts with `use` and uses React hooks inside.
+- The hook stores `debouncedValue` in internal state.
+- When `value` changes, the hook starts a timer.
+- If `value` changes again before the timer finishes, cleanup clears the old timer.
+- After `delay` ms without changes, `debouncedValue` updates.
+- `useEffect` dependencies are `[value, delay]` because the effect uses both values.
+- Search input still uses `searchQuery` so typing feels immediate.
+- Filtering uses `debouncedSearchQuery` so list updates are delayed.
+- `hasActiveControls` should still use `searchQuery` because controls should react immediately.
