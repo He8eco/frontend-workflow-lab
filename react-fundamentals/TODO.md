@@ -72,8 +72,8 @@
 - [x] Apply `useDebounce` to search
 - [x] Create `useLocalStorage`
 - [x] Replace favorites localStorage logic with `useLocalStorage`
-- [ ] Create `useGames`
-- [ ] Move game loading logic into `useGames`
+- [x] Create `useGames`
+- [x] Move game loading logic into `useGames`
 - [ ] Clean up `App.jsx`
 - [ ] Close custom hooks substage
 

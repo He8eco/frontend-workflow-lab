@@ -556,3 +556,17 @@
 - `App.jsx` now uses `const [favorites, setFavorites] = useLocalStorage('favoriteGames', [])`.
 - The old favorites localStorage effect was removed from `App.jsx`.
 - `handleToggleFavorite` still works because `setFavorites` behaves like a normal state setter.
+
+## Stage 5 — Substage 5 — Block 3
+
+- Created `useGames`.
+- Moved game loading state into `useGames`.
+- `useGames` owns `games`, `loading`, and `error`.
+- `useGames` owns initial loading with `useEffect`.
+- `useGames` owns `AbortController` cleanup for initial loading.
+- Internal `loadGames(signal)` accepts an optional abort signal.
+- Public `reloadGames()` does not accept arguments and is safe to pass directly to `onClick`.
+- `App.jsx` now receives `games`, `loading`, `error`, and `reloadGames` from `useGames`.
+- `App.jsx` no longer imports `getGames`.
+- `App.jsx` no longer owns the initial loading effect.
+- Custom hooks can hide implementation details while exposing a simple API to components.

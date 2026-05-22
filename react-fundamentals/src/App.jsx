@@ -1,55 +1,20 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Header } from './components/Header'
 import { GameFilters } from './components/GameFilters'
 import { GameList } from './components/GameList'
-import { getGames } from './api/gameApi'
 import { useDebounce } from './hooks/useDebounce'
-import './App.css'
 import { useLocalStorage } from './hooks/useLocalStorage'
+import { useGames } from './hooks/useGames'
+import './App.css'
 
 export default function App() {
-  const [games, setGames] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
   const [favorites, setFavorites] = useLocalStorage('favoriteGames', [])
   const [sort, setSort] = useState('default')
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
   const [minRating, setMinRating] = useState(0)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-
-  const loadGames = useCallback(async (signal) => {
-    setLoading(true)
-    setError(null)
-
-    try {
-      const loadedGames = await getGames({ signal })
-
-      setGames(loadedGames)
-    } catch (error) {
-      if (error.name === 'AbortError') {
-        return
-      }
-
-      console.error(error)
-
-      setGames([])
-      setError('Failed to load games')
-    } finally {
-      if (!signal?.aborted) {
-        setLoading(false)
-      }
-    }
-  }, [])
-  useEffect(() => {
-    const controller = new AbortController()
-
-    loadGames(controller.signal)
-
-    return () => {
-      controller.abort()
-    }
-  }, [loadGames])
+  const {games, loading, error, reloadGames} = useGames()
 
   const hasActiveControls =
     searchQuery.trim() !== '' ||
@@ -156,7 +121,7 @@ export default function App() {
       />
 
       <div className="catalog-actions">
-        <button type="button" onClick={() => loadGames()} disabled={loading}>
+        <button type="button" onClick={reloadGames} disabled={loading}>
           {loading ? 'Loading...' : 'Reload games'}
         </button>
       </div>
