@@ -80,8 +80,8 @@
 ## Substage 6 — React Router
 
 - [x] Understand React Router basics
-- [ ] Install and configure Router
-- [ ] Add base routes
+- [x] Install and configure Router
+- [x] Add base routes
 - [ ] Add layout and Header navigation
 - [ ] Move catalog UI to CatalogPage
 - [ ] Add FavoritesPage
