@@ -541,3 +541,18 @@
 - Search input still uses `searchQuery` so typing feels immediate.
 - Filtering uses `debouncedSearchQuery` so list updates are delayed.
 - `hasActiveControls` should still use `searchQuery` because controls should react immediately.
+
+## Stage 5 — Substage 5 — Block 2
+
+- Created `useLocalStorage(key, initialValue)`.
+- `useLocalStorage` returns `[value, setValue]`, similar to `useState`.
+- The hook reads initial state from `localStorage`.
+- If there is no saved value, it uses `initialValue`.
+- If saved JSON is broken, it catches the error and falls back to `initialValue`.
+- The hook writes updates to `localStorage` with `useEffect`.
+- The storage effect depends on `[key, value]`.
+- `JSON.stringify(value)` is used before saving.
+- `JSON.parse(savedValue)` is used when reading.
+- `App.jsx` now uses `const [favorites, setFavorites] = useLocalStorage('favoriteGames', [])`.
+- The old favorites localStorage effect was removed from `App.jsx`.
+- `handleToggleFavorite` still works because `setFavorites` behaves like a normal state setter.

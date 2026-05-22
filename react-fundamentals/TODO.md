@@ -70,8 +70,8 @@
 - [x] Understand what custom hooks are
 - [x] Create `useDebounce`
 - [x] Apply `useDebounce` to search
-- [ ] Create `useLocalStorage`
-- [ ] Replace favorites localStorage logic with `useLocalStorage`
+- [x] Create `useLocalStorage`
+- [x] Replace favorites localStorage logic with `useLocalStorage`
 - [ ] Create `useGames`
 - [ ] Move game loading logic into `useGames`
 - [ ] Clean up `App.jsx`
