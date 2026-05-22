@@ -74,7 +74,7 @@
 - [x] Replace favorites localStorage logic with `useLocalStorage`
 - [x] Create `useGames`
 - [x] Move game loading logic into `useGames`
-- [ ] Clean up `App.jsx`
+- [x] Clean up `App.jsx`
 - [ ] Close custom hooks substage
 
 ## Substage 6 — React Router

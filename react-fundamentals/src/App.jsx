@@ -8,13 +8,13 @@ import { useGames } from './hooks/useGames'
 import './App.css'
 
 export default function App() {
+  const { games, loading, error, reloadGames } = useGames()
   const [searchQuery, setSearchQuery] = useState('')
   const [favorites, setFavorites] = useLocalStorage('favoriteGames', [])
   const [sort, setSort] = useState('default')
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
   const [minRating, setMinRating] = useState(0)
-  const {games, loading, error, reloadGames} = useGames()
 
   const hasActiveControls =
     searchQuery.trim() !== '' ||
