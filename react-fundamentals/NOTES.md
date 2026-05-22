@@ -601,3 +601,21 @@
 - Filtering and sorting stayed in `App.jsx` because they are simple derived data.
 - Not every piece of logic needs a custom hook.
 - A good custom hook should make the component easier to read, not harder to understand.
+
+## Stage 5 — Substage 6 — Block 0
+
+- React Router is used to connect URL paths with React UI.
+- Routing means: URL → page component.
+- The app will become a multi-page SPA.
+- Planned routes:
+  - `/` → Catalog page
+  - `/favorites` → Favorites page
+  - `/games/:id` → Game details page
+  - `*` → Not found page
+- `Link` is used for SPA navigation without full page reload.
+- `NavLink` is useful for active navigation links.
+- `useParams` is used to read dynamic URL params like `/games/:id`.
+- `*` route can be used as a catch-all 404 page.
+- Shared data like games and favorites should stay above routes for now.
+- Pages will receive data through props.
+- Context is not needed yet for this substage.

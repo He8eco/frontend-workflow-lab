@@ -79,8 +79,12 @@
 
 ## Substage 6 — React Router
 
-- [ ] Add routes
-- [ ] Add Header navigation
-- [ ] Add item details page
-- [ ] Add favorites page
-- [ ] Add 404 page
+- [x] Understand React Router basics
+- [ ] Install and configure Router
+- [ ] Add base routes
+- [ ] Add layout and Header navigation
+- [ ] Move catalog UI to CatalogPage
+- [ ] Add FavoritesPage
+- [ ] Add GameDetailsPage with useParams
+- [ ] Add 404 NotFoundPage
+- [ ] Close React Router substage
