@@ -646,3 +646,20 @@
 - `end` is used on the `/` NavLink so Catalog is active only on the exact home route.
 - Header is rendered above `<Routes>`, so it appears on every page.
 - `favoritesCount={0}` is temporary until favorites state is wired back into the routed app.
+
+## Stage 5 — Substage 6 — Block 3
+
+- Moved catalog UI into `CatalogPage`.
+- `App.jsx` now owns shared data:
+  - `games`
+  - `loading`
+  - `error`
+  - `reloadGames`
+  - `favorites`
+  - `setFavorites`
+- `CatalogPage` receives catalog data through props.
+- Catalog-specific controls stay inside `CatalogPage`.
+- Search, filters, sorting, reset controls, and catalog rendering are page-level logic.
+- `favorites` stay in `App.jsx` because they will be needed by multiple routes.
+- `Header` now receives the real `favorites.length`.
+- `/` now renders the real catalog page.

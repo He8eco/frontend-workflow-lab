@@ -83,7 +83,7 @@
 - [x] Install and configure Router
 - [x] Add base routes
 - [x] Add layout and Header navigation
-- [ ] Move catalog UI to CatalogPage
+- [x] Move catalog UI to CatalogPage
 - [ ] Add FavoritesPage
 - [ ] Add GameDetailsPage with useParams
 - [ ] Add 404 NotFoundPage
