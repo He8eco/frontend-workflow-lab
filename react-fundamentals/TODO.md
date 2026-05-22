@@ -86,5 +86,5 @@
 - [x] Move catalog UI to CatalogPage
 - [x] Add FavoritesPage
 - [x] Add GameDetailsPage with useParams
-- [ ] Add 404 NotFoundPage
-- [ ] Close React Router substage
+- [x] Add 404 NotFoundPage
+- [x] Close React Router substage

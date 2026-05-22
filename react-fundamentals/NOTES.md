@@ -684,3 +684,26 @@
 - `Game not found` means the route exists but there is no game with that id.
 - Game cards now link to details with `Link to={`/games/${game.id}`}`.
 - `Link` is used instead of `<a>` for SPA navigation.
+
+## Stage 5 — Substage 6 — Summary
+
+- React Router connects URL paths with page components.
+- The app now has multiple SPA routes:
+  - `/` → catalog page
+  - `/favorites` → favorites page
+  - `/games/:id` → game details page
+  - `*` → not found page
+- `BrowserRouter` wraps the app in `main.jsx`.
+- `Routes` and `Route` define which page should render for each path.
+- `Header` uses `NavLink` for SPA navigation.
+- `NavLink` can apply active styles based on the current URL.
+- The `/` NavLink uses `end` so it is active only on the exact home route.
+- `CatalogPage` owns catalog controls: search, filters, sorting, reset, and catalog rendering.
+- `FavoritesPage` derives favorite games from `games` and `favorites`.
+- `GameDetailsPage` uses `useParams()` to read the `id` from `/games/:id`.
+- Route params are strings, so game lookup uses `String(game.id) === id`.
+- `Link` is used for internal navigation without full page reload.
+- Shared state like games and favorites stays in `App.jsx` above routes.
+- Pages receive shared data through props.
+- Context is not needed yet for this stage.
+- `NotFoundPage` handles unknown URLs through the `*` route.
