@@ -663,3 +663,13 @@
 - `favorites` stay in `App.jsx` because they will be needed by multiple routes.
 - `Header` now receives the real `favorites.length`.
 - `/` now renders the real catalog page.
+
+## Stage 5 — Substage 6 — Block 4
+
+- Added real `FavoritesPage`.
+- `FavoritesPage` receives `games`, `loading`, `error`, `favorites`, and `setFavorites` from `App.jsx`.
+- Favorite games are derived from `games.filter((game) => favorites.includes(game.id))`.
+- Favorites page uses the same loading → error → empty → success order.
+- `setFavorites` is passed so games can be removed from favorites on the favorites page.
+- `Header` count updates because favorites state still lives above routes.
+- Empty favorites state shows `No favorite games yet.`
