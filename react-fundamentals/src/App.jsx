@@ -29,7 +29,18 @@ export default function App() {
             />
           }
         />
-        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route
+          path="/favorites"
+          element={
+            <FavoritesPage
+              games={games}
+              loading={loading}
+              error={error}
+              favorites={favorites}
+              setFavorites={setFavorites}
+            />
+          }
+        />
         <Route path="/games/:id" element={<GameDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
