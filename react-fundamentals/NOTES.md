@@ -570,3 +570,16 @@
 - `App.jsx` no longer imports `getGames`.
 - `App.jsx` no longer owns the initial loading effect.
 - Custom hooks can hide implementation details while exposing a simple API to components.
+
+## Stage 5 — Substage 5 — Block 4
+
+- Cleaned up `App.jsx` after extracting custom hooks.
+- Removed unused imports like `useEffect`, `useCallback`, and `getGames` from `App.jsx`.
+- `App.jsx` now gets game loading data from `useGames`.
+- `App.jsx` gets persistent favorites state from `useLocalStorage`.
+- `App.jsx` gets delayed search value from `useDebounce`.
+- `hasActiveControls` still uses `searchQuery` because controls should react immediately.
+- Filtering uses `debouncedSearchQuery`.
+- The filtering and sorting pipeline stays in `App.jsx` because it is simple derived data.
+- `catalogContent` still handles loading → error → empty → success.
+- `reloadGames` is safe to pass directly to `onClick`.
