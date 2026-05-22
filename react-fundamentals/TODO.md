@@ -65,12 +65,17 @@
 - [x] Refactor loading logic if needed
 - [x] Close useEffect substage
 
-## Next: Substage 5 — Custom Hooks
+## Substage 5 — Custom Hooks
 
-- [ ] Extract reusable logic into custom hooks
+- [x] Understand what custom hooks are
 - [ ] Create `useDebounce`
+- [ ] Apply `useDebounce` to search
 - [ ] Create `useLocalStorage`
-- [ ] Consider `useGames` or `useFetch`
+- [ ] Replace favorites localStorage logic with `useLocalStorage`
+- [ ] Create `useGames`
+- [ ] Move game loading logic into `useGames`
+- [ ] Clean up `App.jsx`
+- [ ] Close custom hooks substage
 
 ## Substage 6 — React Router
 

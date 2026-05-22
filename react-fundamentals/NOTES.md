@@ -513,3 +513,18 @@
 - `loadGames` is wrapped in `useCallback` because it is used inside an effect dependency array.
 - `useEffect` dependencies should reflect the reactive values used by the effect.
 - Do not hide dependency problems by randomly changing dependency arrays.
+
+## Stage 5 — Substage 5 — Block 0
+
+- A custom hook is a JavaScript function that starts with `use`.
+- Custom hooks can use React hooks inside them.
+- Custom hooks help extract reusable stateful logic from components.
+- Components return UI, custom hooks return data and functions.
+- Custom hooks follow the same Rules of Hooks as built-in hooks.
+- Hooks should be called at the top level of components or other hooks.
+- Do not call hooks inside conditions, loops, nested functions, or after unstable early returns.
+- `useDebounce` will delay a changing value.
+- `useLocalStorage` will handle reading and writing state to localStorage.
+- `useGames` will handle games loading, loading state, error state, reload, and abort logic.
+- Not every piece of logic needs a custom hook.
+- Derived data like filtering and sorting can stay in render if it is simple and readable.
