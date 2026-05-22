@@ -619,3 +619,20 @@
 - Shared data like games and favorites should stay above routes for now.
 - Pages will receive data through props.
 - Context is not needed yet for this substage.
+
+## Stage 5 — Substage 6 — Block 1
+
+- Installed React Router with `npm install react-router`.
+- Wrapped `<App />` with `<BrowserRouter>` in `main.jsx`.
+- Created basic page components:
+  - `CatalogPage`
+  - `FavoritesPage`
+  - `GameDetailsPage`
+  - `NotFoundPage`
+- Added basic routes in `App.jsx`.
+- `/` renders `CatalogPage`.
+- `/favorites` renders `FavoritesPage`.
+- `/games/:id` renders `GameDetailsPage`.
+- `*` renders `NotFoundPage`.
+- `:id` is a dynamic route parameter.
+- The catalog UI is not moved yet; this block only verifies base routing.

@@ -1,132 +1,19 @@
-import { useState } from 'react'
-import { Header } from './components/Header'
-import { GameFilters } from './components/GameFilters'
-import { GameList } from './components/GameList'
-import { useDebounce } from './hooks/useDebounce'
-import { useLocalStorage } from './hooks/useLocalStorage'
-import { useGames } from './hooks/useGames'
+import { Route, Routes } from 'react-router'
+import { CatalogPage } from './pages/CatalogPage'
+import { FavoritesPage } from './pages/FavoritesPage'
+import { GameDetailsPage } from './pages/GameDetailsPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 import './App.css'
 
 export default function App() {
-  const { games, loading, error, reloadGames } = useGames()
-  const [searchQuery, setSearchQuery] = useState('')
-  const [favorites, setFavorites] = useLocalStorage('favoriteGames', [])
-  const [sort, setSort] = useState('default')
-  const [genre, setGenre] = useState('all')
-  const [platform, setPlatform] = useState('all')
-  const [minRating, setMinRating] = useState(0)
-
-  const hasActiveControls =
-    searchQuery.trim() !== '' ||
-    genre !== 'all' ||
-    platform !== 'all' ||
-    minRating !== 0 ||
-    sort !== 'default'
-
-  const debouncedSearchQuery = useDebounce(searchQuery, 300)
-  const normalizedSearchQuery = debouncedSearchQuery.trim().toLowerCase()
-
-  const searchedGames = games.filter((game) => {
-    return game.title.toLowerCase().includes(normalizedSearchQuery)
-  })
-
-  const genreFilteredGames = searchedGames.filter((game) => {
-    if (genre === 'all') {
-      return true
-    }
-
-    return game.genre === genre
-  })
-
-  const platformFilteredGames = genreFilteredGames.filter((game) => {
-    if (platform === 'all') {
-      return true
-    }
-
-    return game.platform === platform
-  })
-
-  const filteredGames = platformFilteredGames.filter((game) => {
-    return game.rating >= minRating
-  })
-  const sortedGames = [...filteredGames].sort((firstGame, secondGame) => {
-    switch (sort) {
-      case 'rating-desc':
-        return secondGame.rating - firstGame.rating
-
-      case 'year-desc':
-        return secondGame.year - firstGame.year
-
-      case 'title-asc':
-        return firstGame.title.localeCompare(secondGame.title)
-
-      default:
-        return 0
-    }
-  })
-
-  function handleResetControls() {
-    setSearchQuery('')
-    setGenre('all')
-    setPlatform('all')
-    setMinRating(0)
-    setSort('default')
-  }
-
-  function handleToggleFavorite(gameId) {
-    setFavorites((currentFavorites) => {
-      if (currentFavorites.includes(gameId)) {
-        return currentFavorites.filter((favoriteId) => favoriteId !== gameId)
-      }
-
-      return [...currentFavorites, gameId]
-    })
-  }
-
-  let catalogContent
-
-  if (loading) {
-    catalogContent = <p className="catalog-message">Loading games...</p>
-  } else if (error) {
-    catalogContent = <p className="catalog-message error-message">{error}</p>
-  } else if (sortedGames.length === 0) {
-    catalogContent = <p className="catalog-message">No games found.</p>
-  } else {
-    catalogContent = (
-      <GameList
-        games={sortedGames}
-        favorites={favorites}
-        onToggleFavorite={handleToggleFavorite}
-      />
-    )
-  }
-
   return (
     <main className="app">
-      <Header favoritesCount={favorites.length} />
-
-      <GameFilters
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        genre={genre}
-        onGenreChange={setGenre}
-        platform={platform}
-        onPlatformChange={setPlatform}
-        minRating={minRating}
-        onMinRatingChange={setMinRating}
-        sort={sort}
-        onSortChange={setSort}
-        isResetDisabled={!hasActiveControls}
-        onResetControls={handleResetControls}
-      />
-
-      <div className="catalog-actions">
-        <button type="button" onClick={reloadGames} disabled={loading}>
-          {loading ? 'Loading...' : 'Reload games'}
-        </button>
-      </div>
-
-      {catalogContent}
+      <Routes>
+        <Route path="/" element={<CatalogPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/games/:id" element={<GameDetailsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </main>
   )
 }
