@@ -673,3 +673,14 @@
 - `setFavorites` is passed so games can be removed from favorites on the favorites page.
 - `Header` count updates because favorites state still lives above routes.
 - Empty favorites state shows `No favorite games yet.`
+
+## Stage 5 — Substage 6 — Block 5
+
+- Added real `GameDetailsPage`.
+- `GameDetailsPage` receives `games`, `loading`, `error`, `favorites`, and `setFavorites`.
+- `useParams()` is used to read `id` from `/games/:id`.
+- Route params are strings, so game id comparison uses `String(game.id) === id`.
+- Details page handles loading, error, not found, and success states.
+- `Game not found` means the route exists but there is no game with that id.
+- Game cards now link to details with `Link to={`/games/${game.id}`}`.
+- `Link` is used instead of `<a>` for SPA navigation.
