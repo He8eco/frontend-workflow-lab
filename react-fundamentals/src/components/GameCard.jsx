@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 export function GameCard({ game, isFavorite, onToggleFavorite }) {
   return (
     <article className="game-card">
@@ -24,6 +26,7 @@ export function GameCard({ game, isFavorite, onToggleFavorite }) {
           {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
         </button>
       </div>
+      <Link to={`/games/${game.id}`}>View details</Link>
     </article>
   )
 }
