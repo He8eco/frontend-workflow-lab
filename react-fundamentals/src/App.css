@@ -44,6 +44,28 @@
 .header__stats strong {
   color: #facc15;
 }
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-nav__link {
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.app-nav__link:hover {
+  opacity: 1;
+}
+
+.app-nav__link--active {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 .search-panel {
   max-width: 960px;
   margin: 0 auto 32px;

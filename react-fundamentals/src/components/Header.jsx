@@ -1,4 +1,6 @@
-export function Header({favoritesCount}) {
+import { NavLink } from 'react-router'
+
+export function Header({ favoritesCount }) {
   return (
     <header className="header">
       <p className="header__eyebrow">Stage 5 · React Fundamentals</p>
@@ -9,6 +11,26 @@ export function Header({favoritesCount}) {
       <p className="header__stats">
         Favorite games: <strong>{favoritesCount}</strong>
       </p>
+
+      <nav className="app-nav" aria-label="Main navigation">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? 'app-nav__link app-nav__link--active' : 'app-nav__link'
+          }
+        >
+          Catalog
+        </NavLink>
+        <NavLink
+          to="/favorites"
+          end
+          className={({ isActive }) =>
+            isActive ? 'app-nav__link app-nav__link--active' : 'app-nav__link'
+          }
+        >
+          Favorites
+        </NavLink>
+      </nav>
     </header>
   )
 }
