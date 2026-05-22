@@ -5,27 +5,12 @@ import { GameList } from './components/GameList'
 import { getGames } from './api/gameApi'
 import { useDebounce } from './hooks/useDebounce'
 import './App.css'
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 export default function App() {
   const [games, setGames] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
-  const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = localStorage.getItem('favoriteGames')
-
-    if (!savedFavorites) {
-      return []
-    }
-
-    try {
-      const parsedFavorites = JSON.parse(savedFavorites)
-
-      return Array.isArray(parsedFavorites) ? parsedFavorites : []
-    } catch (error) {
-      console.error(error)
-
-      return []
-    }
-  })
+  const [favorites, setFavorites] = useLocalStorage('favoriteGames', [])
   const [sort, setSort] = useState('default')
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
@@ -65,14 +50,6 @@ export default function App() {
       controller.abort()
     }
   }, [loadGames])
-
-  useEffect(() => {
-    try {
-      localStorage.setItem('favoriteGames', JSON.stringify(favorites))
-    } catch (error) {
-      console.error(error)
-    }
-  }, [favorites])
 
   const hasActiveControls =
     searchQuery.trim() !== '' ||
