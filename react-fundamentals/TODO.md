@@ -75,7 +75,7 @@
 - [x] Create `useGames`
 - [x] Move game loading logic into `useGames`
 - [x] Clean up `App.jsx`
-- [ ] Close custom hooks substage
+- [x] Close custom hooks substage
 
 ## Substage 6 — React Router
 
