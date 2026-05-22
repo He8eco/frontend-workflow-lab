@@ -583,3 +583,21 @@
 - The filtering and sorting pipeline stays in `App.jsx` because it is simple derived data.
 - `catalogContent` still handles loading → error → empty → success.
 - `reloadGames` is safe to pass directly to `onClick`.
+
+## Stage 5 — Substage 5 — Summary
+
+- Custom hooks extract reusable stateful React logic from components.
+- Custom hooks start with `use` and can use React hooks inside.
+- Components return UI, while custom hooks return data and functions.
+- `useDebounce(value, delay)` delays a changing value.
+- `useDebounce` uses `setTimeout` and cleanup with `clearTimeout`.
+- Search input still uses `searchQuery`, while filtering uses `debouncedSearchQuery`.
+- `useLocalStorage(key, initialValue)` behaves like `useState`, but persists the value in localStorage.
+- `useLocalStorage` reads initial state from localStorage and writes updates with `useEffect`.
+- `useGames()` owns game loading state and logic.
+- `useGames` returns `games`, `loading`, `error`, and `reloadGames`.
+- `useGames` hides `getGames`, `loadGames`, `AbortController`, and loading cleanup from `App.jsx`.
+- `App.jsx` became cleaner after extracting hooks.
+- Filtering and sorting stayed in `App.jsx` because they are simple derived data.
+- Not every piece of logic needs a custom hook.
+- A good custom hook should make the component easier to read, not harder to understand.
