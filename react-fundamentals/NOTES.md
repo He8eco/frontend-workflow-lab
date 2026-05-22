@@ -636,3 +636,13 @@
 - `*` renders `NotFoundPage`.
 - `:id` is a dynamic route parameter.
 - The catalog UI is not moved yet; this block only verifies base routing.
+
+## Stage 5 — Substage 6 — Block 2
+
+- Added Header navigation with `NavLink`.
+- `NavLink` is used for SPA navigation and active link styling.
+- `to="/"` points to the catalog route.
+- `to="/favorites"` points to the favorites route.
+- `end` is used on the `/` NavLink so Catalog is active only on the exact home route.
+- Header is rendered above `<Routes>`, so it appears on every page.
+- `favoritesCount={0}` is temporary until favorites state is wired back into the routed app.

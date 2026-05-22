@@ -82,7 +82,7 @@
 - [x] Understand React Router basics
 - [x] Install and configure Router
 - [x] Add base routes
-- [ ] Add layout and Header navigation
+- [x] Add layout and Header navigation
 - [ ] Move catalog UI to CatalogPage
 - [ ] Add FavoritesPage
 - [ ] Add GameDetailsPage with useParams
