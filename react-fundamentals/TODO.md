@@ -88,3 +88,13 @@
 - [x] Add GameDetailsPage with useParams
 - [x] Add 404 NotFoundPage
 - [x] Close React Router substage
+
+## Stage 5 — Final Review
+
+- [x] Check project manually
+- [x] Polish UI styles
+- [x] Review key React concepts
+- [x] Update README
+- [x] Update NOTES
+- [x] Run build
+- [x] Close Stage 5

@@ -26,7 +26,9 @@ export function GameCard({ game, isFavorite, onToggleFavorite }) {
           {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
         </button>
       </div>
-      <Link to={`/games/${game.id}`}>View details</Link>
+      <Link className="app-nav__link view-details" to={`/games/${game.id}`}>
+        View details
+      </Link>
     </article>
   )
 }

@@ -40,7 +40,7 @@ export function FavoritesPage({
   }
 
   return (
-    <section>
+    <section className='header'>
       <h2>Favorite games</h2>
 
       {favoritesContent}
