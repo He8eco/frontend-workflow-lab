@@ -68,3 +68,50 @@ Project foundation is complete. The next step is building the first React Game L
 ## Notes
 
 This closes Substage 0. The project is ready for React components, props, and state practice.
+
+# React Game Library
+
+A training React SPA built during Stage 5 — React Fundamentals.
+
+## Features
+
+- Game catalog
+- Search with debounce
+- Genre/platform/rating filters
+- Sorting
+- Favorite games
+- Favorites persisted in localStorage
+- Async game loading simulation
+- Loading/error/empty states
+- Reload games action
+- Custom hooks
+- React Router pages
+- Game details page
+- 404 page
+
+## Tech
+
+- React
+- Vite
+- React Router
+- CSS
+- localStorage
+
+## Custom hooks
+
+- `useDebounce(value, delay)`
+- `useLocalStorage(key, initialValue)`
+- `useGames()`
+
+## Routes
+
+- `/` — catalog
+- `/favorites` — favorite games
+- `/games/:id` — game details
+- `*` — not found page
+
+## Run locally
+
+```bash
+npm install
+npm run dev

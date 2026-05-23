@@ -707,3 +707,27 @@
 - Pages receive shared data through props.
 - Context is not needed yet for this stage.
 - `NotFoundPage` handles unknown URLs through the `*` route.
+
+## Stage 5 — Final Summary
+
+- Built a React Game Library SPA.
+- Practiced components, props, and state.
+- Rendered lists with stable keys.
+- Built controlled search and filter inputs.
+- Added async game loading through `useEffect`.
+- Added loading, error, empty, and success UI states.
+- Added reload functionality.
+- Persisted favorites with `localStorage`.
+- Created custom hooks:
+  - `useDebounce`
+  - `useLocalStorage`
+  - `useGames`
+- Added React Router:
+  - catalog page
+  - favorites page
+  - game details page
+  - not found page
+- Moved page-specific logic into page components.
+- Kept shared state above routes.
+- Used props to pass shared data into pages.
+- Completed React fundamentals without TypeScript, Redux, or external state libraries.

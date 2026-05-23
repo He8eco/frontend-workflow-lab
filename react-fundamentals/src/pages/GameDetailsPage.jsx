@@ -37,11 +37,13 @@ export function GameDetailsPage({
 
   if (!game) {
     return (
-      <section className="game-details">
+      <section className="header">
         <h2>Game not found</h2>
         <p>This game does not exist or is not available.</p>
 
-        <Link to="/">Back to catalog</Link>
+        <Link className="app-nav__link back-to-catalog" to="/">
+          ← Back to catalog
+        </Link>
       </section>
     )
   }
@@ -49,8 +51,10 @@ export function GameDetailsPage({
   const isFavorite = favorites.includes(game.id)
 
   return (
-    <section className="game-details">
-      <Link to="/">← Back to catalog</Link>
+    <section className="header game-details">
+      <Link className="app-nav__link back-to-catalog" to="/">
+        ← Back to catalog
+      </Link>
 
       <article className="game-details__card">
         <h2>{game.title}</h2>
@@ -71,7 +75,11 @@ export function GameDetailsPage({
           <strong>Year:</strong> {game.year}
         </p>
 
-        <button type="button" onClick={handleToggleFavorite}>
+        <button
+          className="game-card__favorite-button"
+          type="button"
+          onClick={handleToggleFavorite}
+        >
           {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
         </button>
       </article>

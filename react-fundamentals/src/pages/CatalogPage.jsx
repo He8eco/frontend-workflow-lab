@@ -7,9 +7,9 @@ export function CatalogPage({
   games,
   loading,
   error,
-  reloadGames,
   favorites,
   setFavorites,
+  reloadGames,
 }) {
   const [searchQuery, setSearchQuery] = useState('')
   const [sort, setSort] = useState('default')
@@ -98,6 +98,8 @@ export function CatalogPage({
         games={sortedGames}
         favorites={favorites}
         onToggleFavorite={handleToggleFavorite}
+        reloadGames={reloadGames}
+        loading={loading}
       />
     )
   }
@@ -118,12 +120,6 @@ export function CatalogPage({
         isResetDisabled={!hasActiveControls}
         onResetControls={handleResetControls}
       />
-
-      <div className="catalog-actions">
-        <button type="button" onClick={reloadGames} disabled={loading}>
-          {loading ? 'Loading...' : 'Reload games'}
-        </button>
-      </div>
 
       {catalogContent}
     </main>
