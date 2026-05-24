@@ -1,8 +1,19 @@
 ## Stage 6 — Game Explorer
 
-- [x] Setup Vite React project
+- [x] Define project idea
+- [x] Define MVP
+- [x] Define game model
+- [x] Choose local mock data as initial data source
+- [x] Create Vite React project
 - [x] Install React Router
 - [x] Prepare base project structure
-- [ ] Add local game data
-- [ ] Add API layer
+- [x] Add local game data
+- [x] Add API layer
+- [ ] Add base routing
 - [ ] Build catalog page
+- [ ] Add search, filters, sorting
+- [ ] Add pagination or Load more
+- [ ] Add details page
+- [ ] Add favorites
+- [ ] Add UI polish and responsive
+- [ ] Deploy project
