@@ -11,8 +11,8 @@
 - [x] Add API layer
 - [x] Load games from local API
 - [x] Add base components
-- [ ] Build catalog page
-- [ ] Add search, filters, sorting
+- [x] Build catalog page
+- [x] Add search, filters, sorting
 - [ ] Add pagination or Load more
 - [ ] Add details page
 - [ ] Add favorites
