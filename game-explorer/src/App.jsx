@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import { Header } from './components/Header'
 import { getGames } from './api/gameApi'
+import { GameList } from './components/GameList'
 
 function App() {
   const [games, setGames] = useState([])
@@ -37,24 +38,7 @@ function App() {
   } else if (games.length === 0) {
     catalogContent = <p>No games found</p>
   } else {
-    catalogContent = (
-      <div className="game-list">
-        {games.map((game) => (
-          <div key={game.id} className="game-card">
-            <div className="cover"></div>
-            <div className="game-characteristics">
-              <p className="game-title">{game.title}</p>
-              <p className="game-rating">Rating: {game.rating}</p>
-              <p className="game-genre">Genre: {game.genre}</p>
-              <p className="game-platform">
-                platforms: {game.platforms.join(', ')}
-              </p>
-              <p className="game-release">Release year: {game.releaseYear}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    )
+    catalogContent = <GameList games={games}/>
   }
 
   return (

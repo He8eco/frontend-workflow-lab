@@ -8,7 +8,7 @@ function sleep(delay) {
     })
 }
 
-export async function getGame() {
+export async function getGames() {
     await sleep(500)
 
     return games

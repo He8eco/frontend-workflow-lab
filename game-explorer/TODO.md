@@ -9,7 +9,8 @@
 - [x] Prepare base project structure
 - [x] Add local game data
 - [x] Add API layer
-- [ ] Add base routing
+- [x] Load games from local API
+- [x] Add base components
 - [ ] Build catalog page
 - [ ] Add search, filters, sorting
 - [ ] Add pagination or Load more
