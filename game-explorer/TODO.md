@@ -11,13 +11,13 @@
 - [x] Add API layer
 - [x] Load games from local API
 - [x] Add base components
-- [x] Build catalog page
 - [x] Add search, filters, sorting
-- [x] Add pagination or Load more
+- [x] Add reset controls
+- [x] Add Load more
 - [x] Add base routing
 - [x] Add Header navigation
 - [x] Add details page
 - [x] Add favorites
 - [x] Add 404 page
-- [ ] Add UI polish and responsive
-- [ ] Deploy project
+- [x] Polish UI
+- [x] Run build
