@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import { getGames } from './api/gameApi'
 import {Routes, Route} from 'react-router'
 import { CatalogPage } from './pages/CatalogPage'
+import { FavoritesPage } from './pages/FavoritesPage'
 
 function App() {
   const [games, setGames] = useState([])
@@ -35,6 +36,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<CatalogPage games={games} loading={loading} error={error}/>}/>
+        <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </div>
   )

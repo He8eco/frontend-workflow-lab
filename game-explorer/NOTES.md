@@ -28,3 +28,11 @@
 - `hasMoreGames` checks whether there are more games to show.
 - Load more increases `visibleCount`.
 - Reset controls also resets `visibleCount`.
+
+## Stage 6 — Substage 8 — Header navigation
+
+- Added header navigation with `NavLink`.
+- Added route for `/favorites`.
+- Added temporary `FavoritesPage`.
+- `Catalog` link uses `end` so it is active only on `/`.
+- Header navigation uses SPA navigation without full page reload.
