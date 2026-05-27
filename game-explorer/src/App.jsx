@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router'
 import { CatalogPage } from './pages/CatalogPage'
 import { FavoritesPage } from './pages/FavoritesPage'
 import { GameDetailsPage } from './pages/GameDetailsPage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 function App() {
   const [games, setGames] = useState([])
@@ -102,6 +103,7 @@ function App() {
             />
           }
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   )

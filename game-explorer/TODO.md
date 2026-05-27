@@ -18,5 +18,6 @@
 - [x] Add Header navigation
 - [x] Add details page
 - [x] Add favorites
+- [x] Add 404 page
 - [ ] Add UI polish and responsive
 - [ ] Deploy project
