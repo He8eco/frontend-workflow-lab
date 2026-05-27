@@ -2,7 +2,13 @@ import { useState } from 'react'
 import { GameList } from '../components/GameList'
 import { GameControls } from '../components/GameControls'
 
-export function CatalogPage({ games, loading, error }) {
+export function CatalogPage({
+  games,
+  loading,
+  error,
+  favorites,
+  onToggleFavorite,
+}) {
   const [searchQuery, setSearchQuery] = useState('')
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
@@ -96,7 +102,13 @@ export function CatalogPage({ games, loading, error }) {
   } else if (sortedGames.length === 0) {
     catalogContent = <p className="catalog-message">No games found</p>
   } else {
-    catalogContent = <GameList games={visibleGames} />
+    catalogContent = (
+      <GameList
+        games={visibleGames}
+        favorites={favorites}
+        onToggleFavorite={onToggleFavorite}
+      />
+    )
   }
 
   return (

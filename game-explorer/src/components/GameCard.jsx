@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-export function GameCard({ game }) {
+export function GameCard({ game, isFavorite, onToggleFavorite }) {
   return (
     <article className="game-card">
       <div className="cover"></div>
@@ -11,9 +11,19 @@ export function GameCard({ game }) {
         <p className="game-genre">Genre: {game.genre}</p>
         <p className="game-platform">Platforms: {game.platforms.join(', ')}</p>
         <p className="game-release">Release year: {game.releaseYear}</p>
-        <Link className="game-card__link" to={`/games/${game.id}`}>
-          View details
-        </Link>
+        <div className="game-card__actions">
+          <Link className="game-card__link" to={`/games/${game.id}`}>
+            View details
+          </Link>
+
+          <button
+            className="favorite-button"
+            type="button"
+            onClick={() => onToggleFavorite(game.id)}
+          >
+            {isFavorite ? 'Remove' : 'Favorite'}
+          </button>
+        </div>
       </div>
     </article>
   )

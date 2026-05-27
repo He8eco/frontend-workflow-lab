@@ -365,6 +365,40 @@
   font-size: 16px;
 }
 
+.game-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.favorite-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 999px;
+  padding: 9px 12px;
+  color: #f8fafc;
+  font-size: 13px;
+  font-weight: 900;
+  background: rgba(2, 6, 23, 0.48);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.favorite-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(96, 165, 250, 0.44);
+  background: rgba(30, 41, 59, 0.85);
+}
+
+.details-favorite-button {
+  width: fit-content;
+}
+
 @media (max-width: 980px) {
   .game-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -395,7 +429,6 @@
   .game-list {
     grid-template-columns: 1fr;
   }
-
 
   .details-card {
     grid-template-columns: 1fr;

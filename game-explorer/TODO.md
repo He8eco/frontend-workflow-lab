@@ -17,6 +17,6 @@
 - [x] Add base routing
 - [x] Add Header navigation
 - [x] Add details page
-- [ ] Add favorites
+- [x] Add favorites
 - [ ] Add UI polish and responsive
 - [ ] Deploy project

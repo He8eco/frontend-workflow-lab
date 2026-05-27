@@ -11,6 +11,35 @@ function App() {
   const [games, setGames] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem('favoriteGames2')
+
+    if (!savedFavorites) {
+      return []
+    }
+
+    try {
+      return JSON.parse(savedFavorites)
+    } catch (error) {
+      console.error(error)
+
+      return []
+    }
+  })
+
+  useEffect(() => {
+    localStorage.setItem('favoriteGames', JSON.stringify(favorites))
+  }, [favorites])
+
+  function handleToggleFavorite(gameId) {
+    setFavorites((currentFavorites) => {
+      if (currentFavorites.includes(gameId)) {
+        return currentFavorites.filter((favoriteID) => favoriteID !== gameId)
+      }
+
+      return [...currentFavorites, gameId]
+    })
+  }
 
   async function loadGames() {
     setLoading(true)
@@ -34,20 +63,43 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header favoritesCount={favorites.length} />
       <Routes>
         <Route
           path="/"
           element={
-            <CatalogPage games={games} loading={loading} error={error} />
+            <CatalogPage
+              games={games}
+              loading={loading}
+              error={error}
+              favorites={favorites}
+              onToggleFavorite={handleToggleFavorite}
+            />
           }
         />
-        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route
+          path="/favorites"
+          element={
+            <FavoritesPage
+              games={games}
+              loading={loading}
+              error={error}
+              favorites={favorites}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          }
+        />
 
         <Route
           path="/games/:id"
           element={
-            <GameDetailsPage games={games} loading={loading} error={error} />
+            <GameDetailsPage
+              games={games}
+              loading={loading}
+              error={error}
+              favorites={favorites}
+              onToggleFavorite={handleToggleFavorite}
+            />
           }
         />
       </Routes>
