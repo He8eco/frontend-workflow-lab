@@ -57,3 +57,11 @@
 - Game details page can add/remove game from favorites.
 - Favorites page renders favorite games.
 - Empty favorites state shows `No favorite games yet.`
+
+## Stage 6 — Substage 11 — Not found page
+
+- Added `NotFoundPage`.
+- Added catch-all route with `path="*"`.
+- Unknown URLs now render a 404 page.
+- `Game not found` is different from route-level 404.
+- `/games/:id` can exist even if the game id is invalid.
