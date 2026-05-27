@@ -14,6 +14,8 @@
 - [x] Build catalog page
 - [x] Add search, filters, sorting
 - [x] Add pagination or Load more
+- [x] Add base routing
+- [x] Add Header navigation
 - [ ] Add details page
 - [ ] Add favorites
 - [ ] Add UI polish and responsive
