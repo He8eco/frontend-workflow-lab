@@ -14,6 +14,7 @@ function App() {
   const [platform, setPlatform] = useState('all')
   const [minRating, setMinRating] = useState(0)
   const [sort, setSort] = useState('default')
+  const [visibleCount, setVisibleCount] = useState(6)
 
   async function loadGames() {
     setLoading(true)
@@ -86,12 +87,21 @@ function App() {
     }
   })
 
+  const visibleGames = sortedGames.slice(0, visibleCount)
+
+  const hasMoreGames = visibleCount < sortedGames.length
+
+  function handleLoadMore() {
+    setVisibleCount((currentCount) => currentCount + 6)
+  }
+
   function handleResetControls() {
     setSearchQuery('')
     setGenre('all')
     setPlatform('all')
     setMinRating(0)
     setSort('default')
+    setVisibleCount(6)
   }
 
   const hasActiveControls =
@@ -110,7 +120,7 @@ function App() {
   } else if (sortedGames.length === 0) {
     catalogContent = <p>No games found</p>
   } else {
-    catalogContent = <GameList games={sortedGames} />
+    catalogContent = <GameList games={visibleGames} />
   }
 
   return (
@@ -133,6 +143,12 @@ function App() {
         handleResetControls={handleResetControls}
       />
       {catalogContent}
+      {hasMoreGames &&
+      (
+        <button type="button" onClick={handleLoadMore}>
+          Load more
+        </button>
+      )}
     </div>
   )
 }
