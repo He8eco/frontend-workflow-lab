@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { GameList } from '../components/GameList'
 import { GameControls } from '../components/GameControls'
 
-export function CatalogPage({games, loading, error}) {
+export function CatalogPage({ games, loading, error }) {
   const [searchQuery, setSearchQuery] = useState('')
   const [genre, setGenre] = useState('all')
   const [platform, setPlatform] = useState('all')
@@ -88,17 +88,19 @@ export function CatalogPage({games, loading, error}) {
   let catalogContent
 
   if (loading) {
-    catalogContent = <p>Loading games...</p>
+    catalogContent = <p className="catalog-message">Loading games...</p>
   } else if (error) {
-    catalogContent = <p>{error}</p>
+    catalogContent = (
+      <p className="catalog-message catalog-message--error">{error}</p>
+    )
   } else if (sortedGames.length === 0) {
-    catalogContent = <p>No games found</p>
+    catalogContent = <p className="catalog-message">No games found</p>
   } else {
     catalogContent = <GameList games={visibleGames} />
   }
 
   return (
-    <div className="container">
+    <main className="catalog-page">
       <GameControls
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -115,13 +117,20 @@ export function CatalogPage({games, loading, error}) {
         hasActiveControls={hasActiveControls}
         handleResetControls={handleResetControls}
       />
+
       {catalogContent}
-      {hasMoreGames &&
-      (
-        <button type="button" onClick={handleLoadMore}>
-          Load more
-        </button>
+
+      {hasMoreGames && (
+        <div className="load-more-wrapper">
+          <button
+            className="load-more-button"
+            type="button"
+            onClick={handleLoadMore}
+          >
+            Load more
+          </button>
+        </div>
       )}
-    </div>
+    </main>
   )
 }

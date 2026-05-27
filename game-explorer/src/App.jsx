@@ -31,7 +31,7 @@ function App() {
   }, [])
 
   return (
-    <div className="container">
+    <div className="app">
       <Header />
       <Routes>
         <Route path='/' element={<CatalogPage games={games} loading={loading} error={error}/>}/>

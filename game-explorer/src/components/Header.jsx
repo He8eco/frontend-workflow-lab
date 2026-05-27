@@ -1,7 +1,10 @@
 export function Header() {
   return (
     <header className="header">
-      <h2>Game Explorer</h2>
+      <div>
+        <p className="header__eyebrow">Stage 6 React SPA</p>
+        <h1>Game Explorer</h1>
+      </div>
     </header>
   )
 }
