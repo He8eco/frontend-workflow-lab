@@ -16,7 +16,7 @@
 - [x] Add pagination or Load more
 - [x] Add base routing
 - [x] Add Header navigation
-- [ ] Add details page
+- [x] Add details page
 - [ ] Add favorites
 - [ ] Add UI polish and responsive
 - [ ] Deploy project

@@ -36,3 +36,12 @@
 - Added temporary `FavoritesPage`.
 - `Catalog` link uses `end` so it is active only on `/`.
 - Header navigation uses SPA navigation without full page reload.
+
+## Stage 6 — Substage 9 — Game details page
+
+- Added `GameDetailsPage`.
+- Added `/games/:id` route.
+- Used `useParams()` to read game id from URL.
+- Game lookup uses `String(game.id) === id`.
+- Added loading, error, not found, and success states.
+- Added details links from game cards.
