@@ -17,3 +17,14 @@
 - `App.jsx` still owns control state and derived catalog data.
 - Control components receive values and handlers through props.
 - Search, filters, sorting, and reset still work after refactoring.
+
+## Stage 6 — Substage 6 — Load more
+
+- Added `visibleCount` state.
+- Added client-side Load more behavior.
+- `visibleGames` is created with `sortedGames.slice(0, visibleCount)`.
+- `GameList` receives `visibleGames`.
+- Empty state is still based on `sortedGames.length`.
+- `hasMoreGames` checks whether there are more games to show.
+- Load more increases `visibleCount`.
+- Reset controls also resets `visibleCount`.

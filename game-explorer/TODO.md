@@ -13,7 +13,7 @@
 - [x] Add base components
 - [x] Build catalog page
 - [x] Add search, filters, sorting
-- [ ] Add pagination or Load more
+- [x] Add pagination or Load more
 - [ ] Add details page
 - [ ] Add favorites
 - [ ] Add UI polish and responsive
