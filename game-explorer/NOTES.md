@@ -45,3 +45,15 @@
 - Game lookup uses `String(game.id) === id`.
 - Added loading, error, not found, and success states.
 - Added details links from game cards.
+
+## Stage 6 — Substage 10 — Favorites
+
+- Added favorites state in `App.jsx`.
+- Favorites are stored as game ids.
+- Added `handleToggleFavorite(gameId)`.
+- Favorites are persisted in `localStorage`.
+- Header shows favorite games count.
+- Game cards can add/remove games from favorites.
+- Game details page can add/remove game from favorites.
+- Favorites page renders favorite games.
+- Empty favorites state shows `No favorite games yet.`

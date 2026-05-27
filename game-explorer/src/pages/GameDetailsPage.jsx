@@ -1,11 +1,19 @@
 import { Link, useParams } from 'react-router'
 
-export function GameDetailsPage({ games, error, loading }) {
+export function GameDetailsPage({
+  games,
+  error,
+  loading,
+  favorites,
+  onToggleFavorite,
+}) {
   const { id } = useParams()
 
   const game = games.find((game) => {
     return String(game.id) === id
   })
+
+  const isFavorite = favorites.includes(game.id)
 
   if (loading) {
     return <p className="catalog-message">Loading game...</p>
@@ -69,6 +77,13 @@ export function GameDetailsPage({ games, error, loading }) {
               <strong>{game.platforms.join(', ')}</strong>
             </div>
           </div>
+          <button
+            className="favorite-button details-favorite-button"
+            type="button"
+            onClick={() => onToggleFavorite(game.id)}
+          >
+            {isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+          </button>
         </div>
       </section>
     </main>

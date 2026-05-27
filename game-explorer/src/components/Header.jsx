@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router'
 
-export function Header() {
+export function Header({favoritesCount}) {
   return (
     <header className="header">
       <div>
@@ -27,7 +27,7 @@ export function Header() {
               : 'header-nav__link'
           }
         >
-          Favorites
+          Favorites ({favoritesCount})
         </NavLink>
       </nav>
     </header>
