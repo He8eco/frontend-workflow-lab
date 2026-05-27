@@ -65,3 +65,24 @@
 - Unknown URLs now render a 404 page.
 - `Game not found` is different from route-level 404.
 - `/games/:id` can exist even if the game id is invalid.
+
+## Stage 6 — Final Summary
+
+- Built Game Explorer React SPA.
+- Used local mock data through an API layer.
+- Loaded games with async `getGames()`.
+- Added loading, error, empty, and success states.
+- Built catalog components:
+  - `GameControls`
+  - `GameList`
+  - `GameCard`
+- Added search, filters, sorting, reset controls, and Load more.
+- Added React Router pages:
+  - `CatalogPage`
+  - `FavoritesPage`
+  - `GameDetailsPage`
+  - `NotFoundPage`
+- Added favorites with localStorage persistence.
+- Added details page with `useParams`.
+- Added route-level 404 page.
+- Polished UI styles.
