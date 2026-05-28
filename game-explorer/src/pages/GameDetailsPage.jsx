@@ -48,7 +48,11 @@ export function GameDetailsPage({
       </Link>
 
       <section className="details-card">
-        <div className="details-cover"></div>
+        <div className="details-cover">
+          {game.coverUrl && (
+            <img src={game.coverUrl} alt={`${game.title} cover`} />
+          )}
+        </div>
 
         <div className="details-content">
           <p className="page-eyebrow">{game.genre}</p>

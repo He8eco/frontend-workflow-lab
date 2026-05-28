@@ -3,7 +3,11 @@ import { Link } from 'react-router'
 export function GameCard({ game, isFavorite, onToggleFavorite }) {
   return (
     <article className="game-card">
-      <div className="cover"></div>
+      <div className="cover">
+        {game.coverUrl && (
+          <img src={game.coverUrl} alt={`${game.title} cover`} />
+        )}
+      </div>
 
       <div className="game-characteristics">
         <p className="game-title">{game.title}</p>
