@@ -21,3 +21,21 @@
 - [x] Add 404 page
 - [x] Polish UI
 - [x] Run build
+
+## Stage 7 — UI for jobs + responsive
+
+- [x] Audit current UI direction
+- [x] Create UI guide
+- [ ] Add SCSS setup
+- [ ] Create SCSS structure
+- [ ] Add variables and mixins
+- [ ] Connect Bootstrap
+- [ ] Refactor layout with Bootstrap
+- [ ] Refactor Navbar with React-Bootstrap
+- [ ] Refactor forms with React-Bootstrap
+- [ ] Refactor cards with React-Bootstrap
+- [ ] Improve loading/error/empty states
+- [ ] Improve responsive layout
+- [ ] Polish details, favorites, and 404 pages
+- [ ] Update README
+- [ ] Final UI review
