@@ -142,3 +142,12 @@
 - Preserved existing catalog filtering and sorting logic.
 - Updated SCSS to style Bootstrap `.form-control`, `.form-select`, and `.btn` inside `.game-controls`.
 - Kept the custom dark Game Explorer visual style.
+
+## Stage 7 — Substage 6 — React-Bootstrap Cards
+
+- Refactored `GameCard` to use React-Bootstrap `Card`.
+- Used `Card.Body`, `Card.Title`, `Card.Text`, and `Card.Img`.
+- Used React-Bootstrap `Button` for card actions.
+- Used `Button as={Link}` for SPA navigation to details page.
+- Preserved the existing custom dark card style through SCSS.
+- Updated SCSS selectors to override Bootstrap `.card`, `.card-body`, `.card-title`, and `.btn` styles.

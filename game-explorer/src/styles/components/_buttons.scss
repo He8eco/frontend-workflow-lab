@@ -28,7 +28,7 @@
   }
 }
 
-.favorite-button {
+.favorite-button.btn {
   border: 1px solid rgba(148, 163, 184, 0.2);
   padding: 9px $space-4;
   color: $color-text;
@@ -36,7 +36,9 @@
 
   @include pill-button-base;
 
-  &:hover {
+  &:hover,
+  &:focus {
+    color: $color-text;
     transform: translateY(-1px);
     border-color: rgba(96, 165, 250, 0.44);
     background: rgba(30, 41, 59, 0.85);

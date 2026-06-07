@@ -34,7 +34,7 @@
 - [x] Refactor layout with Bootstrap
 - [x] Refactor Navbar with React-Bootstrap
 - [x] Refactor forms with React-Bootstrap
-- [ ] Refactor cards with React-Bootstrap
+- [x] Refactor cards with React-Bootstrap
 - [ ] Improve loading/error/empty states
 - [ ] Improve responsive layout
 - [ ] Polish details, favorites, and 404 pages
