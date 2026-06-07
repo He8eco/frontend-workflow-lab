@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import { Header } from './components/Header'
 import { getGames } from './api/gameApi'
 import { Routes, Route } from 'react-router'

@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 * {
   box-sizing: border-box;
 }
@@ -16,7 +18,7 @@ body {
     BlinkMacSystemFont,
     'Segoe UI',
     sans-serif;
-  color: #f8fafc;
+  color: $color-text;
   background:
     radial-gradient(
       circle at top left,
@@ -28,7 +30,12 @@ body {
       rgba(168, 85, 247, 0.18),
       transparent 30rem
     ),
-    linear-gradient(135deg, #020617 0%, #0f172a 45%, #111827 100%);
+    linear-gradient(
+      135deg,
+      $color-bg 0%,
+      $color-bg-soft 45%,
+      $color-bg-deep 100%
+    );
 }
 
 button,
