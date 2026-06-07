@@ -22,7 +22,7 @@ export function GameControls({
   hasActiveControls,
 }) {
   return (
-    <section className="game-controls">
+    <section className="game-controls" aria-label="Game catalog controls">
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <GenreFilter genre={genre} setGenre={setGenre} genres={genres} />
       <RatingFilter minRating={minRating} setMinRating={setMinRating} />

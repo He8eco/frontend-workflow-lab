@@ -33,7 +33,7 @@
 - [x] Connect Bootstrap
 - [x] Refactor layout with Bootstrap
 - [x] Refactor Navbar with React-Bootstrap
-- [ ] Refactor forms with React-Bootstrap
+- [x] Refactor forms with React-Bootstrap
 - [ ] Refactor cards with React-Bootstrap
 - [ ] Improve loading/error/empty states
 - [ ] Improve responsive layout

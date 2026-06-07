@@ -1,11 +1,17 @@
-export function ResetControlsButton({handleResetControls, hasActiveControls}) {
+import { Button } from 'react-bootstrap'
+
+export function ResetControlsButton({
+  handleResetControls,
+  hasActiveControls,
+}) {
   return (
-    <button
+    <Button
+      className="reset-controls-button"
       type="button"
       onClick={handleResetControls}
       disabled={!hasActiveControls}
     >
       Reset controls
-    </button>
+    </Button>
   )
 }
