@@ -32,7 +32,7 @@
 - [x] Move current UI styles to SCSS
 - [x] Connect Bootstrap
 - [x] Refactor layout with Bootstrap
-- [ ] Refactor Navbar with React-Bootstrap
+- [x] Refactor Navbar with React-Bootstrap
 - [ ] Refactor forms with React-Bootstrap
 - [ ] Refactor cards with React-Bootstrap
 - [ ] Improve loading/error/empty states

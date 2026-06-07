@@ -123,3 +123,13 @@
 - Used `fluid="xl"` to keep the layout responsive while limiting large desktop width.
 - Kept custom SCSS as the main visual layer.
 - Updated `.app` styles so Bootstrap controls horizontal layout and SCSS controls vertical spacing.
+
+## Stage 7 — Substage 4 — React-Bootstrap Navbar
+
+- Replaced custom header navigation with React-Bootstrap `Navbar`.
+- Used `Navbar.Brand`, `Navbar.Toggle`, `Navbar.Collapse`, `Nav`.
+- Preserved custom dark glass UI through SCSS.
+- Added responsive burger menu behavior with `expand="lg"`.
+- Kept active navigation styles custom instead of relying on default Bootstrap styles.
+- Kept React Router `NavLink` directly inside React-Bootstrap `Nav` to preserve custom link styling.
+- Avoided `Nav.Link as={NavLink}` because Bootstrap `.nav-link` styles conflicted with custom pill link styles.
