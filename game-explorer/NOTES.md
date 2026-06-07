@@ -107,3 +107,11 @@
 - Split styles into component and page SCSS partials.
 - Fixed responsive structure so tablet and mobile layouts are separated.
 - `main.jsx` now imports `styles/index.scss`.
+
+## Stage 7 — Substage 2 — Bootstrap base
+
+- Installed `bootstrap` and `react-bootstrap`.
+- Connected Bootstrap compiled CSS before custom SCSS.
+- Custom SCSS remains the main visual layer for Game Explorer.
+- Bootstrap will be used as a UI foundation for layout and components.
+- No major UI refactor was done in this substage.
