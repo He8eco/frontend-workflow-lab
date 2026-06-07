@@ -133,3 +133,12 @@
 - Kept active navigation styles custom instead of relying on default Bootstrap styles.
 - Kept React Router `NavLink` directly inside React-Bootstrap `Nav` to preserve custom link styling.
 - Avoided `Nav.Link as={NavLink}` because Bootstrap `.nav-link` styles conflicted with custom pill link styles.
+
+## Stage 7 — Substage 5 — React-Bootstrap Forms
+
+- Refactored catalog controls to use React-Bootstrap form components.
+- Replaced native inputs/selects with `Form.Control` and `Form.Select`.
+- Replaced reset button with React-Bootstrap `Button`.
+- Preserved existing catalog filtering and sorting logic.
+- Updated SCSS to style Bootstrap `.form-control`, `.form-select`, and `.btn` inside `.game-controls`.
+- Kept the custom dark Game Explorer visual style.
