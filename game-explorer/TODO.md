@@ -30,7 +30,7 @@
 - [x] Create SCSS structure
 - [x] Add variables and mixins
 - [x] Move current UI styles to SCSS
-- [ ] Connect Bootstrap
+- [x] Connect Bootstrap
 - [ ] Refactor layout with Bootstrap
 - [ ] Refactor Navbar with React-Bootstrap
 - [ ] Refactor forms with React-Bootstrap
