@@ -86,3 +86,12 @@
 - Added details page with `useParams`.
 - Added route-level 404 page.
 - Polished UI styles.
+
+## Stage 7 — Substage 0 — UI audit and redesign plan
+
+- Started Stage 7 focused on UI, SCSS, Bootstrap, React-Bootstrap, and responsive design.
+- Decided to improve the existing Game Explorer project instead of creating a new project.
+- The current dark visual direction will be preserved.
+- Bootstrap and React-Bootstrap will be used as structure/component tools.
+- Custom SCSS will keep the project identity.
+- Added `UI_GUIDE.md` to document UI goals, breakpoints, component rules, and redesign plan.
