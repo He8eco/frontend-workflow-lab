@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Container } from 'react-bootstrap'
 import { Header } from './components/Header'
 import { getGames } from './api/gameApi'
 import { Routes, Route } from 'react-router'
@@ -62,7 +63,7 @@ function App() {
   }, [])
 
   return (
-    <div className="app">
+    <Container className='app' fluid="xl">
       <Header favoritesCount={favorites.length} />
       <Routes>
         <Route
@@ -104,7 +105,7 @@ function App() {
         />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </div>
+    </Container>
   )
 }
 
