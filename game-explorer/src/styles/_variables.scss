@@ -1,0 +1,63 @@
+$color-bg: #020617;
+$color-bg-soft: #0f172a;
+$color-bg-deep: #111827;
+
+$color-surface: rgba(15, 23, 42, 0.72);
+$color-surface-light: rgba(15, 23, 42, 0.68);
+$color-surface-strong: rgba(15, 23, 42, 0.94);
+$color-surface-dark: rgba(2, 6, 23, 0.72);
+$color-surface-dark-soft: rgba(2, 6, 23, 0.38);
+
+$color-text: #f8fafc;
+$color-muted: #cbd5e1;
+$color-subtle: #94a3b8;
+$color-placeholder: #64748b;
+
+$color-primary: #60a5fa;
+$color-primary-soft: #93c5fd;
+$color-primary-light: #bfdbfe;
+$color-secondary: #a78bfa;
+
+$color-danger: #f87171;
+$color-danger-soft: #fecaca;
+$color-warning: #fde68a;
+
+$border-soft: rgba(148, 163, 184, 0.16);
+$border-medium: rgba(148, 163, 184, 0.18);
+$border-control: rgba(148, 163, 184, 0.22);
+$border-focus: rgba(96, 165, 250, 0.72);
+
+$radius-sm: 14px;
+$radius-md: 18px;
+$radius-lg: 22px;
+$radius-xl: 24px;
+$radius-2xl: 28px;
+$radius-pill: 999px;
+
+$shadow-card: 0 20px 60px rgba(0, 0, 0, 0.2);
+$shadow-card-hover: 0 24px 70px rgba(0, 0, 0, 0.32);
+$shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.28);
+$shadow-control: 0 18px 60px rgba(0, 0, 0, 0.22);
+$shadow-button: 0 14px 30px rgba(96, 165, 250, 0.22);
+$shadow-button-hover: 0 18px 38px rgba(96, 165, 250, 0.28);
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 10px;
+$space-4: 12px;
+$space-5: 14px;
+$space-6: 16px;
+$space-7: 18px;
+$space-8: 20px;
+$space-9: 24px;
+$space-10: 28px;
+$space-11: 32px;
+$space-12: 56px;
+
+$breakpoint-sm: 620px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 980px;
+$breakpoint-xl: 1200px;
+
+$transition-fast: 160ms ease;
+$transition-card: 180ms ease;

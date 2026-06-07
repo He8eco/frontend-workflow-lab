@@ -1,0 +1,16 @@
+@use './variables';
+@use './mixins';
+@use './globals';
+
+@use './pages/layout';
+@use './pages/catalog-page';
+@use './pages/details-page';
+@use './pages/favorites-page';
+@use './pages/not-found-page';
+
+@use './components/header';
+@use './components/game-controls';
+@use './components/game-list';
+@use './components/gamecard';
+@use './components/buttons';
+@use './components/messages';

@@ -1,0 +1,6 @@
+@use '../variables' as *;
+
+.catalog-page {
+  display: grid;
+  gap: $space-9;
+}

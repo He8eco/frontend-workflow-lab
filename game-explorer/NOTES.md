@@ -95,3 +95,15 @@
 - Bootstrap and React-Bootstrap will be used as structure/component tools.
 - Custom SCSS will keep the project identity.
 - Added `UI_GUIDE.md` to document UI goals, breakpoints, component rules, and redesign plan.
+
+## Stage 7 — Substage 1 — SCSS setup and structure
+
+- Installed Sass.
+- Created SCSS structure in `src/styles`.
+- Preserved the existing dark Game Explorer visual style.
+- Moved global styles to `_globals.scss`.
+- Added variables for colors, spacing, radii, shadows, and breakpoints.
+- Added mixins for panels, gradients, responsive rules, and buttons.
+- Split styles into component and page SCSS partials.
+- Fixed responsive structure so tablet and mobile layouts are separated.
+- `main.jsx` now imports `styles/index.scss`.

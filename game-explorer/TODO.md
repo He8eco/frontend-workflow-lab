@@ -26,9 +26,10 @@
 
 - [x] Audit current UI direction
 - [x] Create UI guide
-- [ ] Add SCSS setup
-- [ ] Create SCSS structure
-- [ ] Add variables and mixins
+- [x] Add SCSS setup
+- [x] Create SCSS structure
+- [x] Add variables and mixins
+- [x] Move current UI styles to SCSS
 - [ ] Connect Bootstrap
 - [ ] Refactor layout with Bootstrap
 - [ ] Refactor Navbar with React-Bootstrap

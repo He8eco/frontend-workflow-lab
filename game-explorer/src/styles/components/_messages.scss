@@ -1,0 +1,37 @@
+@use '../variables' as *;
+
+.catalog-message {
+  padding: $space-10;
+  border: 1px solid $border-soft;
+  border-radius: $radius-lg;
+  color: $color-muted;
+  text-align: center;
+  font-weight: 700;
+  background: $color-surface-light;
+}
+
+.catalog-message--error {
+  border-color: rgba(248, 113, 113, 0.32);
+  color: $color-danger-soft;
+  background: rgba(127, 29, 29, 0.24);
+}
+
+.page-eyebrow {
+  margin: 0;
+  color: $color-primary-soft;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.back-link {
+  width: fit-content;
+  color: $color-primary-soft;
+  text-decoration: none;
+  font-weight: 800;
+
+  &:hover {
+    color: $color-primary-light;
+  }
+}

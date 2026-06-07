@@ -1,0 +1,104 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.game-controls {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, minmax(150px, 1fr)) auto;
+  gap: $space-4;
+  align-items: center;
+  padding: $space-7;
+  border: 1px solid $border-soft;
+  border-radius: $radius-lg;
+  background: $color-surface-light;
+  box-shadow: $shadow-control;
+  backdrop-filter: blur(16px);
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+    padding: $space-5;
+  }
+
+  select {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid $border-control;
+    border-radius: $radius-sm;
+    padding: 0 $space-5;
+    color: $color-text;
+    background: $color-surface-dark;
+    outline: none;
+    transition:
+      border-color $transition-fast,
+      box-shadow $transition-fast,
+      background $transition-fast;
+
+    &:focus {
+      border-color: $border-focus;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16);
+      background: $color-surface-strong;
+    }
+  }
+
+  button {
+    min-height: 44px;
+    border: 0;
+    border-radius: $radius-sm;
+    padding: 0 $space-7;
+    color: $color-bg;
+    font-weight: 800;
+    box-shadow: $shadow-button;
+    transition:
+      transform $transition-fast,
+      opacity $transition-fast,
+      box-shadow $transition-fast;
+
+    @include accent-gradient;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: $shadow-button-hover;
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      box-shadow: none;
+    }
+  }
+}
+
+.search-bar {
+  min-width: 0;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-column: 1 / -1;
+  }
+
+  input {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid $border-control;
+    border-radius: $radius-sm;
+    padding: 0 $space-5;
+    color: $color-text;
+    background: $color-surface-dark;
+    outline: none;
+    transition:
+      border-color $transition-fast,
+      box-shadow $transition-fast,
+      background $transition-fast;
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+
+    &:focus {
+      border-color: $border-focus;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16);
+      background: $color-surface-strong;
+    }
+  }
+}
