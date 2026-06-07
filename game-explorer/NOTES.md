@@ -115,3 +115,11 @@
 - Custom SCSS remains the main visual layer for Game Explorer.
 - Bootstrap will be used as a UI foundation for layout and components.
 - No major UI refactor was done in this substage.
+
+## Stage 7 — Substage 3 — Bootstrap layout
+
+- Started using React-Bootstrap layout tools.
+- Replaced the custom app width wrapper with React-Bootstrap `Container`.
+- Used `fluid="xl"` to keep the layout responsive while limiting large desktop width.
+- Kept custom SCSS as the main visual layer.
+- Updated `.app` styles so Bootstrap controls horizontal layout and SCSS controls vertical spacing.

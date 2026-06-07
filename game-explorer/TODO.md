@@ -31,7 +31,7 @@
 - [x] Add variables and mixins
 - [x] Move current UI styles to SCSS
 - [x] Connect Bootstrap
-- [ ] Refactor layout with Bootstrap
+- [x] Refactor layout with Bootstrap
 - [ ] Refactor Navbar with React-Bootstrap
 - [ ] Refactor forms with React-Bootstrap
 - [ ] Refactor cards with React-Bootstrap
