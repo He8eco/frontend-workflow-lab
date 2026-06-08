@@ -36,7 +36,7 @@
 - [x] Refactor forms with React-Bootstrap
 - [x] Refactor cards with React-Bootstrap
 - [x] Improve loading/error/empty states
-- [ ] Improve responsive layout
+- [x] Improve responsive layout
 - [x] Polish details, favorites, and 404 pages
 - [ ] Update README
 - [ ] Final UI review

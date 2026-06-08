@@ -1,5 +1,18 @@
 @use '../variables' as *;
 
+.app {
+  width: min(1440px, calc(100% - 32px));
+  max-width: 1440px;
+  padding-top: $space-11;
+  padding-bottom: $space-12;
+
+  @media (max-width: $breakpoint-sm) {
+    width: min(100% - 20px, 1440px);
+    padding-top: $space-8;
+    padding-bottom: $space-11;
+  }
+}
+
 .page-header {
   display: grid;
   gap: $space-3;
@@ -16,6 +29,11 @@
     line-height: 1;
     letter-spacing: -0.05em;
   }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $space-7;
+    border-radius: $radius-lg;
+  }
 }
 
 .page-description {
@@ -24,4 +42,8 @@
   color: $color-muted;
   font-size: 16px;
   line-height: 1.6;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 15px;
+  }
 }
