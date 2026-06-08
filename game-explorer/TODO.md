@@ -37,6 +37,6 @@
 - [x] Refactor cards with React-Bootstrap
 - [x] Improve loading/error/empty states
 - [ ] Improve responsive layout
-- [ ] Polish details, favorites, and 404 pages
+- [x] Polish details, favorites, and 404 pages
 - [ ] Update README
 - [ ] Final UI review

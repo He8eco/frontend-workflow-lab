@@ -2,16 +2,5 @@
 
 .favorites-page {
   display: grid;
-  gap: $space-6;
-  padding: $space-10;
-  border: 1px solid $border-soft;
-  border-radius: $radius-xl;
-  background: $color-surface-light;
-  box-shadow: $shadow-card;
-
-  h2 {
-    margin: 0;
-    font-size: 32px;
-    letter-spacing: -0.04em;
-  }
+  gap: $space-7;
 }
