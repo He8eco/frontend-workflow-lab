@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { GameList } from '../components/GameList'
 import { GameControls } from '../components/GameControls'
+import { CatalogState } from '../components/CatalogState'
 
 export function CatalogPage({
   games,
@@ -94,13 +95,31 @@ export function CatalogPage({
   let catalogContent
 
   if (loading) {
-    catalogContent = <p className="catalog-message">Loading games...</p>
+    catalogContent = (
+      <CatalogState
+        type="loading"
+        title="Loading games"
+        message="Please wait while the catalog is loading"
+      />
+    )
   } else if (error) {
     catalogContent = (
-      <p className="catalog-message catalog-message--error">{error}</p>
+      <CatalogState
+        type="error"
+        title="Failed to load games"
+        message={error}
+      />
     )
   } else if (sortedGames.length === 0) {
-    catalogContent = <p className="catalog-message">No games found</p>
+    catalogContent = (
+      <CatalogState
+        type="empty"
+        title="No games found"
+        message="Try changing your search or filters."
+        actionLabel={hasActiveControls ? 'Reset controls' : undefined}
+        onAction={hasActiveControls ? handleResetControls : undefined}
+      />
+    )
   } else {
     catalogContent = (
       <GameList

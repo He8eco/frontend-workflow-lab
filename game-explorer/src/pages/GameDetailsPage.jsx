@@ -1,9 +1,10 @@
 import { Link, useParams } from 'react-router'
+import { CatalogState } from '../components/CatalogState'
 
 export function GameDetailsPage({
   games,
-  error,
   loading,
+  error,
   favorites,
   onToggleFavorite,
 }) {
@@ -13,14 +14,20 @@ export function GameDetailsPage({
     return String(game.id) === id
   })
 
-  const isFavorite = favorites.includes(game.id)
-
   if (loading) {
-    return <p className="catalog-message">Loading game...</p>
+    return (
+      <CatalogState
+        type="loading"
+        title="Loading game"
+        message="Please wait while game details are loading."
+      />
+    )
   }
 
   if (error) {
-    return <p className="catalog-message catalog-message--error">{error}</p>
+    return (
+      <CatalogState type="error" title="Failed to load game" message={error} />
+    )
   }
 
   if (!game) {
@@ -30,17 +37,16 @@ export function GameDetailsPage({
           ← Back to catalog
         </Link>
 
-        <section className="details-card">
-          <p className="page-eyebrow">Not found</p>
-          <h2>Game not found</h2>
-          <p className="details-description">
-            This game does not exist or is not available.
-          </p>
-        </section>
+        <CatalogState
+          type="not-found"
+          title="Game not found"
+          message="This game does not exist or is not available."
+        />
       </main>
     )
   }
 
+  const isFavorite = favorites.includes(game.id)
   return (
     <main className="details-page">
       <Link className="back-link" to="/">

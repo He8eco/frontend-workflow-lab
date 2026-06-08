@@ -1,0 +1,68 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.catalog-state.alert {
+  display: grid;
+  justify-items: center;
+  gap: $space-6;
+  margin: 0;
+  padding: $space-10;
+  border: 1px solid $border-soft;
+  border-radius: $radius-lg;
+  color: $color-muted;
+  text-align: center;
+  background: $color-surface-light;
+  box-shadow: $shadow-card;
+}
+
+.catalog-state--error.alert {
+  border-color: rgba(248, 113, 113, 0.32);
+  color: $color-danger-soft;
+  background: rgba(127, 29, 29, 0.24);
+}
+
+.catalog-state__spinner {
+  width: 42px;
+  height: 42px;
+  color: $color-primary;
+}
+
+.catalog-state__content {
+  display: grid;
+  justify-items: center;
+  gap: $space-3;
+}
+
+.catalog-state__content h2 {
+  margin: 0;
+  color: $color-text;
+  font-size: 26px;
+  letter-spacing: -0.04em;
+}
+
+.catalog-state__content p {
+  max-width: 520px;
+  margin: 0;
+  color: inherit;
+  line-height: 1.6;
+}
+
+.catalog-state__button.btn {
+  min-height: 42px;
+  margin-top: $space-2;
+  border: 0;
+  border-radius: $radius-sm;
+  padding: 0 $space-7;
+  color: $color-bg;
+  font-weight: 800;
+  box-shadow: $shadow-button;
+
+  @include accent-gradient;
+
+  &:hover,
+  &:focus {
+    color: $color-bg;
+    transform: translateY(-1px);
+    box-shadow: $shadow-button-hover;
+  }
+}

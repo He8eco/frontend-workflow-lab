@@ -151,3 +151,12 @@
 - Used `Button as={Link}` for SPA navigation to details page.
 - Preserved the existing custom dark card style through SCSS.
 - Updated SCSS selectors to override Bootstrap `.card`, `.card-body`, `.card-title`, and `.btn` styles.
+
+## Stage 7 — Substage 7 — UI states
+
+- Added reusable `CatalogState` component.
+- Used React-Bootstrap `Alert`, `Spinner`, and `Button`.
+- Improved loading, error, empty, and not-found states.
+- Added empty catalog action to reset active controls.
+- Reused state UI across catalog, favorites, details, and not found pages.
+- Preserved custom dark UI styling through SCSS.
