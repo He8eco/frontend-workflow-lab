@@ -1,5 +1,5 @@
 import { GameList } from '../components/GameList'
-
+import { CatalogState } from '../components/CatalogState'
 export function FavoritesPage({
   games,
   loading,
@@ -14,13 +14,29 @@ export function FavoritesPage({
   let favoritesContent
 
   if (loading) {
-    favoritesContent = <p className="catalog-message">Loading games...</p>
+    favoritesContent = (
+      <CatalogState
+        type="loading"
+        title="Loading favorites"
+        message="Please wait while your saved games are loading."
+      />
+    )
   } else if (error) {
     favoritesContent = (
-      <p className="catalog-message catalog-message--error">{error}</p>
+      <CatalogState
+        type="error"
+        title="Failed to load favorites"
+        message={error}
+      />
     )
   } else if (favoriteGames.length === 0) {
-    favoritesContent = <p className="catalog-message">No favorite games yet.</p>
+    favoritesContent = (
+      <CatalogState
+        type="empty"
+        title="No favorite games yet"
+        message="Add games to favorites from the catalog or details page."
+      />
+    )
   } else {
     favoritesContent = (
       <GameList
