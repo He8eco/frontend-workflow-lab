@@ -38,5 +38,5 @@
 - [x] Improve loading/error/empty states
 - [x] Improve responsive layout
 - [x] Polish details, favorites, and 404 pages
-- [ ] Update README
-- [ ] Final UI review
+- [x] Update README
+- [x] Final UI review
