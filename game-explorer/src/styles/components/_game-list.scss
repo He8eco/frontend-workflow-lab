@@ -1,10 +1,13 @@
+@use '../variables' as *;
+
 .game-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 280px));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 260px));
   justify-content: center;
-  gap: 18px;
+  gap: $space-7;
 
-  @media (max-width: 620px) {
-    grid-template-columns: 1fr;
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: $space-6;
   }
 }

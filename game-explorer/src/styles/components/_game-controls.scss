@@ -80,6 +80,11 @@
       opacity: 0.45;
       box-shadow: none;
     }
+
+    @media (max-width: $breakpoint-lg) {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
   }
 }
 

@@ -8,6 +8,11 @@
 
   @include glass-panel;
 
+  @include respond-down($breakpoint-sm) {
+    padding: $space-7;
+    border-radius: $radius-lg;
+  }
+
   .navbar-toggler {
     border: 1px solid $border-medium;
     border-radius: $radius-sm;
@@ -55,6 +60,10 @@
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.06em;
+
+  @include respond-down($breakpoint-sm) {
+    font-size: 34px;
+  }
 }
 
 .header-nav {
@@ -66,6 +75,11 @@
     align-items: stretch;
     gap: $space-3;
     margin-top: $space-6;
+  }
+
+  @include respond-down($breakpoint-sm) {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 

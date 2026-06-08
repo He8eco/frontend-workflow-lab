@@ -63,7 +63,7 @@ function App() {
   }, [])
 
   return (
-    <Container className='app' fluid="xl">
+    <Container className='app px-2' fluid>
       <Header favoritesCount={favorites.length} />
       <Routes>
         <Route

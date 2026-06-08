@@ -169,3 +169,14 @@
 - Kept Details page structure consistent with the rest of the UI.
 - Reused `CatalogState` for empty and not-found states.
 - Preserved the custom dark Game Explorer style.
+
+## Stage 7 — Substage 9 — Responsive layout
+
+- Improved responsive behavior across the app.
+- Adjusted app spacing for mobile screens.
+- Improved header and navbar mobile layout.
+- Improved catalog controls layout for desktop, tablet, and mobile.
+- Improved game list and card behavior on small screens.
+- Improved details page responsive layout.
+- Improved shared UI state panels on mobile.
+- Verified catalog, favorites, details, game not found, and 404 pages on different viewport widths.
