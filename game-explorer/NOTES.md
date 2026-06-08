@@ -160,3 +160,12 @@
 - Added empty catalog action to reset active controls.
 - Reused state UI across catalog, favorites, details, and not found pages.
 - Preserved custom dark UI styling through SCSS.
+
+## Stage 7 — Substage 8 — Page polish
+
+- Added consistent page header structure.
+- Polished Favorites page layout.
+- Polished NotFound page layout.
+- Kept Details page structure consistent with the rest of the UI.
+- Reused `CatalogState` for empty and not-found states.
+- Preserved the custom dark Game Explorer style.

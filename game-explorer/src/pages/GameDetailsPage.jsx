@@ -63,7 +63,6 @@ export function GameDetailsPage({
         <div className="details-content">
           <p className="page-eyebrow">{game.genre}</p>
           <h2>{game.title}</h2>
-
           <p className="details-description">{game.description}</p>
 
           <div className="details-grid">

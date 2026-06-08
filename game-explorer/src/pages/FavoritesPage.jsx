@@ -49,8 +49,13 @@ export function FavoritesPage({
 
   return (
     <main className="favorites-page">
-      <p className="page-eyebrow">Saved games</p>
-      <h2>Favorites</h2>
+      <header className="page-header">
+        <p className="page-eyebrow">Saved games</p>
+        <h2>Favorites</h2>
+        <p className="page-description">
+          Your favorite games are saved locally in this browser.
+        </p>
+      </header>
 
       {favoritesContent}
     </main>

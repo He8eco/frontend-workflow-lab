@@ -4,8 +4,13 @@ import { CatalogState } from '../components/CatalogState'
 export function NotFoundPage() {
   return (
     <main className="not-found-page">
-      <p className="page-eyebrow">404</p>
-      <h2>Page not found</h2>
+      <header className="page-header">
+        <p className="page-eyebrow">404</p>
+        <h2>Page not found</h2>
+        <p className="page-description">
+          This route does not exist in Game Explorer.
+        </p>
+      </header>
 
       <CatalogState
         type="not-found"
